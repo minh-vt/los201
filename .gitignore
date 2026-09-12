@@ -1,0 +1,121 @@
+# =============================================================================
+# LOS201 – Embedded Linux Systems
+#
+# Keep: source code, configs, scripts, logs, reports (PDF), screenshots (PNG),
+#       small kernel modules (*.ko).
+# Drop: third-party source trees, kernel build artifacts, disk/kernel images,
+#       initramfs archives, submission tarballs, demo video, course slides.
+# Rule of thumb: nothing large or regenerable should be committed.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Third-party source trees & toolchains (hundreds of MB, re-downloadable)
+# -----------------------------------------------------------------------------
+LAB/embedded_lab1/kernel/linux-5.15/
+LAB/embedded_lab1/uboot/u-boot-2022.04/
+LAB/embedded_lab1/rootfs/busybox-1.35.0/
+
+# Source archives (.tar.xz / .tar.bz2 / submission .tar.gz)
+*.tar.xz
+*.tar.bz2
+*.tar.gz
+*.tgz
+*.zip
+
+# -----------------------------------------------------------------------------
+# Kernel / U-Boot / BusyBox build artifacts
+# -----------------------------------------------------------------------------
+*.o
+*.o.*
+*.a
+*.mod
+*.mod.c
+*.cmd
+modules.order
+Module.symvers
+.tmp_*
+vmlinux
+vmlinux.*
+System.map
+Image
+zImage
+uImage
+*.dtb
+*.dtbo
+*.ko.zst
+
+# -----------------------------------------------------------------------------
+# Generated board images / initramfs / firmware (rebuild with make/run.sh)
+# -----------------------------------------------------------------------------
+*.cpio
+*.cpio.gz
+*.img
+*.iso
+
+# -----------------------------------------------------------------------------
+# Large generated binaries (rebuilt by make; keep the sources instead)
+# -----------------------------------------------------------------------------
+**/bin/busybox
+**/sbin/busybox
+LAB/embedded_lab1/output/zImage
+LAB/embedded_lab1/output/u-boot
+LAB/embedded_lab1/output/initramfs.cpio.gz
+LAB/embedded_lab2/output/zImage
+LAB/embedded_lab2/output/initramfs_lab2.cpio.gz
+LAB/embedded_lab2/rootfs/initramfs/lib/modules/5.15.0/nand.ko
+Assignment/asgn01/output/
+Assignment/asgn01/rootfs/
+Assignment/asgn01/task1_ioctl/asgn1_test
+Assignment/asgn01/task2_misc/counter_test
+Assignment/asgn02/rootfs/
+Assignment/asgn02/output/*.cpio.gz
+Assignment/asgn02/output/zImage
+Assignment/asgn02/output/u-boot
+Assignment/asgn02/app/sms_app
+Assignment/asgn02/app/sms_app_x86
+
+# -----------------------------------------------------------------------------
+# Documents / media / presentations (not versioned in this repo)
+# -----------------------------------------------------------------------------
+*.docx
+*.doc
+*.odt
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
+*.pptx
+*.ppt
+*.key
+*.odp
+
+# -----------------------------------------------------------------------------
+# Python / editor / OS noise
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# -----------------------------------------------------------------------------
+# Agent scaffolding / study notes (kept locally, NOT part of the course repo)
+# The repository only versions Assignment/, LAB/ and Lecture Slides/
+# (source material + reports + lab/assignment results).
+# -----------------------------------------------------------------------------
+/MISSION.md
+/NOTES.md
+/RESOURCES.md
+/assets/
+/lessons/
+/reference/
+/learning-records/
+/LAB/_work/
+
+# local scratch
+*.log.tmp
