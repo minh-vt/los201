@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>SE201043 - Lab02 BaoCao</title>
+<style>
+  @page { size: A4; margin: 18mm 15mm 18mm 15mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Noto Sans", "DejaVu Sans", Arial, sans-serif; font-size: 10.5pt;
+         line-height: 1.5; color: #1a1a1a; margin: 0; }
+  h1 { font-size: 20pt; text-align: center; margin: 0 0 2px 0; }
+  h2 { font-size: 15pt; text-align: center; color: #2E75B6; margin: 0 0 16px 0; font-weight: 600; }
+  h3 { font-size: 13pt; color: #1F4E79; border-bottom: 2px solid #2E75B6; padding-bottom: 3px;
+       margin-top: 22px; page-break-after: avoid; }
+  h4 { font-size: 11.5pt; color: #2E75B6; margin: 16px 0 6px 0; page-break-after: avoid; }
+  p { margin: 6px 0; text-align: justify; }
+  ul, ol { margin: 5px 0 8px 0; padding-left: 22px; }
+  li { margin: 3px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 9.6pt; }
+  th, td { border: 1px solid #9dc3e6; padding: 5px 7px; text-align: left; vertical-align: top; }
+  th { background: #2E75B6; color: #fff; }
+  tr:nth-child(even) td { background: #f2f7fc; }
+  .info td:first-child { width: 34%; font-weight: 600; background: #eaf2fa; }
+  code, pre { font-family: "DejaVu Sans Mono", "Noto Sans Mono", monospace; font-size: 9pt; }
+  pre { background: #f4f6f8; border: 1px solid #d6dde4; border-left: 4px solid #2E75B6;
+        padding: 9px 11px; border-radius: 3px; white-space: pre-wrap; page-break-inside: avoid; }
+  .diagram { background: #0f172a; color: #cbd5e1; padding: 12px; border-radius: 4px;
+             font-family: "DejaVu Sans Mono", monospace; font-size: 8.6pt; line-height: 1.35;
+             white-space: pre; overflow: hidden; }
+  .shot { text-align: center; margin: 12px 0 4px 0; page-break-inside: avoid; }
+  .shot img { max-width: 100%; max-height: 185mm; height: auto; border: 1px solid #b9c6d3; border-radius: 3px; }
+  .cap { font-size: 9pt; font-style: italic; color: #555; margin: 4px 0 14px 0; text-align: center; }
+  .note { background: #fff8e1; border-left: 4px solid #f0ad4e; padding: 8px 11px; margin: 10px 0;
+          font-size: 9.6pt; }
+  .ok { background: #eafaf1; border-left: 4px solid #27ae60; padding: 8px 11px; margin: 10px 0; }
+  .pagebreak { page-break-before: always; }
+  .q { background: #eef4fb; border-left: 4px solid #2E75B6; padding: 7px 11px; margin: 14px 0 6px 0;
+       font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>BÁO CÁO THỰC HÀNH LAB 02</h1>
+<h2>Viết Device Driver &amp; Quản lý File System (Kernel Module · Character Device · sysfs/procfs · MTD/JFFS2)</h2>
+
+<h3>Mục 1: Thông tin sinh viên &amp; Môi trường thực hiện</h3>
+<table class="info">
+  <tr><td>Họ và tên</td><td>Vũ Tùng Minh</td></tr>
+  <tr><td>Mã số sinh viên (MSSV)</td><td>SE201043</td></tr>
+  <tr><td>Lớp chuyên ngành</td><td>AS2105 (Môn: LOS201 – Embedded Linux Systems)</td></tr>
+  <tr><td>Thời gian thực hiện</td><td>17/10/2026</td></tr>
+  <tr><td>Kiến trúc mục tiêu</td><td>ARMv7-A – Cortex-A9 (QEMU <code>vexpress-a9</code>, 2 core, 512 MB RAM)</td></tr>
+  <tr><td>Kernel target</td><td>Linux <b>5.15.0</b> (<code>#2 SMP ... armv7l</code>), cấu hình mở rộng thêm <code>CONFIG_MTD_RAW_NAND=m</code>, <code>CONFIG_MTD_NAND_NANDSIM=m</code> cho Phần C</td></tr>
+  <tr><td>Toolchain</td><td><code>arm-linux-gnueabihf-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0</code> – hard-float ABI</td></tr>
+  <tr><td>Môi trường host</td><td>CachyOS Linux x86_64 (kernel 7.2.9) + container <b>Ubuntu 22.04 LTS</b> (Podman); QEMU <b>6.2.0</b></td></tr>
+  <tr><td>Công cụ</td><td>mtd-utils <b>2.1.4</b>, BusyBox <b>1.35.0</b> (static, có <code>flash_eraseall</code>, <code>nandwrite</code>, <code>nanddump</code>), <code>fakeroot</code>, <code>cpio</code></td></tr>
+</table>
+
+<div class="note">
+<b>Ghi chú môi trường Phần C:</b> Host CachyOS đang chạy kernel 7.2.9-1 nhưng <b>không có thư mục module tương ứng</b> (<code>/lib/modules/7.2.9-1*</code> trống) và tài khoản không có quyền <code>root</code>, nên <b>không thể <code>modprobe nandsim</code> trên host</b> như hướng dẫn. Để vẫn thực hiện đúng bản chất kỹ thuật, em đã <b>biên dịch <code>nandsim.ko</code> kèm kernel target</b> và chạy toàn bộ quy trình MTD → JFFS2 <b>ngay trong QEMU ARM</b>. Trên <code>vexpress-a9</code>, NOR flash và PSRAM của bo mạch đã chiếm <code>mtd0</code>/<code>mtd1</code>, nên NAND simulator là <b><code>mtd2</code></b> (đúng như lưu ý trong đề bài: dùng <code>/proc/mtd</code> để xác định đúng phân vùng). Tất cả số liệu trong báo cáo đều là kết quả chạy thật, không mô phỏng lại.
+</div>
+
+<h3>Mục 2: Sơ đồ kiến trúc Driver</h3>
+<p>Luồng dữ liệu từ không gian người dùng xuống driver và ra các giao diện quản trị:</p>
+<div class="diagram">
+┌────────────────────────────── USER SPACE ──────────────────────────────┐
+│  test_driver.sh   test_procfs.sh   cat /proc/lab2_info   cat /sys/...   │
+│        │ open()/read()/write()/close()      │ read()         │ read()   │
+└────────┼────────────────────────────────────┼────────────────┼──────────┘
+         ▼  system call (svc #0)              ▼                ▼
+┌────────────────────────────── KERNEL SPACE ─────────────────────────────┐
+│  VFS (Virtual File System)                                              │
+│    ├── /dev/lab2  ─────────────► lab2_fops (file_operations)            │
+│    │        .open=lab2_open  .read=lab2_read  .write=lab2_write          │
+│    │        .release=lab2_release                                        │
+│    │                       copy_to_user() / copy_from_user()             │
+│    │                                     ▼                               │
+│    │                          device_buffer[1024]  (+ buffer_len,        │
+│    │                             ▲ open_count, DEFINE_MUTEX(lab2_mutex)) │
+│    │                             │                                       │
+│    ├── /proc/lab2_info ──► seq_file API: single_open() → lab2_proc_show() │
+│    └── /sys/class/lab2_class/lab2/ ──► attribute_group (kobject)         │
+│              buffer_len (RO)  open_count (RO)  last_data (RO)            │
+│                    ▲      ▲          ▲                                   │
+│              sysfs_create_group() / DEVICE_ATTR_RO()                     │
+└──────────────────────────────────────────────────────────────────────────┘
+                 │ major=240 (register_chrdev), minor=0
+                 ▼
+   MTD subsystem (Phần C): nandsim.ko → nand.ko → MTD core → JFFS2
+</div>
+
+<h4>Luồng ghi dữ liệu (write)</h4>
+<pre>user buffer (địa chỉ ảo user) → copy_from_user(device_buffer, buf, len)
+     → [mutex_lock] ghi vào device_buffer → buffer_len = len
+     → device_buffer[len] = '\0' → [mutex_unlock]
+     → procfs/sysfs đọc lại cùng device_buffer khi người dùng cat</pre>
+
+<h4>Cây sysfs của driver</h4>
+<pre>/sys/class/lab2_class/lab2/
+├── buffer_len     (0444, DEVICE_ATTR_RO)  -> số byte dữ liệu hiện có
+├── open_count     (0444, DEVICE_ATTR_RO)  -> số lần open() tích lũy
+├── last_data      (0444, DEVICE_ATTR_RO)  -> nội dung device_buffer
+├── dev            -> ánh xạ major:minor (240:0)
+├── power/ , subsystem/ , uevent            (do kernel device model tạo)</pre>
+
+<h3>Mục 3: Log thực hành và phân tích ảnh chụp</h3>
+
+<h4>Phần A – Kernel Module Character Device</h4>
+<p>Module được build trực tiếp bởi hệ thống Kbuild của kernel ARM đã build ở LAB-01 (không dùng gcc thường), với <code>CC="arm-linux-gnueabihf-gcc -mfloat-abi=soft"</code> đúng như kernel ARM yêu cầu. <code>modinfo</code> xác nhận <code>vermagic: 5.15.0 SMP mod_unload ARMv7 p2v8</code> – khớp chính xác kernel target, đây là điều kiện bắt buộc để <code>insmod</code> thành công.</p>
+<div class="shot"><img src="partA_build_modinfo.png" style="max-width:96%"></div>
+<div class="cap">Hình 1: <code>make</code> sinh <code>lab2_driver.ko</code> (ELF 32-bit ARM EABI5), <code>file</code> và <code>modinfo</code> xác nhận license GPL, author và vermagic 5.15.0.</div>
+
+<p>Trong QEMU, module được <code>rcS</code> nạp tự động. Script <code>test_driver.sh</code> kiểm tra lần lượt open → write → read → release; kernel log (<code>dmesg</code>) in đúng vòng đời module và số byte nhận/gửi, chứng minh <code>copy_from_user()</code>/<code>copy_to_user()</code> hoạt động và <code>open_count</code> tăng tuần tự (1→8) không bị race trên bộ đệm.</p>
+<div class="shot"><img src="partA_test_driver.png" style="max-width:74%"></div>
+<div class="cap">Hình 2: Kết quả <code>test_driver.sh</code> – ghi 30 byte, đọc lại đúng <code>[Hello from userspace, LAB-02!]</code>, vòng lặp write/read 3 lần in lại Message_1..3, kết thúc <code>=== Test PASSED ===</code>.</div>
+
+<h4>Phần B – Giao tiếp qua procfs (/proc) và sysfs (/sys)</h4>
+<p>Entry <code>/proc/lab2_info</code> dùng seq_file API (<code>single_open()</code>) xuất thống kê dạng text; ba thuộc tính sysfs (<code>buffer_len</code>, <code>open_count</code>, <code>last_data</code>) dùng macro <code>DEVICE_ATTR_RO</code>, mỗi file chỉ chứa một giá trị. Trước khi ghi, <code>Data length = 0</code> và <code>Last data = (empty)</code>; sau khi ghi 30 byte, procfs và sysfs đều phản ánh đúng dữ liệu mới.</p>
+<div class="shot"><img src="partB_procfs_sysfs.png" style="max-width:62%"></div>
+<div class="cap">Hình 3: <code>test_procfs.sh</code> – <code>/proc/lab2_info</code> trước/sau write, các attribute sysfs đọc được từ userspace, <code>=== procfs/sysfs Test PASSED ===</code>.</div>
+
+<div class="pagebreak"></div>
+<h4>Phần C – MTD Subsystem, NAND và JFFS2</h4>
+<p>NAND 32 MiB được mô phỏng bằng <code>nandsim first_id_byte=0x20 second_id_byte=0x35</code> (SLC, page 512 B, eraseblock 16 KiB, OOB 16 B). Kernel nhận diện đúng chip <i>ST Micro NAND 32MiB</i> và tạo phân vùng <code>"NAND simulator partition 0"</code>. Vì bo mạch đã có NOR flash (<code>mtd0</code>) và PSRAM (<code>mtd1</code>), phân vùng NAND là <code>mtd2</code>.</p>
+<div class="shot"><img src="partC_mtd_nandsim.png" style="max-width:78%"></div>
+<div class="cap">Hình 4: Load <code>nand.ko</code> + <code>nandsim.ko</code>; <code>/proc/mtd</code> xác định NAND simulator là <code>mtd2</code> (size 0x02000000 = 32 MiB, erasesize 0x4000 = 16 KiB); <code>flash_eraseall /dev/mtd2</code> xóa sạch flash rồi <code>nandwrite -p</code> ghi image JFFS2.</div>
+
+<p>Sau khi <code>mount -t jffs2 /dev/mtdblock2 /mnt/jffs2</code>, các file <code>hello.txt</code>, <code>info.txt</code>, <code>logs/boot.log</code> đọc được đúng nội dung. Ghi thêm dữ liệu runtime, <code>umount</code> rồi mount lại thì <b>dữ liệu vẫn còn nguyên</b> (persistence) – đây là đặc trưng cốt lõi của JFFS2.</p>
+<div class="shot"><img src="partC_jffs2_persist.png" style="max-width:82%"></div>
+<div class="cap">Hình 5: Mount JFFS2 thành công, đọc file gốc, ghi thêm <code>runtime.txt</code> và dòng log mới; remount vẫn giữ nguyên toàn bộ dữ liệu.</div>
+
+<p><code>nanddump -o -l 512</code> dump 512 byte dữ liệu + OOB; <code>hexdump -C</code> cho thấy ngay offset 0 là <b><code>85 19</code></b> – magic bitmask của node JFFS2, xác nhận image được ghi đúng vào flash.</p>
+<div class="shot"><img src="partC_hexdump.png" style="max-width:82%"></div>
+<div class="cap">Hình 6: Raw dump MTD; magic JFFS2 <code>85 19</code> ở 0x00 và tên file <code>hello.txt</code>, <code>info.txt</code>, <code>logs</code> xuất hiện trong các dirent node.</div>
+
+<h4>Phần D – Tích hợp BusyBox Init &amp; auto-load module</h4>
+<p><code>/etc/init.d/rcS</code> (chạy ở action <code>sysinit</code>) mount <code>/proc</code>, <code>/sys</code>, <code>/tmp</code>, <code>/dev</code> rồi <code>insmod</code> module và tạo node <code>/dev/lab2</code> major 240. Nhờ vậy khi shell mở ra, module đã sẵn sàng.</p>
+<div class="shot"><img src="partD_boot_autoload.png" style="max-width:96%"></div>
+<div class="cap">Hình 7: Boot log QEMU – rcS báo <code>lab2_driver loaded OK</code>, tạo <code>/dev/lab2</code> (major=240, minor=0) trước khi mở shell.</div>
+
+<p>Trong shell BusyBox, các kiểm tra Mục D.5 đều đạt: <code>lsmod</code> thấy module, <code>/dev/lab2</code> tồn tại, hai script test PASSED, <code>cat /proc/lab2_info</code> và các attribute sysfs đọc đúng, <code>dmesg | grep lab2</code> in đủ vòng đời module.</p>
+<div class="shot"><img src="partB_procfs_sysfs.png" style="max-width:60%"></div>
+<div class="cap">Hình 8: (tái hiện) procfs/sysfs đọc trực tiếp trong QEMU shell.</div>
+
+<div class="ok"><b>Vấn đề gặp phải và cách khắc phục (đáng chú ý):</b> Ban đầu initramfs của LAB-02 được đóng gói mà <b>không dùng <code>fakeroot</code></b>, nên <code>/dev/console</code> bị lưu thành <i>regular file</i> thay vì character device <code>c 5 1</code>. Hệ quả: kernel mở <code>/dev/console</code> (fd 0/1/2 của PID 1) trỏ vào file thường nên <b>toàn bộ output của rcS và shell biến mất khỏi cổng serial</b> dù module vẫn nạp. Cách sửa: đóng gói lại bằng <code>fakeroot</code> + <code>mknod</code> để archive chứa đúng device node (giống LAB-01). Sau khi sửa, console serial hoạt động trở lại.</div>
+
+<h3>Mục 4: So sánh Filesystem cho hệ thống nhúng</h3>
+<table>
+  <tr><th>Tiêu chí</th><th>ext4</th><th>JFFS2</th><th>cramfs</th><th>SquashFS</th><th>UBIFS</th></tr>
+  <tr><td>Ghi được (writable)</td><td>Có</td><td>Có</td><td>Không (RO)</td><td>Không (RO)</td><td>Có</td></tr>
+  <tr><td>Wear leveling</td><td>Không tích hợp (nhờ FTL/eMMC)</td><td>Có (log-structured)</td><td>Không</td><td>Không</td><td>Có</td></tr>
+  <tr><td>Nén</td><td>Không (cần ext4 + fscrypt/khác)</td><td>Có (zlib/rtime)</td><td>Có (zlib, block nén)</td><td>Có (gzip/lzo/xz/zstd)</td><td>Có</td></tr>
+  <tr><td>Journaling / phục hồi</td><td>Journaling</td><td>Log-structured (tự phục hồi)</td><td>Không (RO)</td><td>Không (RO)</td><td>Journal (log)</td></tr>
+  <tr><td>Phù hợp thiết bị</td><td>eMMC/SD/HDD/SSD</td><td>Raw NAND/NOR nhỏ–vừa</td><td>Firmware ROM, rootfs RO</td><td>Rootfs RO nén, OTA image</td><td>NAND lớn, cần hiệu năng</td></tr>
+  <tr><td>Thời gian mount</td><td>Nhanh (nhưng cần block layer)</td><td>Chậm dần khi FS lớn (quét toàn bộ)</td><td>Rất nhanh</td><td>Rất nhanh (random access nén)</td><td>Nhanh (nhờ anchor/UBI)</td></tr>
+  <tr><td>Hạn chế chính</td><td>Không dùng trực tiếp trên raw flash</td><td>Mount chậm + RAM cho bảng node khi FS lớn</td><td>Chỉ đọc, kích thước block cố định</td><td>Chỉ đọc (cần overlay để ghi)</td><td>Cần UBI, không hợp NOR/FS &lt; 4 MB</td></tr>
+</table>
+
+<div class="ok"><b>Khuyến nghị cho thiết bị IoT 32 MB NAND cần update firmware OTA:</b>
+<ul>
+<li><b>Rootfs (hệ điều hành):</b> dùng <b>SquashFS</b> (read-only, nén tốt, mount nhanh, phù hợp image OTA bất biến) đặt trên phân vùng NAND/UBI, hoặc <b>UBIFS</b> nếu muốn rootfs ghi được.</li>
+<li><b>Dữ liệu cấu hình/ghi runtime:</b> dùng <b>JFFS2</b> (hoặc UBIFS) trên phân vùng NAND còn lại vì có wear-leveling tích hợp, tránh hỏng flash.</li>
+<li><b>OTA:</b> giữ 2 phân vùng A/B (dual-bank), mỗi bản một image SquashFS, ghi bản mới rồi chuyển boot – vừa an toàn (rollback) vừa tận dụng tính read-only của SquashFS. Không dùng <code>ext4</code> trực tiếp trên raw NAND.</li>
+</ul>
+</div>
+
+<div class="pagebreak"></div>
+<h3>Mục 5: Trả lời câu hỏi phân tích</h3>
+
+<div class="q">Câu 1. Tại sao không thể dùng <code>memcpy()</code> thay <code>copy_to_user()</code>/<code>copy_from_user()</code>?</div>
+<p>Trong kiến trúc ARMv7 có MMU, mỗi tiến trình user có <b>không gian địa chỉ ảo riêng</b> (bảng trang riêng); kernel space nằm ở vùng địa chỉ riêng và được ánh xạ cho mọi tiến trình. Con trỏ <code>char __user *buf</code> là <b>địa chỉ ảo user</b> – chỉ có ý nghĩa với bảng trang của tiến trình đang gọi. Nếu kernel <code>memcpy()</code> trực tiếp con trỏ này:</p>
+<ul>
+<li>Nếu trang đó chưa được nạp vào RAM (page fault), CPU sẽ nhảy vào <b>page fault handler trong kernel context</b>; <code>memcpy()</code> không có cơ chế xử lý an toàn nên có thể <b>Kernel Oops / panic</b>, hoặc ghi sai chỗ.</li>
+<li>Con trỏ có thể là <code>NULL</code>, trỏ vào vùng chỉ đọc, hoặc cố tình trỏ vào địa chỉ kernel → <b>leo thang đặc quyền</b> (user đọc/ghi được bộ nhớ kernel).</li>
+<li>Trên các CPU có SMAP/PAN, kernel bị cấm truy cập trực tiếp user page → fault ngay.</li>
+</ul>
+<p><code>copy_to_user()</code>/<code>copy_from_user()</code> thực hiện theo đúng quy trình: kiểm tra vùng địa chỉ (<code>access_ok()</code>), dùng <b>cơ chế copy đặc biệt có bắt page fault</b> (qua exception table <code>__ex_table</code>), và <b>trả về số byte chưa copy</b> (khác 0) để driver trả <code>-EFAULT</code> thay vì treo máy. Trong bài lab, nhờ dùng đúng API mà thao tác ghi/đọc <code>/dev/lab2</code> luôn nhận đúng 30 byte và không hề gây Oops.</p>
+
+<div class="q">Câu 2. Vì sao cần <code>DEFINE_MUTEX(lab2_mutex)</code>? Race condition nếu bỏ mutex?</div>
+<p><code>device_buffer</code>, <code>buffer_len</code>, <code>open_count</code> là tài nguyên dùng chung giữa nhiều tiến trình/CPU. Nếu không có mutex, hai process gọi <code>write()</code> đồng thời có thể bị <b>đan xen (interleaving)</b>:</p>
+<pre>P1: write("AAAAAAAAAA")                 P2: write("BBBBBBBBBB")
+copy_from_user(device_buffer,"AAAAAAAAAA",10)   // đang ghi
+                                        copy_from_user(device_buffer,"BBBBBBBBBB",10)
+buffer_len = 10   // P1
+                                        buffer_len = 10   // P2 (ghi đè)
+device_buffer[10]='\0'                  device_buffer[10]='\0'</pre>
+<p>Kết quả có thể là dữ liệu bị <b>trộn lẫn</b> (nửa A nửa B), hoặc <code>buffer_len</code> không khớp với nội dung thực, khiến process đọc ra <b>rác / dữ liệu rác giữa các phiên</b>. Với <code>open_count++</code> không khóa, thao tác <i>read-modify-write</i> của hai CPU có thể mất một lần tăng (lost update). Mutex đưa các process đến sau vào trạng thái <b>sleep</b> (không busy-wait) cho đến khi lock được giải phóng, đảm bảo tính <b>nguyên tử</b> và nhất quán. Trong log thực tế, <code>open_count</code> tăng liên tục và đúng 1→8 dù nhiều lần mở/đóng – bằng chứng vùng găng được bảo vệ đúng.</p>
+
+<div class="q">Câu 3. So sánh procfs (/proc) và sysfs (/sys). Vì sao nên ưu tiên /sys?</div>
+<p><b>procfs</b> ra đời trước, chủ yếu để xuất trạng thái tiến trình và thông tin kernel dạng text tự do; <b>sysfs</b> là hệ thống file ảo có cấu trúc <b>phân cấp theo mô hình thiết bị (kobject)</b>. Kernel documentation khuyến nghị <b>không thêm file tùy tiện vào /proc</b> vì:</p>
+<ul>
+<li><b>ABI không ổn định:</b> nội dung /proc là text tự do, dễ thay đổi và khó kiểm soát; sysfs có quy tắc rõ ràng (mỗi file một giá trị).</li>
+<li><b>Thiếu cấu trúc/khả năng gán:</b> sysfs ánh xạ 1-1 với device/class/driver, hỗ trợ quyền, symlink, uevent và tự động xuất hiện/biến mất theo vòng đời thiết bị.</li>
+<li><b>Nguyên tắc "one value per file":</b> giúp script/userspace dễ parse, ổn định, tránh việc driver tự định dạng chuỗi.</li>
+</ul>
+<p>Với driver bài lab: <b>thống kê tổng hợp</b> (<code>/proc/lab2_info</code>: tên driver, major, buffer size, data length, open count, last data) phù hợp đặt ở /proc vì đây là dữ liệu "nhiều dòng, mang tính báo cáo". Ngược lại, các <b>thuộc tính đơn trị có thể đọc/ghi theo từng cái một</b> (<code>buffer_len</code>, <code>open_count</code>, <code>last_data</code>) đặt ở sysfs; chúng tuân thủ one-value-per-file và tự gắn vào <code>kobject</code> của thiết bị nên dễ quản lý bằng script/udev.</p>
+
+<div class="q">Câu 4. Vì sao JFFS2 phải erase trước khi ghi, còn ext4 không?</div>
+<p>Đặc tính vật lý của flash NAND/NOR khác đĩa từ/SSD có FTL: (1) ghi chỉ đổi bit <b>1 → 0</b>, không đổi được 0 → 1; (2) đơn vị xóa là <b>eraseblock</b> (16–256 KiB), không xóa từng byte; (3) số chu kỳ xóa giới hạn. Vì vậy không thể "ghi đè tại chỗ" như ext4 (ghi trực tiếp lên sector bất kỳ qua block layer). Muốn ghi giá trị mới cho một vùng, trước hết phải <b>erase cả eraseblock về 0xFF</b>. Trong bài lab, sau <code>flash_eraseall /dev/mtd2</code> khi mount nhầm phân vùng chưa format, kernel báo <i>"Magic bitmask 0x1985 not found … 0xffff"</i> và <i>"Cowardly refusing to erase blocks on filesystem with no valid JFFS2 nodes"</i> – minh họa rõ rằng vùng flash sạch là 0xFF và JFFS2 cần node hợp lệ mới mount được.</p>
+<p>JFFS2 giải quyết bằng thiết kế <b>log-structured</b>: mỗi thay đổi được ghi thành một <b>node mới</b> (kèm CRC và version) vào chỗ flash trống thay vì sửa node cũ; node cũ bị đánh dấu "obsolete". Khi hết chỗ, <b>garbage collector</b> chọn eraseblock có nhiều node cũ, copy các node còn sống sang block khác rồi mới erase block đó. Nhờ ghi trải đều và chỉ ghi tăng thêm, JFFS2 có <b>wear-leveling</b> và <b>bad-block management</b> tích hợp, phù hợp raw flash nhỏ.</p>
+
+<div class="q">Câu 5. Nếu <code>insmod</code> trong <code>rcS</code> thất bại, hệ thống có boot tiếp không?</div>
+<p>Có. BusyBox init chạy các dòng trong <code>/etc/inittab</code> tuần tự; <code>rcS</code> chỉ là một process được gọi ở action <code>sysinit</code>. Nếu một lệnh trong rcS thất bại, script <b>vẫn tiếp tục các lệnh sau</b> (trừ khi script đặt <code>set -e</code> hoặc tự <code>exit</code>), và init vẫn chuyển sang mở shell ở dòng <code>::askfirst:-/bin/sh</code>. Nói cách khác, <b>lỗi load module mặc định là non-critical</b>: hệ thống vẫn boot, chỉ thiếu chức năng của module. Chỉ các lỗi <b>nghiêm trọng</b> như <code>mount</code> thất bại với rootfs, hoặc <code>exec /sbin/init</code> thất bại, mới làm kernel panic/dừng boot.</p>
+<p>Để phân biệt mức độ, script cần <b>kiểm tra mã trả về của từng bước quan trọng</b> và quyết định rõ ràng. Trong bài lab, <code>rcS</code> đã kiểm tra <code>$?</code> sau <code>insmod</code> và in cảnh báo <i>"ERROR: insmod lab2_driver failed (non-critical, continuing boot)!"</i> nhưng vẫn tiếp tục – đúng với triết lý "degrade gracefully". Có thể cải thiện như sau:</p>
+<pre>#!/bin/sh
+# Ham bao loi nghiem trong: ghi log va dung boot
+die() { echo "[ LAB-02 ] FATAL: $1"; exec /bin/sh; }   # hoac: reboot -f
+
+mount -t proc  none /proc || die "khong mount duoc /proc"
+mount -t sysfs none /sys  || die "khong mount duoc /sys"
+mount -t devtmpfs none /dev 2>/dev/null || mdev -s
+
+KO=/lib/modules/5.15.0/lab2_driver.ko
+if [ -f "$KO" ]; then
+    if insmod "$KO"; then
+        mknod /dev/lab2 c 240 0 2>/dev/null; chmod 666 /dev/lab2
+    else
+        echo "[ LAB-02 ] WARN: nap $KO that bai (loi ${?}) - tiep tuc boot o che do suy giam"
+        # co the thu: depmod -a; modprobe lab2_driver
+    fi
+else
+    echo "[ LAB-02 ] WARN: thieu $KO - driver khong kha dung"
+fi
+# Dong cuoi: chi bao thanh cong neu module da nam trong lsmod
+lsmod | grep -q '^lab2_driver' \
+  && echo "[ LAB-02 ] OK: driver san sang" \
+  || echo "[ LAB-02 ] CANH BAO: driver KHONG hoat dong"</pre>
+<p>Nguyên tắc: lỗi <b>có thể phục hồi</b> (module/thiết bị phụ) thì log cảnh báo và tiếp tục; lỗi <b>không thể phục hồi</b> (rootfs, console, init) thì dừng/khởi động lại để tránh hệ thống chạy nửa vời.</p>
+
+<h3>Mục 6: Nhận xét &amp; Khó khăn</h3>
+<p><b>Kết quả đạt được:</b> module nạp/gỡ đúng, open/read/write/release hoạt động, procfs + sysfs xuất đúng thống kê, nandsim + JFFS2 mount/ghi/persistence thành công, module được auto-load khi boot.</p>
+<ol>
+<li><b>Khó khăn 1 – console biến mất sau khi đóng gói initramfs:</b> module vẫn nạp nhưng không thấy output rcS/shell. Nguyên nhân là archive không dùng <code>fakeroot</code> nên <code>/dev/console</code> là regular file. <i>Cách giải quyết:</i> dùng <code>fakeroot</code> + <code>mknod</code> để đóng gói <code>/dev/console</code> (c 5 1), <code>/dev/null</code>, <code>/dev/zero</code>, <code>/dev/random</code> thành character device – giống cách LAB-01 đã làm.</li>
+<li><b>Khó khăn 2 – không <code>modprobe nandsim</code> được trên host:</b> kernel host đang chạy (7.2.9-1) thiếu thư mục module và không có quyền root. <i>Cách giải quyết:</i> bật <code>CONFIG_MTD_RAW_NAND=m</code> + <code>CONFIG_MTD_NAND_NANDSIM=m</code>, build <code>nand.ko</code>/<code>nandsim.ko</code> kèm kernel target và chạy MTD/JFFS2 ngay trong QEMU ARM; đồng thời xác định NAND simulator là <code>mtd2</code> nhờ <code>/proc/mtd</code> thay vì giả định <code>mtd0</code>.</li>
+<li><b>Khó khăn 3 – build kernel lỗi <code>dmb ish</code>:</b> do thiếu cờ <code>-mfloat-abi=soft</code> khiến <code>cc-option -march=armv7-a</code> thất bại và rớt xuống <code>armv5t</code>. <i>Cách giải quyết:</i> build với <code>CC="arm-linux-gnueabihf-gcc -mfloat-abi=soft"</code> (đúng như kernel ARM yêu cầu).</li>
+</ol>
+
+</body>
+</html>

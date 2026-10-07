@@ -1,0 +1,17 @@
+=== PART C (host side) - Ubuntu 22.04 container ===
+$ mkdir -p /tmp/jffs2_data/logs
+$ echo "Hello from JFFS2!" > /tmp/jffs2_data/hello.txt
+$ echo "Embedded Linux Lab2" > /tmp/jffs2_data/info.txt
+$ date > /tmp/jffs2_data/logs/boot.log
+$ mkfs.jffs2 --root=/tmp/jffs2_data --eraseblock=0x4000 --output=/tmp/rootfs.jffs2 --pad --no-cleanmarkers
+$ ls -lh /tmp/rootfs.jffs2
+-rw-r--r-- 1 root root 16K Oct 17 00:24 /tmp/rootfs.jffs2
+$ file /tmp/rootfs.jffs2
+/tmp/rootfs.jffs2: Linux jffs2 filesystem data little endian
+
+=== mtd-utils version ===
+mkfs.jffs2 (mtd-utils) 2.1.4
+
+=== Ghi chu: Host CachyOS (kernel 7.2.9-1) KHONG nap duoc module nandsim (thieu module cho kernel dang chay + khong co quyen root).
+    Vi vay phan MTD/NAND/JFFS2 duoc chay NGAY TRONG QEMU target ARM (nandsim.ko build kem kernel).
+    Tren vexpress-a9, NOR flash (mtd0) va PSRAM (mtd1) da ton tai san, nen NAND simulator la mtd2.

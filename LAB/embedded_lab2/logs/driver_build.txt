@@ -1,0 +1,33 @@
+$ cd ~/embedded_lab2/driver
+$ make clean
+  CLEAN   /root/embedded_lab2/driver/Module.symvers
+make[1]: Leaving directory '/work/LAB/embedded_lab1/kernel/linux-5.15'
+
+$ make
+make -C /root/embedded_lab2/driver/../../embedded_lab1/kernel/linux-5.15 M=/root/embedded_lab2/driver ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- CC="arm-linux-gnueabihf-gcc -mfloat-abi=soft" modules
+make[1]: Entering directory '/work/LAB/embedded_lab1/kernel/linux-5.15'
+  CC [M]  /root/embedded_lab2/driver/lab2_driver.o
+  MODPOST /root/embedded_lab2/driver/Module.symvers
+  CC [M]  /root/embedded_lab2/driver/lab2_driver.mod.o
+  LD [M]  /root/embedded_lab2/driver/lab2_driver.ko
+make[1]: Leaving directory '/work/LAB/embedded_lab1/kernel/linux-5.15'
+
+$ ls -lh lab2_driver.ko
+-rw-r--r-- 1 root root 141K Oct 17 00:17 lab2_driver.ko
+
+$ file lab2_driver.ko
+lab2_driver.ko: ELF 32-bit LSB relocatable, ARM, EABI5 version 1 (SYSV), BuildID[sha1]=e2937b1007cbe70be0e1b7778588831563780b82, with debug_info, not stripped
+
+$ modinfo lab2_driver.ko
+filename:       /root/embedded_lab2/driver/lab2_driver.ko
+version:        1.0
+description:    LAB-02: Character Device Driver with procfs and sysfs interfaces
+author:         Vu Tung Minh - SE201043
+license:        GPL
+srcversion:     AE8325818819D5115761363
+depends:        
+name:           lab2_driver
+vermagic:       5.15.0 SMP mod_unload ARMv7 p2v8 
+
+$ modinfo lab2_driver.ko | grep vermagic
+vermagic:       5.15.0 SMP mod_unload ARMv7 p2v8 
