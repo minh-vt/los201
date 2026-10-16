@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>SE201043 - Assignment 01</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+  body { font-family: "Noto Sans","DejaVu Sans",Arial,sans-serif; font-size: 12pt; line-height: 1.55; color:#1a1a1a; margin:0; }
+  h1 { font-size: 21pt; text-align:center; margin:0 0 2px 0; }
+  h2 { font-size: 14pt; text-align:center; color:#2E75B6; margin:0 0 16px 0; font-weight:600; }
+  h3 { font-size: 14pt; color:#1F4E79; border-bottom:2px solid #2E75B6; padding-bottom:3px; margin-top:22px; page-break-after:avoid; }
+  h4 { font-size: 12.5pt; color:#2E75B6; margin:16px 0 6px 0; page-break-after:avoid; }
+  p { margin:7px 0; text-align:justify; }
+  ul,ol { margin:6px 0 8px 0; padding-left:24px; }
+  li { margin:4px 0; }
+  table { border-collapse:collapse; width:100%; margin:10px 0; font-size:10.5pt; }
+  th,td { border:1px solid #9dc3e6; padding:5px 7px; vertical-align:top; }
+  th { background:#2E75B6; color:#fff; }
+  tr:nth-child(even) td { background:#f2f7fc; }
+  .info td:first-child { width:32%; font-weight:600; background:#eaf2fa; }
+  pre { font-family:"DejaVu Sans Mono",monospace; font-size:9.5pt; background:#f4f6f8;
+        border:1px solid #d6dde4; border-left:4px solid #2E75B6; padding:9px 11px; border-radius:3px;
+        white-space:pre-wrap; page-break-inside:avoid; }
+  code { font-family:"DejaVu Sans Mono",monospace; font-size:10pt; }
+  .diagram { background:#0f172a; color:#cbd5e1; padding:12px; border-radius:4px;
+             font-family:"DejaVu Sans Mono",monospace; font-size:8.4pt; line-height:1.35;
+             white-space:pre; overflow:hidden; }
+  .shot { text-align:center; margin:12px 0 4px 0; page-break-inside:avoid; }
+  .shot img { max-width:100%; max-height:180mm; height:auto; border:1px solid #b9c6d3; border-radius:3px; }
+  .cap { font-size:10pt; font-style:italic; color:#555; margin:4px 0 14px 0; text-align:center; }
+  .note { background:#fff8e1; border-left:4px solid #f0ad4e; padding:8px 11px; margin:10px 0; font-size:10.5pt; }
+  .ok { background:#eafaf1; border-left:4px solid #27ae60; padding:8px 11px; margin:10px 0; font-size:10.5pt; }
+  .pagebreak { page-break-before:always; }
+  .q { background:#eef4fb; border-left:4px solid #2E75B6; padding:7px 11px; margin:14px 0 6px 0; font-weight:600; }
+</style>
+</head>
+<body>
+
+<h1>ASSIGNMENT 01 – HOW TO WRITE A DEVICE DRIVER</h1>
+<h2>ioctl Interface · Misc Device · Driver Analysis · ARMv7 Target (LOS201)</h2>
+
+<h3>Mục 0: Thông tin sinh viên &amp; môi trường</h3>
+<table class="info">
+  <tr><td>Họ và tên / MSSV</td><td>Vũ Tùng Minh – SE201043</td></tr>
+  <tr><td>Lớp</td><td>AS2105 – LOS201 Embedded Linux Systems</td></tr>
+  <tr><td>Ngày thực hiện</td><td>17/10/2026</td></tr>
+  <tr><td>Kiến trúc / target</td><td>ARMv7-A Cortex-A9 – QEMU <code>vexpress-a9</code>, Linux 5.15.0</td></tr>
+  <tr><td>Toolchain</td><td><code>arm-linux-gnueabihf-gcc 11.4.0</code> (hard-float), Kbuild từ kernel LAB-01</td></tr>
+  <tr><td>Môi trường host</td><td>CachyOS x86_64 + container Ubuntu 22.04 (Podman), QEMU 6.2.0</td></tr>
+</table>
+
+<h3>Mục 1: Sơ đồ kiến trúc hai driver</h3>
+<div class="diagram">
+┌──────────────────────────── USER SPACE ─────────────────────────────┐
+│  asgn1_test (ioctl/write/read)        counter_test (read/write)     │
+│        │ ioctl()  read()  write()           │ read()  write()       │
+└────────┼────────────────────────────────────┼───────────────────────┘
+         ▼  syscall (svc)                     ▼  syscall (svc)
+┌──────────────────────────── KERNEL SPACE ────────────────────────────┐
+│  VFS                                                                 │
+│   ├── /dev/asgn1  (major 241)                                        │
+│   │      register_chrdev() → asgn1_fops                              │
+│   │        .open  .release  .read  .write  .unlocked_ioctl           │
+│   │                              │                                   │
+│   │        ASGN1_RESET_BUFFER ───┤                                   │
+│   │        ASGN1_GET_STATS ──────┼──► copy_to_user(struct stats)     │
+│   │        ASGN1_SET_MODE ───────┼──► mode = KERNEL|ECHO             │
+│   │        ASGN1_GET_VERSION ────┘──► copy_to_user(char[64])         │
+│   │                    ▼                                             │
+│   │        device_buffer[1024] + buffer_len/open_count/write_count/  │
+│   │        read_count/last_write_size   ◄── asgn1_mutex (data layer) │
+│   │                                                                  │
+│   └── /dev/counter  (MISC_MAJOR 10, minor dong)                      │
+│          misc_register() → counter_fops                              │
+│            .read  → "<value>\n" + atomic_inc(counter)                │
+│            .write → kstrtoint() → atomic_set(counter, value)         │
+│                        │                                             │
+│          /proc/counter_info ──► seq_file: value, total_reads/writes  │
+└──────────────────────────────────────────────────────────────────────┘
+</div>
+
+<h3>Mục 2: So sánh ba loại Device Driver</h3>
+<table>
+  <tr><th>Tiêu chí</th><th>Character Device</th><th>Block Device</th><th>Network Device</th></tr>
+  <tr><td>Ngõ vào VFS</td><td><code>file_operations</code> (read/write/ioctl/mmap…)</td><td><code>block_device_operations</code> + <code>gendisk</code>/request queue</td><td><code>net_device_ops</code> (không có file trong /dev)</td></tr>
+  <tr><td>Đơn vị truyền</td><td>Byte stream (không định hình kích thước)</td><td>Block / sector (512B–4KB), truy cập địa chỉ được</td><td>Packet / frame (mỗi packet rời rạc)</td></tr>
+  <tr><td>Buffering</td><td>Không có buffer tầng VFS; driver tự quyết định. Có thể dùng DMA, FIFO.</td><td>Page cache + request queue, I/O scheduler gộp/sắp xếp request.</td><td>Đệm trong sk_buff + queue; có NAPI/NAPI poll.</td></tr>
+  <tr><td>Ví dụ nhúng</td><td>UART/console, GPIO, ADC, <b>/dev/asgn1</b>, <b>/dev/counter</b>, rtc, input</td><td>eMMC/SD card, NAND qua FTL, USB mass storage, MTD block</td><td>Ethernet MAC, Wi-Fi, CAN, virtual <code>eth0</code>/<code>wlan0</code></td></tr>
+  <tr><td>Ngữ nghĩa vị trí</td><td>Tuần tự (seek tùy ý nếu muốn)</td><td>Truy cập ngẫu nhiên theo block, mount được filesystem</td><td>Không có khái niệm offset; gửi/nhận theo giao thức</td></tr>
+</table>
+<p><b>Khi nào chọn loại nào (ví dụ thiết kế cụ thể):</b></p>
+<ul>
+<li><b>ADC đọc điện áp theo thời gian:</b> dữ liệu là dòng mẫu một chiều, không cần tìm kiếm → <b>character device</b> (đúng như <code>/dev/sms_sensor</code> sẽ làm trong Assignment 2).</li>
+<li><b>Thẻ SD chứa ảnh/rootfs:</b> cần mount filesystem, đọc ghi theo cluster → <b>block device</b> và để tầng <code>ext4</code>/<code>vfat</code> xử lý.</li>
+<li><b>Truyền dữ liệu telemetry qua Ethernet:</b> giao tiếp theo gói, có địa chỉ MAC, chồng giao thức TCP/IP → <b>network device</b>, không nên "giả" thành char device.</li>
+</ul>
+
+<h3>Mục 3: Phân tích thiết kế</h3>
+
+<h4>3.1. Vì sao Task 1 dùng <code>register_chrdev()</code> còn Task 2 dùng <code>misc_register()</code>?</h4>
+<table>
+  <tr><th></th><th><code>register_chrdev()</code> (Task 1)</th><th><code>misc_register()</code> (Task 2)</th></tr>
+  <tr><td>Major number</td><td>Người viết tự chọn (241) – có thể trùng, phải tự quản lý dải 240–254</td><td>Kernel cấp <b>MISC_MAJOR = 10</b>; chỉ cần chọn minor (động)</td></tr>
+  <tr><td>Device node</td><td>Tự tạo class/device (hoặc <code>mknod</code>)</td><td>Framework tự tạo <code>/dev/&lt;name&gt;</code> khi <code>misc_register()</code></td></tr>
+  <tr><td>Số minor</td><td>Một major cho nhiều minor (nếu dùng <code>register_chrdev_region</code>)</td><td>Một minor cho một driver nhỏ; chỉ 1 node mặc định</td></tr>
+  <tr><td>Phù hợp</td><td>Driver "lớn", có thể cần nhiều thiết bị con / nhiều minor</td><td>Driver nhỏ, đơn mục đích (GPIO, watchdog, nvram, bộ đếm)</td></tr>
+  <tr><td>Trong bài</td><td>Cần major riêng để rõ ràng, kiểm tra qua <code>/proc/devices</code> (241 asgn1)</td><td>Đúng "khuôn mẫu" của kernel cho bộ đếm nhỏ: <code>misc_register()</code></td></tr>
+</table>
+<p>Nhìn chung càng hạn chế tự chọn major càng tốt để tránh xung đột; kernel dành 240–254 cho "local/experimental", vì vậy Task 1 dùng 241 là hợp lệ nhưng trong sản phẩm thật nên xin cấp major động bằng <code>alloc_chrdev_region()</code> hoặc dùng misc.</p>
+
+<h4>3.2. Vì sao Task 2 dùng <code>atomic_t</code> thay vì <code>int</code>?</h4>
+<p>Trên SMP (vexpress-a9 có 2 core), phép <code>counter++</code> không nguyên tử: nó gồm <i>load → add → store</i>. Nếu Sensor Thread và một luồng khác cùng tăng, hai core có thể cùng đọc giá trị cũ và cùng ghi lại cùng kết quả ⇒ <b>lost update</b>. Ví dụ:</p>
+<pre>counter = 5
+CPU0: read 5            CPU1: read 5
+CPU0: add -> 6          CPU1: add -> 6
+CPU0: store 6           CPU1: store 6      <-- đáng lẽ phải là 7</pre>
+<p>Cơ chế <code>atomic_inc()</code> dùng lệnh <code>ldrex/strex</code> (LL/SC) của ARMv7 để đảm bảo đọc–tăng–ghi là một thao tác nguyên tử, không bị xen kẽ. Trong driver, tác vụ đọc giá trị rồi mới tăng cũng cần <code>atomic_read()</code> + <code>atomic_inc()</code> để không mất mát; ngoài ra các counter thống kê (<code>total_reads/writes</code>) chỉ chạm trong <code>counter_mutex</code> nên có thể dùng <code>int</code> an toàn.</p>
+
+<h4>3.3. Cơ chế ioctl magic number</h4>
+<p>Mã lệnh ioctl là một số 32-bit được <code>_IOC()</code> đóng gói thành 4 trường: <code>dir</code> (2 bit, hướng dữ liệu) ở bit 30–31, <code>size</code> (14 bit, kích thước tham số) ở bit 16–29, <code>type</code> (8 bit, magic number) ở bit 8–15 và <code>nr</code> (8 bit, số thứ tự lệnh) ở bit 0–7. Magic number giúp phân biệt các driver khác nhau, tránh việc gửi lệnh của driver này cho driver khác và tránh trùng số lệnh.</p>
+<pre>/* trích asgn1_ioctl.h */
+#define ASGN1_IOC_MAGIC   'k'                                /* 0x6b        */
+struct asgn1_stats { int open_count; ... int last_write_size; }; /* 5*int = 20B */
+#define ASGN1_GET_STATS   _IOR(ASGN1_IOC_MAGIC, 1, struct asgn1_stats)</pre>
+<p>Tính cụ thể: <code>_IOC_READ = 2</code>; <code>sizeof(struct asgn1_stats) = 5 * 4 = 20 = 0x14</code>.</p>
+<pre>cmd = (2 &lt;&lt; 30) | (20 &lt;&lt; 16) | ('k' &lt;&lt; 8) | 1
+    = 0x80000000 | 0x00140000 | 0x00006b00 | 0x00000001
+    = 0x80146B01
+_IOC_NR(0x80146B01)   = cmd &amp; 0xFF                = 0x01
+_IOC_SIZE(0x80146B01) = (cmd >> 16) &amp; 0x3FFF      = 20
+_IOC_TYPE(0x80146B01) = (cmd >> 8)  &amp; 0xFF        = 0x6B</pre>
+<p>Và lệnh không hợp lệ dùng trong test <code>_IO('k', 9)</code> chính là <code>0x00006B09</code> – dmesg ghi đúng <code>unknown ioctl 0x6b09 -&gt; -ENOTTY</code>, chứng minh các bit được mã hóa/giải mã đúng.</p>
+
+<div class="pagebreak"></div>
+<h3>Mục 4: Kết quả kiểm thử (Task 1 &amp; Task 2)</h3>
+
+<h4>4.1. Task 1 – asgn1_driver ioctl</h4>
+<p><code>test_asgn1.sh</code> load module major 241, xác nhận node <code>/dev/asgn1</code>, gọi lần lượt 4 ioctl và chạy <code>rmmod</code>. Toàn bộ 13 kiểm tra đều <b>PASS</b>:</p>
+<div class="shot"><img src="task1_ioctl_test.png"></div>
+<div class="cap">Hình 1: GET_VERSION trả “asgn1_driver v1.0 - SE201043”; SET_MODE KERNEL chèn tiền tố <code>[KERNEL]</code>; SET_MODE ECHO lưu nguyên bản; mode 7 bị từ chối EINVAL; GET_STATS trả đủ 5 trường; RESET xóa buffer và đưa counter về 0; lệnh lạ trả ENOTTY.</div>
+
+<p>Kernel log xác nhận mỗi ioctl command được ghi log rõ ràng, và module được gỡ sạch:</p>
+<div class="shot"><img src="task1_dmesg.png"></div>
+<div class="cap">Hình 2: <code>dmesg | grep asgn1</code> – trình tự init → ioctl → write/read → unloaded.</div>
+
+<h4>4.2. Task 2 – counter_driver misc device</h4>
+<div class="shot"><img src="task2_counter_test.png"></div>
+<div class="cap">Hình 3: misc device được cấp major 10, minor động (125); read tự tăng 0→1→2; write ‘100’ đặt giá trị; write ‘-5’ và ‘abc’ bị từ chối EINVAL.</div>
+
+<p><code>/proc/counter_info</code> đọc được ở các thời điểm khác nhau (trước test, sau test) và phản ánh đúng tổng số lần đọc/ghi:</p>
+<div class="shot"><img src="task2_proc_info.png" style="max-width:70%"></div>
+<div class="cap">Hình 4: trước test: value=0, reads=0, writes=0. Sau test: value=1, reads=6, writes=3.</div>
+
+<h4>4.3. Lỗi gặp phải và cách sửa</h4>
+<div class="note"><b>Lỗi 1 – frame size vượt 1KB (cảnh báo của kernel build):</b> phiên bản đầu của <code>asgn1_write()</code> khai báo <code>char kbuf[BUFFER_SIZE]</code> (1024 B) trên stack rồi mới ghép tiền tố. Kbuild cảnh báo <code>the frame size of 1032 bytes is larger than 1024 bytes [-Wframe-larger-than=]</code>. Stack kernel chỉ có 8 KB (không có guard page mở rộng), cấp phát lớn trên stack dễ tràn. <b>Cách sửa:</b> bỏ buffer tạm, ghi tiền tố trực tiếp vào <code>device_buffer</code> rồi <code>copy_from_user(device_buffer + prefix_len, …)</code> – vừa hết cảnh báo vừa giảm copy thừa.</div>
+<div class="note"><b>Lỗi 2 – quên đóng gói <code>/dev/console</code> khi tạo initramfs:</b> lần đầu đóng gói rootfs bằng <code>cpio</code> thường khiến <code>/dev/console</code> thành regular file, làm output của shell biến mất trên serial dù driver nạp thành công. <b>Cách sửa:</b> dùng <code>fakeroot</code> + <code>mknod</code> để archive chứa character device <code>c 5 1</code> (bài học từ LAB-02).</div>
+
+<div class="pagebreak"></div>
+<h3>Mục 5: Câu hỏi lý thuyết (Task 4)</h3>
+
+<div class="q">Câu 1. Cơ chế reference counting của kernel module. Điều gì xảy ra khi rmmod lúc đang có process giữ open?</div>
+<p>Mỗi module có một biến <code>struct module::refcnt</code>. Khi module được nạp, kernel giữ một tham chiếu tạm (<code>module_get()</code>) trong lúc chạy <code>module_init()</code>, sau khi init xong mới <code>module_put()</code> – nên <code>lsmod</code> hiển thị <code>Used by 0</code> khi chưa ai dùng. Khi một process <code>open()</code> một char device có <code>file_operations.owner = THIS_MODULE</code>, hàm <code>chrdev_open()</code> gọi <code>try_module_get()</code> để tăng refcount; <code>close()</code> cuối cùng gọi <code>module_put()</code> để giảm. Như vậy refcount phản ánh số đối tượng đang "níu" module trong bộ nhớ.</p>
+<p>Nếu gọi <code>rmmod</code> khi vẫn còn process open device, refcount &gt; 0 nên kernel từ chối: <code>rmmod: ERROR: Module is in use</code> (errno <code>EBUSY</code>). Điều này rất quan trọng: nếu cưỡng ép gỡ trong khi <code>file_operations</code> còn được tham chiếu, kernel có thể gọi hàm đã bị giải phóng → <b>use-after-free/oops</b>. Để buộc gỡ, ta phải: (1) đóng/tắt process đang dùng thiết bị, (2) nếu cần, dùng <code>rmmod -f</code> – chỉ khả dụng khi kernel bật <code>CONFIG_MODULE_FORCE_UNLOAD</code>, và đây là cách nguy hiểm vì bỏ qua kiểm tra an toàn (có thể gây crash). Trong bài, sau khi <code>asgn1_test</code> đóng fd, <code>rmmod asgn1_driver</code> gỡ thành công – dmesg hiện <code>asgn1_driver: unloaded</code>.</p>
+
+<div class="q">Câu 2. Vì sao không thể dùng <code>memcpy()</code> hay con trỏ trực tiếp để trả struct stats? Điều gì xảy ra ở mức MMU?</div>
+<p>Địa chỉ con trỏ do userspace truyền vào ioctl (<code>arg</code>) là <b>địa chỉ ảo của tiến trình gọi</b>, chỉ được dịch đúng khi MMU dùng bảng trang của tiến trình đó (<code>current-&gt;mm</code>). Kernel truy cập bộ nhớ qua ánh xạ của riêng nó; với KPTI, phần lớn không gian user không hiện diện trong bảng trang kernel. Nếu kernel <code>memcpy()</code> thẳng vào địa chỉ user:</p>
+<ul>
+<li>Trang có thể chưa được nạp (chưa fault-in) hoặc đã bị swap ra → MMU phát <b>page fault</b> trong lúc kernel-mode; nếu không có cơ chế xử lý an toàn (exception table), kernel <b>Oops/panic</b>.</li>
+<li>Con trỏ có thể không hợp lệ (<code>NULL</code>, vùng chỉ đọc, hoặc cố tình trỏ vào vùng kernel) → ghi đè bộ nhớ kernel hoặc rò rỉ thông tin (leo thang đặc quyền).</li>
+<li>Trên CPU có <b>SMAP/PAN</b>, truy cập user page từ kernel bị chặn cứng, gây fault tức thì.</li>
+<li>Struct <code>asgn1_stats</code> do kernel điền có layout/endianness cố định; <code>copy_to_user()</code> đảm bảo copy đúng <code>sizeof(struct)</code> và xử lý fault, còn <code>memcpy()</code> không kiểm tra gì.</li>
+</ul>
+<p><code>copy_to_user()</code> gọi <code>access_ok()</code> để xác thực vùng địa chỉ user, rồi dùng các store đặc biệt được khoanh trong bảng <b>exception table</b> (<code>__put_user</code>); nếu page fault xảy ra, kernel bắt lỗi, trả về số byte chưa copy và driver trả <code>-EFAULT</code> thay vì làm sập hệ thống.</p>
+
+<div class="q">Câu 3. MTD subsystem khác gì block device subsystem?</div>
+<table>
+  <tr><th>Tiêu chí</th><th>Block subsystem</th><th>MTD subsystem</th></tr>
+  <tr><td>Mô hình thiết bị</td><td>Thiết bị giả lập ghi đè sector bất kỳ (có FTL/controller quản lý)</td><td>Flash thô: chỉ ghi 1→0, phải xóa theo eraseblock trước khi ghi</td></tr>
+  <tr><td>Đơn vị I/O</td><td>Block cố định 512B/4KB, có request queue + I/O scheduler, page cache</td><td>Truy cập byte qua <code>/dev/mtdX</code> + ioctl (<code>MEMERASE</code>, <code>MEMWRITE</code>, <code>MEMGETINFO</code>)</td></tr>
+  <tr><td>Bad block / wear</td><td>Ẩn dưới FTL/controller</td><td>Phải quản lý bad block; wear-leveling do filesystem (JFFS2/UBIFS) lo</td></tr>
+  <tr><td>Filesystem</td><td>ext4/vfat/…</td><td>JFFS2/UBIFS/YAFFS2; không dùng ext4 trực tiếp</td></tr>
+  <tr><td>Ví dụ</td><td>eMMC, SD, USB, HDD</td><td>Raw NAND/NOR/SPI-NOR trên board nhúng</td></tr>
+</table>
+<p>Thiết bị lưu trữ cần quản lý qua MTD khi đó là <b>flash thô gắn trực tiếp</b> (NAND/NOR) mà kernel/OS phải tự xử lý erase, bad block và wear – nếu đưa nó qua block layer như ext4 thì sẽ ghi đè sai và nhanh hỏng. Ví dụ cụ thể: chip NAND 128 MiB hàn trên board (như mô phỏng <code>nandsim</code> ở LAB-02) – phải dùng MTD + JFFS2/UBIFS. Ngược lại thẻ microSD hay eMMC có bộ điều khiển FTL bên trong thì dùng block layer bình thường.</p>
+
+<div class="q">Câu 4. Vì sao <code>read()</code> của counter_driver phải xử lý <code>*ppos</code>?</div>
+<p>Khi userspace gọi <code>cat /dev/counter</code>, thư viện C lặp: <code>while ((n = read(fd, buf, N)) &gt; 0) write(1, buf, n);</code> – tức là gọi <code>read()</code> <b>nhiều lần liên tiếp</b> cho đến khi nhận 0 byte. VFS không tự dịch con trỏ vị trí cho driver; nó truyền <code>&amp;file-&gt;f_pos</code> qua tham số <code>loff_t *ppos</code> và <b>trông cậy driver cập nhật</b> giá trị đó.</p>
+<p>Nếu driver <b>không kiểm tra/không cập nhật</b> <code>*ppos</code>: lần gọi đầu trả về <code>"0\n"</code> (2 byte) nhưng <code>*ppos</code> vẫn bằng 0. Lần gọi kế tiếp VFS lại gọi driver với <code>*ppos</code> = 0, driver lại trả về giá trị hiện tại (đã tăng thành 1) và lại không tiến offset… <code>cat</code> không bao giờ thấy EOF nên <b>lặp vô tận</b>, in ra một dòng số mỗi vòng (hoặc treo terminal, đầy log). Vì vậy driver phải: (1) trả 0 khi <code>*ppos != 0</code> (đã đọc hết), và (2) <code>*ppos += n</code> sau khi copy dữ liệu. Trong <code>counter_driver.c</code>, hai dòng này chính là điều kiện dừng cho <code>cat</code>:</p>
+<pre>if (*ppos != 0)
+    return 0;          /* EOF -> cat dung */
+...
+*ppos += n;             /* bao cho VFS biet da doc xong */</pre>
+
+<div class="ok"><b>Kết luận:</b> Cả hai driver build sạch (không còn cảnh báo), nạp/gỡ an toàn, 4 ioctl hoạt động đúng, misc counter read/write/auto-increment/procfs đều chính xác; tất cả 13 + 11 kiểm tra userspace đạt.</div>
+
+</body>
+</html>
