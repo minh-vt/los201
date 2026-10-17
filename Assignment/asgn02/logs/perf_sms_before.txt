@@ -1,0 +1,621 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 119K of event 'cpu_core/cycles:u/'
+# Event count (approx.): 43863797283
+#
+# Children      Self  Command      Shared Object         Symbol                    
+# ........  ........  ...........  ....................  ..........................
+#
+    30.20%    30.19%  alert        [vdso]                [.] __vdso_clock_gettime
+            |          
+             --30.19%--__vdso_clock_gettime
+
+    26.20%     0.00%  alert        [unknown]             [.] 0xffffffff8b400080
+            |
+            ---0xffffffff8b400080
+
+    26.19%    26.19%  alert        libc.so.6             [.] 0x00000000000b5a20
+            |
+            ---0x7f3b1aeb5a20
+               0xffffffff8b400080
+
+    26.19%     0.00%  alert        libc.so.6             [.] 0x00007f3b1aeb5a20
+            |
+            ---0x7f3b1aeb5a20
+               0xffffffff8b400080
+
+    19.28%    19.28%  alert        libc.so.6             [.] mq_timedreceive
+            |          
+             --19.28%--mq_timedreceive
+
+    12.61%     0.00%  alert        libc.so.6             [.] 0x00007f3b1aeb5a22
+            |
+            ---0x7f3b1aeb5a22
+
+     9.59%     9.59%  alert        [unknown]             [k] 0xffffffff8b4001c8
+            |
+            ---0x7f3b1aeb5a22
+
+     6.97%     6.97%  alert        sms_app_x86           [.] alert_thread
+            |
+            ---alert_thread
+
+     3.03%     3.03%  alert        libc.so.6             [.] 0x00000000000b5a22
+            |          
+             --3.02%--0x7f3b1aeb5a22
+
+     1.16%     1.16%  alert        libc.so.6             [.] clock_gettime
+            |
+            ---clock_gettime
+
+     0.56%     0.56%  alert        libc.so.6             [.] 0x00000000000b59f9
+            |
+            ---0x7f3b1aeb59f9
+
+     0.56%     0.00%  alert        libc.so.6             [.] 0x00007f3b1aeb59f9
+            |
+            ---0x7f3b1aeb59f9
+
+     0.54%     0.54%  alert        libc.so.6             [.] 0x00000000000b5a08
+            |
+            ---0x7f3b1aeb5a08
+
+     0.54%     0.00%  alert        libc.so.6             [.] 0x00007f3b1aeb5a08
+            |
+            ---0x7f3b1aeb5a08
+
+     0.54%     0.54%  alert        libc.so.6             [.] 0x00000000000b5a16
+            |
+            ---0x7f3b1aeb5a16
+
+     0.54%     0.00%  alert        libc.so.6             [.] 0x00007f3b1aeb5a16
+            |
+            ---0x7f3b1aeb5a16
+
+     0.54%     0.54%  alert        libc.so.6             [.] __errno_location
+            |
+            ---__errno_location
+
+     0.54%     0.54%  alert        sms_app_x86           [.] 0x0000000000002484
+            |
+            ---0x559566779484
+
+     0.54%     0.00%  alert        sms_app_x86           [.] 0x0000559566779484
+            |
+            ---0x559566779484
+
+     0.53%     0.53%  alert        sms_app_x86           [.] 0x0000000000002544
+            |
+            ---0x559566779544
+
+     0.53%     0.00%  alert        sms_app_x86           [.] 0x0000559566779544
+            |
+            ---0x559566779544
+
+     0.30%     0.30%  alert        sms_app_x86           [.] 0x0000000000002504
+     0.30%     0.00%  alert        sms_app_x86           [.] 0x0000559566779504
+     0.01%     0.00%  alert        [unknown]             [.] 0xffffffff8b4015f0
+     0.00%     0.00%  alert        [unknown]             [.] 0xffffffff8b4016f0
+     0.00%     0.00%  alert        [unknown]             [k] 0xffffffff8b401988
+     0.00%     0.00%  sensor       libc.so.6             [.] __snprintf_chk
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00000000000749f0
+     0.00%     0.00%  sensor       sms_app_x86           [.] sensor_thread
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae749f0
+     0.00%     0.00%  alert        libc.so.6             [.] pthread_cond_signal
+     0.00%     0.00%  alert        libc.so.6             [.] _IO_file_xsputn
+     0.00%     0.00%  alert        libc.so.6             [.] 0x000000000006b287
+     0.00%     0.00%  alert        libc.so.6             [.] 0x00007f3b1ae6b287
+     0.00%     0.00%  logger       libc.so.6             [.] pthread_cond_wait
+     0.00%     0.00%  alert        libc.so.6             [.] 0x0000000000074c38
+     0.00%     0.00%  alert        libc.so.6             [.] 0x00007f3b1ae74c38
+     0.00%     0.00%  alert        sms_app_x86           [.] 0x0000000000002480
+     0.00%     0.00%  alert        libc.so.6             [.] 0x00000000000b59f0
+     0.00%     0.00%  alert        sms_app_x86           [.] 0x0000000000002500
+     0.00%     0.00%  alert        [unknown]             [.] 0xffffffff8b400260
+     0.00%     0.00%  logger       libc.so.6             [.] 0x000000000007c872
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00000000000f52dc
+     0.00%     0.00%  process      libc.so.6             [.] __libc_alloca_cutoff
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1ae7c872
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1aef52dc
+     0.00%     0.00%  sensor       [vdso]                [.] __vdso_clock_gettime
+     0.00%     0.00%  sensor       libc.so.6             [.] clock_nanosleep
+     0.00%     0.00%  sensor       libc.so.6             [.] pthread_mutex_lock
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x0000000000024290
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000005f0a6
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00000000000608a0
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x0000000000068f22
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000006b306
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000006b913
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000006bd00
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000006bef9
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000006c2f1
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000006c682
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000006d605
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000006d89c
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000006e390
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x0000000000074be0
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x0000000000074c02
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00000000000759d0
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000009f260
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x000000000009f27f
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00000000000b5a22
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00000000001b3d60
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00000000001b5e80
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae24290
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae5f0a6
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae608a0
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae68f22
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae6b306
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae6b913
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae6bd00
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae6bef9
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae6c2f1
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae6c682
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae6d605
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae6d89c
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae6e390
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae74be0
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae74c02
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae759d0
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae9f260
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1ae9f27f
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1aeb5a22
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1afb3d60
+     0.00%     0.00%  sensor       libc.so.6             [.] 0x00007f3b1afb5e80
+     0.00%     0.00%  sms_app_x86  libc.so.6             [.] 0x00000000001b65b0
+     0.00%     0.00%  sms_app_x86  [unknown]             [.] 0xffffffff8b401280
+     0.00%     0.00%  logger       libc.so.6             [.] clock_gettime
+     0.00%     0.00%  logger       libc.so.6             [.] pthread_mutex_unlock
+     0.00%     0.00%  logger       libc.so.6             [.] 0x0000000000024240
+     0.00%     0.00%  logger       libc.so.6             [.] 0x000000000005d804
+     0.00%     0.00%  logger       libc.so.6             [.] 0x000000000005d9e1
+     0.00%     0.00%  logger       libc.so.6             [.] 0x0000000000075710
+     0.00%     0.00%  logger       libc.so.6             [.] 0x0000000000077470
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00000000000782a2
+     0.00%     0.00%  logger       libc.so.6             [.] 0x000000000007b3f0
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00000000000a78e0
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00000000000b5a22
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00000000000f1e66
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00000000000f3ad0
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00000000000f3b13
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00000000000f3c20
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00000000001b19bf
+     0.00%     0.00%  process      libc.so.6             [.] 0x000000000006b1b0
+     0.00%     0.00%  process      libc.so.6             [.] 0x000000000006c414
+     0.00%     0.00%  process      sms_app_x86           [.] raise_alarm
+     0.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] 0x000000000000396b
+     0.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] 0x00000000000314db
+     0.00%     0.00%  logger       libc.so.6             [.] __pthread_mutex_unlock (inlined)
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1ae24240
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1ae5d804
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1ae5d9e1
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1ae75710
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1ae77470
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1ae782a2
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1ae7b3f0
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1aea78e0
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1aeb5a22
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1aef1e66
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1aef3ad0
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1aef3b13
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1aef3c20
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1afb19bf
+     0.00%     0.00%  process      libc.so.6             [.] 0x00007f3b1ae6b1b0
+     0.00%     0.00%  process      libc.so.6             [.] 0x00007f3b1ae6c414
+     0.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] 0x00007f3b1b1d996b
+     0.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] 0x00007f3b1b2074db
+     0.00%     0.00%  logger       libc.so.6             [.] _IO_setb
+     0.00%     0.00%  logger       libc.so.6             [.] 0x0000000000079dd7
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00000000000a616b
+     0.00%     0.00%  logger       libc.so.6             [.] 0x00007f3b1ae79dd7
+     0.00%     0.00%  logger       [unknown]             [.] 0xffffffff8b4015f0
+
+
+# Samples: 154  of event 'cpu_atom/cycles:u/'
+# Event count (approx.): 22177112
+#
+# Children      Self  Command      Shared Object     Symbol                  
+# ........  ........  ...........  ................  ........................
+#
+    26.86%    26.86%  alert        [vdso]            [.] __vdso_clock_gettime
+            |
+            ---__vdso_clock_gettime
+
+    17.47%     0.00%  alert        libc.so.6         [.] 0x00007f3b1aeb5a22
+            |
+            ---0x7f3b1aeb5a22
+
+     9.74%     9.74%  alert        [unknown]         [k] 0xffffffff8b4001c8
+            |
+            ---0x7f3b1aeb5a22
+
+     8.17%     8.17%  alert        libc.so.6         [.] mq_timedreceive
+            |
+            ---mq_timedreceive
+
+     7.73%     7.73%  alert        libc.so.6         [.] 0x00000000000b5a22
+            |
+            ---0x7f3b1aeb5a22
+
+     7.51%     7.51%  alert        libc.so.6         [.] 0x00000000000b5a20
+            |
+            ---0x7f3b1aeb5a20
+               0xffffffff8b400080
+
+     7.51%     0.00%  alert        libc.so.6         [.] 0x00007f3b1aeb5a20
+            |
+            ---0x7f3b1aeb5a20
+               0xffffffff8b400080
+
+     7.51%     0.00%  alert        [unknown]         [.] 0xffffffff8b400080
+            |
+            ---0xffffffff8b400080
+
+     4.46%     4.46%  alert        sms_app_x86       [.] alert_thread
+            |
+            ---alert_thread
+
+     4.33%     4.33%  alert        libc.so.6         [.] clock_gettime
+            |
+            ---clock_gettime
+
+     1.62%     1.62%  logger       libc.so.6         [.] pthread_cond_wait
+            |
+            ---pthread_cond_wait
+
+     1.13%     1.13%  logger       libc.so.6         [.] 0x00000000000f18c0
+            |
+            ---0x7f3b1aef18c0
+
+     1.13%     1.13%  process      libc.so.6         [.] __libc_alloca_cutoff
+            |
+            ---__libc_alloca_cutoff
+
+     1.13%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aef18c0
+            |
+            ---0x7f3b1aef18c0
+
+     1.07%     1.07%  logger       libc.so.6         [.] 0x00000000000774b1
+            |
+            ---0x7f3b1ae774b1
+
+     1.07%     0.00%  logger       libc.so.6         [.] 0x00007f3b1ae774b1
+            |
+            ---0x7f3b1ae774b1
+
+     0.82%     0.82%  logger       libc.so.6         [.] 0x00000000000775d3
+            |
+            ---0x7f3b1ae775d3
+
+     0.82%     0.82%  logger       libc.so.6         [.] 0x000000000007ba00
+            |
+            ---0x7f3b1ae7ba00
+
+     0.82%     0.82%  logger       libc.so.6         [.] 0x00000000000f695d
+            |
+            ---0x7f3b1aef695d
+
+     0.82%     0.00%  logger       libc.so.6         [.] 0x00007f3b1ae775d3
+            |
+            ---0x7f3b1ae775d3
+
+     0.82%     0.00%  logger       libc.so.6         [.] 0x00007f3b1ae7ba00
+            |
+            ---0x7f3b1ae7ba00
+
+     0.82%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aef695d
+            |
+            ---0x7f3b1aef695d
+
+     0.75%     0.75%  alert        libc.so.6         [.] 0x00000000000b5a02
+            |
+            ---0x7f3b1aeb5a02
+
+     0.75%     0.00%  alert        libc.so.6         [.] 0x00007f3b1aeb5a02
+            |
+            ---0x7f3b1aeb5a02
+
+     0.75%     0.75%  alert        sms_app_x86       [.] 0x0000000000002500
+            |
+            ---0x559566779500
+
+     0.75%     0.00%  alert        sms_app_x86       [.] 0x0000559566779500
+            |
+            ---0x559566779500
+
+     0.59%     0.59%  alert        libc.so.6         [.] 0x00000000000b59f4
+            |
+            ---0x7f3b1aeb59f4
+
+     0.59%     0.00%  alert        libc.so.6         [.] 0x00007f3b1aeb59f4
+            |
+            ---0x7f3b1aeb59f4
+
+     0.56%     0.56%  alert        libc.so.6         [.] 0x00000000000b5a05
+            |
+            ---0x7f3b1aeb5a05
+
+     0.56%     0.56%  alert        sms_app_x86       [.] 0x0000000000002480
+            |
+            ---0x559566779480
+
+     0.56%     0.56%  logger       [vdso]            [.] __vdso_clock_gettime
+            |
+            ---__vdso_clock_gettime
+
+     0.56%     0.56%  logger       libc.so.6         [.] 0x0000000000078d3f
+            |
+            ---0x7f3b1ae78d3f
+
+     0.56%     0.56%  logger       libc.so.6         [.] 0x00000000000a6074
+            |
+            ---0x7f3b1aea6074
+
+     0.56%     0.56%  logger       libc.so.6         [.] 0x00000000000f3b17
+            |
+            ---0x7f3b1aef3b17
+
+     0.56%     0.56%  logger       libc.so.6         [.] 0x00000000000f3c20
+            |
+            ---0x7f3b1aef3c20
+
+     0.56%     0.56%  logger       libc.so.6         [.] 0x00000000000fe2a6
+            |
+            ---0x7f3b1aefe2a6
+
+     0.56%     0.56%  process      libc.so.6         [.] __snprintf_chk
+            |
+            ---__snprintf_chk
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x000000000005f4ec
+            |
+            ---0x7f3b1ae5f4ec
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x0000000000062a9d
+            |
+            ---0x7f3b1ae62a9d
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x0000000000068f22
+            |
+            ---0x7f3b1ae68f22
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x000000000006ae24
+            |
+            ---0x7f3b1ae6ae24
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x000000000006b4e0
+            |
+            ---0x7f3b1ae6b4e0
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x000000000006ba95
+            |
+            ---0x7f3b1ae6ba95
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x000000000006c40d
+            |
+            ---0x7f3b1ae6c40d
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x000000000006c7f2
+            |
+            ---0x7f3b1ae6c7f2
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x0000000000075dba
+            |
+            ---0x7f3b1ae75dba
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x0000000000075fa0
+            |
+            ---0x7f3b1ae75fa0
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x00000000000760d4
+            |
+            ---0x7f3b1ae760d4
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x0000000000076122
+            |
+            ---0x7f3b1ae76122
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x00000000000b5a22
+            |
+            ---0xffffffff8b4015f0
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x00000000001b1a00
+            |
+            ---0x7f3b1afb1a00
+
+     0.56%     0.56%  process      libc.so.6         [.] 0x00000000001b5e40
+            |
+            ---0x7f3b1afb5e40
+
+     0.56%     0.56%  sms_app_x86  libc.so.6         [.] __nanosleep
+            |
+            ---nanosleep (inlined)
+
+     0.56%     0.56%  sms_app_x86  libc.so.6         [.] 0x000000000004a6e0
+            |
+            ---0x7f3b1ae4a6e0
+
+     0.56%     0.00%  alert        libc.so.6         [.] 0x00007f3b1aeb5a05
+            |
+            ---0x7f3b1aeb5a05
+
+     0.56%     0.00%  alert        sms_app_x86       [.] 0x0000559566779480
+            |
+            ---0x559566779480
+
+     0.56%     0.00%  logger       libc.so.6         [.] 0x00007f3b1ae78d3f
+            |
+            ---0x7f3b1ae78d3f
+
+     0.56%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aea6074
+            |
+            ---0x7f3b1aea6074
+
+     0.56%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aef3b17
+            |
+            ---0x7f3b1aef3b17
+
+     0.56%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aef3c20
+            |
+            ---0x7f3b1aef3c20
+
+     0.56%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aefe2a6
+            |
+            ---0x7f3b1aefe2a6
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae5f4ec
+            |
+            ---0x7f3b1ae5f4ec
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae62a9d
+            |
+            ---0x7f3b1ae62a9d
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae68f22
+            |
+            ---0x7f3b1ae68f22
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae6ae24
+            |
+            ---0x7f3b1ae6ae24
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae6b4e0
+            |
+            ---0x7f3b1ae6b4e0
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae6ba95
+            |
+            ---0x7f3b1ae6ba95
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae6c40d
+            |
+            ---0x7f3b1ae6c40d
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae6c7f2
+            |
+            ---0x7f3b1ae6c7f2
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae75dba
+            |
+            ---0x7f3b1ae75dba
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae75fa0
+            |
+            ---0x7f3b1ae75fa0
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae760d4
+            |
+            ---0x7f3b1ae760d4
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1ae76122
+            |
+            ---0x7f3b1ae76122
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1afb1a00
+            |
+            ---0x7f3b1afb1a00
+
+     0.56%     0.00%  process      libc.so.6         [.] 0x00007f3b1afb5e40
+            |
+            ---0x7f3b1afb5e40
+
+     0.56%     0.00%  process      [unknown]         [.] 0xffffffff8b4015f0
+            |
+            ---0xffffffff8b4015f0
+
+     0.56%     0.00%  sms_app_x86  libc.so.6         [.] nanosleep (inlined)
+            |
+            ---nanosleep (inlined)
+
+     0.56%     0.00%  sms_app_x86  libc.so.6         [.] 0x00007f3b1ae4a6e0
+            |
+            ---0x7f3b1ae4a6e0
+
+     0.52%     0.52%  logger       libc.so.6         [.] _IO_default_uflow
+            |
+            ---_IO_default_uflow
+
+     0.52%     0.52%  logger       libc.so.6         [.] 0x00000000000fccca
+            |
+            ---0x7f3b1aefccca
+
+     0.52%     0.52%  logger       libc.so.6         [.] 0x00000000000fe4ac
+            |
+            ---0x7f3b1aefe4ac
+
+     0.52%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aefccca
+            |
+            ---0x7f3b1aefccca
+
+     0.52%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aefe4ac
+            |
+            ---0x7f3b1aefe4ac
+
+     0.50%     0.50%  logger       libc.so.6         [.] localtime_r
+            |
+            ---localtime_r
+
+     0.50%     0.50%  logger       libc.so.6         [.] 0x000000000005dbff
+            |
+            ---0x7f3b1ae5dbff
+
+     0.50%     0.50%  logger       libc.so.6         [.] 0x0000000000068f29
+            |
+            ---0x7f3b1ae68f29
+
+     0.50%     0.50%  logger       libc.so.6         [.] 0x00000000000a9180
+            |
+            ---0x7f3b1aea9180
+
+     0.50%     0.50%  logger       libc.so.6         [.] 0x00000000000f52b0
+            |
+            ---0x7f3b1aef52b0
+
+     0.50%     0.50%  logger       libc.so.6         [.] 0x00000000000fcc49
+            |
+            ---0x7f3b1aefcc49
+
+     0.50%     0.50%  logger       libc.so.6         [.] 0x00000000001b2384
+            |
+            ---0x7f3b1afb2384
+
+     0.50%     0.00%  logger       libc.so.6         [.] 0x00007f3b1ae5dbff
+            |
+            ---0x7f3b1ae5dbff
+
+     0.50%     0.00%  logger       libc.so.6         [.] 0x00007f3b1ae68f29
+            |
+            ---0x7f3b1ae68f29
+
+     0.50%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aea9180
+            |
+            ---0x7f3b1aea9180
+
+     0.50%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aef52b0
+            |
+            ---0x7f3b1aef52b0
+
+     0.50%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aefcc49
+            |
+            ---0x7f3b1aefcc49
+
+     0.50%     0.00%  logger       libc.so.6         [.] 0x00007f3b1afb2384
+            |
+            ---0x7f3b1afb2384
+
+     0.50%     0.50%  logger       libc.so.6         [.] 0x0000000000077978
+     0.50%     0.50%  logger       libc.so.6         [.] 0x00000000000fe920
+     0.50%     0.50%  logger       libc.so.6         [.] 0x00000000001b3da5
+     0.50%     0.00%  logger       libc.so.6         [.] 0x00007f3b1ae77978
+     0.50%     0.00%  logger       libc.so.6         [.] 0x00007f3b1aefe920
+     0.50%     0.00%  logger       libc.so.6         [.] 0x00007f3b1afb3da5
+     0.49%     0.49%  logger       libc.so.6         [.] 0x0000000000078220
+     0.49%     0.00%  logger       libc.so.6         [.] 0x00007f3b1ae78220
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

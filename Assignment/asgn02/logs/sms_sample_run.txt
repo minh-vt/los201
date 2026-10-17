@@ -1,0 +1,1109 @@
+=== HOST (Ubuntu 22.04): $ qemu-system-arm -M vexpress-a9 -cpu cortex-a9 -m 512M -smp 2 -nographic \
+       -kernel /work/Assignment/asgn02/output/zImage \
+       -dtb /work/Assignment/asgn02/output/vexpress-v2p-ca9.dtb \
+       -initrd /work/Assignment/asgn02/output/initramfs_asgn2.cpio.gz \
+       -append 'console=ttyAMA0,115200 rdinit=/sbin/init mem=512M'
+
+qemu: module audio-audio-pa not found, do you want to install qemu-system-gui package?
+qemu: module audio-audio-jack not found, do you want to install qemu-system-gui package?
+qemu: module audio-audio-sdl not found, do you want to install qemu-system-gui package?
+qemu: module audio-audio-pa not found, do you want to install qemu-system-gui package?
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+Booting Linux on physical CPU 0x0
+Linux version 5.15.0 (root@minhvt) (arm-linux-gnueabihf-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #3 SMP Sat Oct 17 00:33:47 UTC 2026
+CPU: ARMv7 Processor [410fc090] revision 0 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+OF: fdt: Machine model: V2P-CA9
+Memory policy: Data cache writealloc
+Reserved memory: created DMA memory pool at 0x4c000000, size 8 MiB
+OF: reserved mem: initialized node vram@4c000000, compatible id shared-dma-pool
+cma: Reserved 16 MiB at 0x7f000000
+Zone ranges:
+  Normal   [mem 0x0000000060000000-0x000000007fffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000060000000-0x000000007fffffff]
+Initmem setup node 0 [mem 0x0000000060000000-0x000000007fffffff]
+percpu: Embedded 15 pages/cpu s30668 r8192 d22580 u61440
+Built 1 zonelists, mobility grouping on.  Total pages: 130048
+Kernel command line: console=ttyAMA0,115200 rdinit=/sbin/init mem=512M
+printk: log_buf_len individual max cpu contribution: 4096 bytes
+printk: log_buf_len total cpu_extra contributions: 12288 bytes
+printk: log_buf_len min size: 16384 bytes
+printk: log_buf_len: 32768 bytes
+printk: early log buf free: 14992(91%)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+mem auto-init: stack:off, heap alloc:off, heap free:off
+Memory: 488356K/524288K available (8192K kernel code, 594K rwdata, 1772K rodata, 1024K init, 150K bss, 19548K reserved, 16384K cma-reserved)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+trace event string verifier disabled
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU event tracing is enabled.
+rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+L2C: platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C: DT/platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 dynamic clock gating disabled, standby mode disabled
+L2C-310 cache controller enabled, 8 ways, 128 kB
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x46420001
+random: get_random_bytes called from start_kernel+0x4e4/0x69c with crng_init=0
+sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+clocksource: arm,sp804: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275 ns
+Failed to initialize '/bus@40000000/motherboard-bus@40000000/iofpga@7,00000000/timer@12000': -22
+smp_twd: clock not found -2
+Console: colour dummy device 80x30
+Calibrating local timer... 97.63MHz.
+Calibrating delay loop... 1734.65 BogoMIPS (lpj=867328)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+CPU: Testing write buffer coherency: ok
+CPU0: Spectre v2: using BPIALL workaround
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x60100000 - 0x60100060
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU1: Spectre v2: using BPIALL workaround
+CPU2: failed to boot: -38
+CPU3: failed to boot: -38
+smp: Brought up 1 node, 2 CPUs
+SMP: Total of 2 processors activated (3500.03 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 0
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+hw-breakpoint: debug architecture 0x4 unsupported.
+Serial: AMBA PL011 UART driver
+irq: type mismatch, failed to map hwirq-75 for interrupt-controller@1e001000!
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource arm,sp804
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+TCP bind hash table entries: 4096 (order: 3, 32768 bytes, linear)
+TCP: Hash tables configured (established 4096 bind 4096)
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+Unpacking initramfs...
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, 5 counters available
+workingset: timestamp_bits=30 max_order=17 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+9p: Installing v9fs 9p2000 file system support
+io scheduler mq-deadline registered
+io scheduler kyber registered
+sii902x 0-0060: supply iovcc not found, using dummy regulator
+sii902x 0-0060: supply cvcc12 not found, using dummy regulator
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x40000000-0x43ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x44000000-0x47ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+Concatenating MTD devices:
+(0): "40000000.flash"
+(1): "40000000.flash"
+into device "40000000.flash"
+Freeing initrd memory: 2524K
+physmap-flash 48000000.psram: physmap platform flash device: [mem 0x48000000-0x49ffffff]
+libphy: Fixed MDIO Bus: probed
+libphy: smsc911x-mdio: probed
+smsc911x 4e000000.ethernet eth0: MAC Address: 52:54:00:12:34:56
+isp1760 4f000000.usb: isp1760 bus width: 32, oc: digital
+isp1760 4f000000.usb: NXP ISP1760 USB Host Controller
+isp1760 4f000000.usb: new USB bus registered, assigned bus number 1
+isp1760 4f000000.usb: Scratch test failed. 0x00000000
+isp1760 4f000000.usb: can't setup: -19
+isp1760 4f000000.usb: USB bus 1 deregistered
+usbcore: registered new interface driver usb-storage
+ledtrig-cpu: registered to indicate activity on CPUs
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered PF_PACKET protocol family
+9pnet: Installing 9P2000 support
+Registering SWP/SWPB emulation handler
+aaci-pl041 10004000.aaci: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+aaci-pl041 10004000.aaci: FIFO 512 entries
+mmci-pl18x 10005000.mmci: Got CD GPIO
+mmci-pl18x 10005000.mmci: Got WP GPIO
+mmci-pl18x 10005000.mmci: mmc0: PL181 manf 41 rev0 at 0x10005000 irq 33,34 (pio)
+10009000.uart: ttyAMA0 at MMIO 0x10009000 (irq = 37, base_baud = 0) is a PL011 rev1
+printk: console [ttyAMA0] enabled
+1000a000.uart: ttyAMA1 at MMIO 0x1000a000 (irq = 38, base_baud = 0) is a PL011 rev1
+1000b000.uart: ttyAMA2 at MMIO 0x1000b000 (irq = 39, base_baud = 0) is a PL011 rev1
+1000c000.uart: ttyAMA3 at MMIO 0x1000c000 (irq = 40, base_baud = 0) is a PL011 rev1
+rtc-pl031 10017000.rtc: registered as rtc0
+rtc-pl031 10017000.rtc: setting system clock to 2026-10-17T01:00:33 UTC (1792198833)
+amba 10020000.clcd: Fixing up cyclic dependency with 0-0039
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+sii902x 0-0039: supply iovcc not found, using dummy regulator
+sii902x 0-0039: supply cvcc12 not found, using dummy regulator
+i2c i2c-0: Added multiplexed i2c bus 2
+drm-clcd-pl111 1001f000.clcd: assigned reserved memory node vram@4c000000
+drm-clcd-pl111 1001f000.clcd: using device-specific reserved memory
+drm-clcd-pl111 1001f000.clcd: core tile graphics present
+drm-clcd-pl111 1001f000.clcd: this device will be deactivated
+drm-clcd-pl111 1001f000.clcd: Versatile Express init failed - -19
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+drm-clcd-pl111 10020000.clcd: found bridge on endpoint 0
+drm-clcd-pl111 10020000.clcd: Using non-panel bridge
+[drm] Initialized pl111 1.0.0 20170317 for 10020000.clcd on minor 0
+input: AT Raw Set 2 keyboard as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10006000.kmi/serio0/input/input0
+Console: switching to colour frame buffer device 128x48
+drm-clcd-pl111 10020000.clcd: [drm] fb0: pl111 frame buffer device
+ALSA device list:
+  #0: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+Freeing unused kernel image (initmem) memory: 1024K
+Run /sbin/init as init process
+[ SMS ] starting system initialization...
+sms_sensor_driver: loading out-of-tree module taints kernel.
+sms_sensor: ready (major=242, /dev/sms_sensor)
+[ SMS ] sms_sensor_driver loaded OK
+[ SMS ] ready. Run: sms_app -i 500 -d 60 -v
+
+Please press Enter to activate this console. input: ImExPS/2 Generic Explorer Mouse as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+
+/ # random: fast init done
+uname -a
+Linux sms-target 5.15.0 #3 SMP Sat Oct 17 00:33:47 UTC 2026 armv7l GNU/Linux
+/ # echo "=========== /proc/sms_stats BEFORE run ==========="
+=========== /proc/sms_stats BEFORE run ===========
+/ # cat /proc/sms_stats
+sms_sensor driver statistics
+============================
+read_count       : 0
+last_temperature : 25.000 C
+last_humidity    : 55.000 %
+driver_uptime    : 21 s
+min_interval_ms  : 100
+/ # echo "=========== RUN sms_app -i 500 -d 60 -v ==========="
+=========== RUN sms_app -i 500 -d 60 -v ===========
+/ # sms_app -i 500 -d 60 -v
+=== Sensor Monitoring System (SMS) - LAB/ASSIGNMENT-02 ===
+interval=500 ms  temp_thr=40.0 C  hum_thr=80.0 %  duration=60 s  driver mode
+sms_sensor: interval set to 500 ms
+[INIT] driver interval set to 500 ms
+[INIT] mlockall OK (pages locked, no page-fault jitter)
+[SENSOR] SCHED_FIFO prio 50 : OK
+[INIT] 4 threads running (sensor, processor, alert, logger)
+[PROCESSOR] started
+[ALERT] started
+[LOGGER] writing to /tmp/sms.log
+[SENSOR] t=41285 temp=38.166 hum=43.843 jitter=856us
+[SENSOR] t=41787 temp=19.460 hum=34.971 jitter=635us
+[ALERT][41787] TEMP_SPIKE: VALUE -18.706 THRESHOLD 5.000
+[SENSOR] t=42289 temp=31.538 hum=63.977 jitter=420us
+[ALERT][42289] TEMP_SPIKE: VALUE 12.078 THRESHOLD 5.000
+[SENSOR] t=42791 temp=31.332 hum=60.100 jitter=297us
+[SENSOR] t=43293 temp=16.498 hum=55.967 jitter=588us
+[ALERT][43293] TEMP_SPIKE: VALUE -14.834 THRESHOLD 5.000
+[SENSOR] t=43795 temp=25.271 hum=68.941 jitter=760us
+[ALERT][43795] TEMP_SPIKE: VALUE 8.773 THRESHOLD 5.000
+[SENSOR] t=44295 temp=23.089 hum=74.240 jitter=590us
+[SENSOR] t=44796 temp=27.539 hum=55.788 jitter=504us
+[SENSOR] t=45298 temp=22.662 hum=67.045 jitter=608us
+[SENSOR] t=45798 temp=22.496 hum=64.073 jitter=586us
+[SENSOR] t=46300 temp=15.682 hum=52.354 jitter=742us
+[ALERT][46300] TEMP_SPIKE: VALUE -6.814 THRESHOLD 5.000
+[SENSOR] t=46801 temp=41.548 hum=76.737 jitter=469us
+[ALERT][46801] TEMP_HIGH: VALUE 41.548 THRESHOLD 40.000
+[ALERT][46801] TEMP_SPIKE: VALUE 25.866 THRESHOLD 5.000
+[SENSOR] t=47302 temp=16.468 hum=67.158 jitter=580us
+[ALERT][47302] TEMP_SPIKE: VALUE -25.080 THRESHOLD 5.000
+[SENSOR] t=47803 temp=37.535 hum=52.926 jitter=683us
+[ALERT][47803] TEMP_SPIKE: VALUE 21.067 THRESHOLD 5.000
+[SENSOR] t=48304 temp=20.269 hum=77.898 jitter=690us
+[ALERT][48304] TEMP_SPIKE: VALUE -17.266 THRESHOLD 5.000
+[SENSOR] t=48806 temp=28.842 hum=44.432 jitter=469us
+[ALERT][48806] TEMP_SPIKE: VALUE 8.573 THRESHOLD 5.000
+[SENSOR] t=49305 temp=44.491 hum=78.595 jitter=392us
+[ALERT][49305] TEMP_HIGH: VALUE 44.491 THRESHOLD 40.000
+[ALERT][49305] TEMP_SPIKE: VALUE 15.649 THRESHOLD 5.000
+[SENSOR] t=49807 temp=41.685 hum=70.054 jitter=631us
+[ALERT][49807] TEMP_HIGH: VALUE 41.685 THRESHOLD 40.000
+[SENSOR] t=50308 temp=24.861 hum=60.146 jitter=462us
+[ALERT][50308] TEMP_SPIKE: VALUE -16.824 THRESHOLD 5.000
+[SENSOR] t=50810 temp=41.712 hum=83.859 jitter=442us
+[ALERT][50810] TEMP_HIGH: VALUE 41.712 THRESHOLD 40.000
+[ALERT][50810] HUMID_HIGH: VALUE 83.859 THRESHOLD 80.000
+[ALERT][50810] TEMP_SPIKE: VALUE 16.851 THRESHOLD 5.000
+[SENSOR] t=51310 temp=31.698 hum=80.402 jitter=437us
+[ALERT][51310] HUMID_HIGH: VALUE 80.402 THRESHOLD 80.000
+[ALERT][51310] TEMP_SPIKE: VALUE -10.014 THRESHOLD 5.000
+[SENSOR] t=51813 temp=23.242 hum=32.686 jitter=423us
+[ALERT][51813] TEMP_SPIKE: VALUE -8.456 THRESHOLD 5.000
+[SENSOR] t=52314 temp=19.996 hum=67.046 jitter=570us
+[SENSOR] t=52816 temp=31.018 hum=40.226 jitter=537us
+[ALERT][52816] TEMP_SPIKE: VALUE 11.022 THRESHOLD 5.000
+[SENSOR] t=53318 temp=16.391 hum=88.489 jitter=610us
+[ALERT][53318] HUMID_HIGH: VALUE 88.489 THRESHOLD 80.000
+[ALERT][53318] TEMP_SPIKE: VALUE -14.627 THRESHOLD 5.000
+[SENSOR] t=53818 temp=34.603 hum=67.037 jitter=703us
+[ALERT][53818] TEMP_SPIKE: VALUE 18.212 THRESHOLD 5.000
+[SENSOR] t=54320 temp=34.320 hum=75.297 jitter=692us
+[SENSOR] t=54819 temp=17.498 hum=85.611 jitter=583us
+[ALERT][54819] HUMID_HIGH: VALUE 85.611 THRESHOLD 80.000
+[ALERT][54819] TEMP_SPIKE: VALUE -16.822 THRESHOLD 5.000
+[SENSOR] t=55320 temp=28.838 hum=80.815 jitter=720us
+[ALERT][55320] HUMID_HIGH: VALUE 80.815 THRESHOLD 80.000
+[ALERT][55320] TEMP_SPIKE: VALUE 11.340 THRESHOLD 5.000
+[SENSOR] t=55821 temp=41.040 hum=70.958 jitter=1042us
+[ALERT][55821] TEMP_HIGH: VALUE 41.040 THRESHOLD 40.000
+[ALERT][55821] TEMP_SPIKE: VALUE 12.202 THRESHOLD 5.000
+[SENSOR] t=56322 temp=27.933 hum=81.488 jitter=617us
+[ALERT][56322] HUMID_HIGH: VALUE 81.488 THRESHOLD 80.000
+[ALERT][56322] TEMP_SPIKE: VALUE -13.107 THRESHOLD 5.000
+[SENSOR] t=56823 temp=24.212 hum=57.059 jitter=582us
+[SENSOR] t=57324 temp=43.146 hum=87.264 jitter=303us
+[ALERT][57324] TEMP_HIGH: VALUE 43.146 THRESHOLD 40.000
+[ALERT][57324] HUMID_HIGH: VALUE 87.264 THRESHOLD 80.000
+[ALERT][57324] TEMP_SPIKE: VALUE 18.934 THRESHOLD 5.000
+[SENSOR] t=57825 temp=35.849 hum=54.021 jitter=447us
+[ALERT][57825] TEMP_SPIKE: VALUE -7.297 THRESHOLD 5.000
+[SENSOR] t=58326 temp=24.407 hum=36.107 jitter=387us
+[ALERT][58326] TEMP_SPIKE: VALUE -11.442 THRESHOLD 5.000
+[SENSOR] t=58826 temp=37.240 hum=64.667 jitter=570us
+[ALERT][58826] TEMP_SPIKE: VALUE 12.833 THRESHOLD 5.000
+[SENSOR] t=59326 temp=27.521 hum=78.004 jitter=278us
+[ALERT][59326] TEMP_SPIKE: VALUE -9.719 THRESHOLD 5.000
+[SENSOR] t=59827 temp=33.534 hum=61.689 jitter=666us
+[ALERT][59827] TEMP_SPIKE: VALUE 6.013 THRESHOLD 5.000
+[SENSOR] t=60328 temp=20.955 hum=75.304 jitter=594us
+[ALERT][60328] TEMP_SPIKE: VALUE -12.579 THRESHOLD 5.000
+[SENSOR] t=60829 temp=31.102 hum=80.263 jitter=893us
+[ALERT][60829] HUMID_HIGH: VALUE 80.263 THRESHOLD 80.000
+[ALERT][60829] TEMP_SPIKE: VALUE 10.147 THRESHOLD 5.000
+[SENSOR] t=61330 temp=29.781 hum=48.844 jitter=632us
+[SENSOR] t=61831 temp=16.691 hum=35.491 jitter=628us
+[ALERT][61831] TEMP_SPIKE: VALUE -13.090 THRESHOLD 5.000
+[SENSOR] t=62331 temp=18.629 hum=85.258 jitter=430us
+[ALERT][62331] HUMID_HIGH: VALUE 85.258 THRESHOLD 80.000
+[SENSOR] t=62833 temp=30.010 hum=82.324 jitter=541us
+[ALERT][62833] HUMID_HIGH: VALUE 82.324 THRESHOLD 80.000
+[ALERT][62833] TEMP_SPIKE: VALUE 11.381 THRESHOLD 5.000
+[SENSOR] t=63334 temp=44.446 hum=40.527 jitter=393us
+[ALERT][63334] TEMP_HIGH: VALUE 44.446 THRESHOLD 40.000
+[ALERT][63334] TEMP_SPIKE: VALUE 14.436 THRESHOLD 5.000
+[SENSOR] t=63834 temp=27.604 hum=53.267 jitter=694us
+[ALERT][63834] TEMP_SPIKE: VALUE -16.842 THRESHOLD 5.000
+[SENSOR] t=64334 temp=35.775 hum=70.579 jitter=313us
+[ALERT][64334] TEMP_SPIKE: VALUE 8.171 THRESHOLD 5.000
+[SENSOR] t=64835 temp=26.267 hum=64.698 jitter=369us
+[ALERT][64835] TEMP_SPIKE: VALUE -9.508 THRESHOLD 5.000
+[SENSOR] t=65336 temp=31.303 hum=61.850 jitter=670us
+[ALERT][65336] TEMP_SPIKE: VALUE 5.036 THRESHOLD 5.000
+[SENSOR] t=65836 temp=35.212 hum=69.838 jitter=442us
+[SENSOR] t=66337 temp=18.018 hum=65.673 jitter=641us
+[ALERT][66337] TEMP_SPIKE: VALUE -17.194 THRESHOLD 5.000
+[SENSOR] t=66839 temp=43.817 hum=40.330 jitter=780us
+[ALERT][66839] TEMP_HIGH: VALUE 43.817 THRESHOLD 40.000
+[ALERT][66839] TEMP_SPIKE: VALUE 25.799 THRESHOLD 5.000
+[SENSOR] t=67340 temp=40.602 hum=67.007 jitter=422us
+[ALERT][67340] TEMP_HIGH: VALUE 40.602 THRESHOLD 40.000
+[SENSOR] t=67840 temp=23.801 hum=61.635 jitter=489us
+[ALERT][67840] TEMP_SPIKE: VALUE -16.801 THRESHOLD 5.000
+[SENSOR] t=68342 temp=19.041 hum=54.959 jitter=704us
+[SENSOR] t=68843 temp=33.145 hum=77.029 jitter=475us
+[ALERT][68843] TEMP_SPIKE: VALUE 14.104 THRESHOLD 5.000
+[SENSOR] t=69343 temp=42.724 hum=44.129 jitter=648us
+[ALERT][69343] TEMP_HIGH: VALUE 42.724 THRESHOLD 40.000
+[ALERT][69343] TEMP_SPIKE: VALUE 9.579 THRESHOLD 5.000
+[SENSOR] t=69845 temp=43.189 hum=84.858 jitter=414us
+[ALERT][69845] TEMP_HIGH: VALUE 43.189 THRESHOLD 40.000
+[ALERT][69845] HUMID_HIGH: VALUE 84.858 THRESHOLD 80.000
+[SENSOR] t=70345 temp=17.248 hum=69.898 jitter=784us
+[ALERT][70345] TEMP_SPIKE: VALUE -25.941 THRESHOLD 5.000
+[SENSOR] t=70845 temp=29.120 hum=47.651 jitter=571us
+[ALERT][70845] TEMP_SPIKE: VALUE 11.872 THRESHOLD 5.000
+[SENSOR] t=71346 temp=33.508 hum=86.777 jitter=536us
+[ALERT][71346] HUMID_HIGH: VALUE 86.777 THRESHOLD 80.000
+[SENSOR] t=71847 temp=30.231 hum=86.680 jitter=779us
+[ALERT][71847] HUMID_HIGH: VALUE 86.680 THRESHOLD 80.000
+[SENSOR] t=72347 temp=30.239 hum=88.541 jitter=701us
+[ALERT][72347] HUMID_HIGH: VALUE 88.541 THRESHOLD 80.000
+[SENSOR] t=72849 temp=27.556 hum=41.706 jitter=547us
+[SENSOR] t=73349 temp=37.642 hum=31.648 jitter=409us
+[ALERT][73349] TEMP_SPIKE: VALUE 10.086 THRESHOLD 5.000
+[SENSOR] t=73851 temp=35.780 hum=33.706 jitter=539us
+[SENSOR] t=74353 temp=37.414 hum=78.256 jitter=550us
+[SENSOR] t=74855 temp=19.820 hum=67.822 jitter=732us
+[ALERT][74855] TEMP_SPIKE: VALUE -17.594 THRESHOLD 5.000
+[SENSOR] t=75356 temp=18.620 hum=77.232 jitter=410us
+[SENSOR] t=75856 temp=34.191 hum=81.967 jitter=723us
+[ALERT][75856] HUMID_HIGH: VALUE 81.967 THRESHOLD 80.000
+[ALERT][75856] TEMP_SPIKE: VALUE 15.571 THRESHOLD 5.000
+[SENSOR] t=76356 temp=34.541 hum=71.998 jitter=446us
+[SENSOR] t=76856 temp=25.374 hum=53.354 jitter=439us
+[ALERT][76856] TEMP_SPIKE: VALUE -9.167 THRESHOLD 5.000
+[SENSOR] t=77358 temp=39.571 hum=30.820 jitter=403us
+[ALERT][77358] TEMP_SPIKE: VALUE 14.197 THRESHOLD 5.000
+[SENSOR] t=77859 temp=40.539 hum=67.737 jitter=391us
+[ALERT][77859] TEMP_HIGH: VALUE 40.539 THRESHOLD 40.000
+[SENSOR] t=78360 temp=24.460 hum=75.821 jitter=598us
+[ALERT][78360] TEMP_SPIKE: VALUE -16.079 THRESHOLD 5.000
+[SENSOR] t=78860 temp=16.844 hum=55.851 jitter=842us
+[ALERT][78860] TEMP_SPIKE: VALUE -7.616 THRESHOLD 5.000
+[SENSOR] t=79361 temp=21.132 hum=73.111 jitter=726us
+[SENSOR] t=79863 temp=22.474 hum=58.470 jitter=418us
+[SENSOR] t=80363 temp=40.945 hum=47.250 jitter=695us
+[ALERT][80363] TEMP_HIGH: VALUE 40.945 THRESHOLD 40.000
+[ALERT][80363] TEMP_SPIKE: VALUE 18.471 THRESHOLD 5.000
+[SENSOR] t=80864 temp=37.197 hum=75.985 jitter=551us
+[SENSOR] t=81364 temp=27.534 hum=38.568 jitter=599us
+[ALERT][81364] TEMP_SPIKE: VALUE -9.663 THRESHOLD 5.000
+[SENSOR] t=81864 temp=40.222 hum=58.313 jitter=385us
+[ALERT][81864] TEMP_HIGH: VALUE 40.222 THRESHOLD 40.000
+[ALERT][81864] TEMP_SPIKE: VALUE 12.688 THRESHOLD 5.000
+[SENSOR] t=82366 temp=37.750 hum=75.238 jitter=651us
+[SENSOR] t=82867 temp=31.433 hum=38.938 jitter=459us
+[ALERT][82867] TEMP_SPIKE: VALUE -6.317 THRESHOLD 5.000
+[SENSOR] t=83367 temp=37.496 hum=45.963 jitter=416us
+[ALERT][83367] TEMP_SPIKE: VALUE 6.063 THRESHOLD 5.000
+[SENSOR] t=83868 temp=20.462 hum=78.158 jitter=468us
+[ALERT][83868] TEMP_SPIKE: VALUE -17.034 THRESHOLD 5.000
+[SENSOR] t=84368 temp=27.826 hum=76.625 jitter=614us
+[ALERT][84368] TEMP_SPIKE: VALUE 7.364 THRESHOLD 5.000
+[SENSOR] t=84869 temp=18.895 hum=53.902 jitter=520us
+[ALERT][84869] TEMP_SPIKE: VALUE -8.931 THRESHOLD 5.000
+[SENSOR] t=85369 temp=26.492 hum=74.251 jitter=357us
+[ALERT][85369] TEMP_SPIKE: VALUE 7.597 THRESHOLD 5.000
+[SENSOR] t=85870 temp=30.881 hum=76.361 jitter=327us
+[SENSOR] t=86372 temp=34.122 hum=58.534 jitter=597us
+[SENSOR] t=86873 temp=27.122 hum=58.247 jitter=571us
+[ALERT][86873] TEMP_SPIKE: VALUE -7.000 THRESHOLD 5.000
+[SENSOR] t=87373 temp=32.751 hum=37.398 jitter=605us
+[ALERT][87373] TEMP_SPIKE: VALUE 5.629 THRESHOLD 5.000
+[SENSOR] t=87873 temp=38.817 hum=85.137 jitter=384us
+[ALERT][87873] HUMID_HIGH: VALUE 85.137 THRESHOLD 80.000
+[ALERT][87873] TEMP_SPIKE: VALUE 6.066 THRESHOLD 5.000
+[SENSOR] t=88373 temp=34.527 hum=60.584 jitter=571us
+[SENSOR] t=88874 temp=19.300 hum=73.443 jitter=429us
+[ALERT][88874] TEMP_SPIKE: VALUE -15.227 THRESHOLD 5.000
+[SENSOR] t=89374 temp=33.075 hum=83.892 jitter=486us
+[ALERT][89374] HUMID_HIGH: VALUE 83.892 THRESHOLD 80.000
+[ALERT][89374] TEMP_SPIKE: VALUE 13.775 THRESHOLD 5.000
+[SENSOR] t=89874 temp=15.155 hum=58.368 jitter=617us
+[ALERT][89874] TEMP_SPIKE: VALUE -17.920 THRESHOLD 5.000
+[SENSOR] t=90375 temp=26.735 hum=74.723 jitter=455us
+[ALERT][90375] TEMP_SPIKE: VALUE 11.580 THRESHOLD 5.000
+[SENSOR] t=90875 temp=18.465 hum=60.888 jitter=660us
+[ALERT][90875] TEMP_SPIKE: VALUE -8.270 THRESHOLD 5.000
+[SENSOR] t=91375 temp=29.738 hum=46.036 jitter=257us
+[ALERT][91375] TEMP_SPIKE: VALUE 11.273 THRESHOLD 5.000
+[SENSOR] t=91877 temp=17.091 hum=86.302 jitter=700us
+[ALERT][91877] HUMID_HIGH: VALUE 86.302 THRESHOLD 80.000
+[ALERT][91877] TEMP_SPIKE: VALUE -12.647 THRESHOLD 5.000
+[SENSOR] t=92378 temp=36.864 hum=51.790 jitter=337us
+[ALERT][92378] TEMP_SPIKE: VALUE 19.773 THRESHOLD 5.000
+[SENSOR] t=92878 temp=19.801 hum=57.922 jitter=626us
+[ALERT][92878] TEMP_SPIKE: VALUE -17.063 THRESHOLD 5.000
+[SENSOR] t=93380 temp=25.393 hum=59.551 jitter=735us
+[ALERT][93380] TEMP_SPIKE: VALUE 5.592 THRESHOLD 5.000
+[SENSOR] t=93880 temp=26.956 hum=62.915 jitter=767us
+[SENSOR] t=94381 temp=26.635 hum=33.911 jitter=585us
+[SENSOR] t=94881 temp=16.956 hum=39.414 jitter=601us
+[ALERT][94881] TEMP_SPIKE: VALUE -9.679 THRESHOLD 5.000
+[SENSOR] t=95383 temp=17.854 hum=56.078 jitter=370us
+[SENSOR] t=95885 temp=21.769 hum=58.056 jitter=509us
+[SENSOR] t=96385 temp=16.744 hum=50.785 jitter=430us
+[ALERT][96385] TEMP_SPIKE: VALUE -5.025 THRESHOLD 5.000
+[SENSOR] t=96886 temp=40.338 hum=42.212 jitter=620us
+[ALERT][96886] TEMP_HIGH: VALUE 40.338 THRESHOLD 40.000
+[ALERT][96886] TEMP_SPIKE: VALUE 23.594 THRESHOLD 5.000
+[SENSOR] t=97386 temp=18.104 hum=65.155 jitter=645us
+[ALERT][97386] TEMP_SPIKE: VALUE -22.234 THRESHOLD 5.000
+[SENSOR] t=97888 temp=43.942 hum=54.837 jitter=563us
+[ALERT][97888] TEMP_HIGH: VALUE 43.942 THRESHOLD 40.000
+[ALERT][97888] TEMP_SPIKE: VALUE 25.838 THRESHOLD 5.000
+[SENSOR] t=98388 temp=26.430 hum=46.791 jitter=561us
+[ALERT][98388] TEMP_SPIKE: VALUE -17.512 THRESHOLD 5.000
+[SENSOR] t=98889 temp=32.404 hum=50.976 jitter=777us
+[ALERT][98889] TEMP_SPIKE: VALUE 5.974 THRESHOLD 5.000
+[SENSOR] t=99389 temp=43.389 hum=61.898 jitter=614us
+[ALERT][99389] TEMP_HIGH: VALUE 43.389 THRESHOLD 40.000
+[ALERT][99389] TEMP_SPIKE: VALUE 10.985 THRESHOLD 5.000
+[SENSOR] t=99891 temp=25.724 hum=88.027 jitter=705us
+[ALERT][99891] HUMID_HIGH: VALUE 88.027 THRESHOLD 80.000
+[ALERT][99891] TEMP_SPIKE: VALUE -17.665 THRESHOLD 5.000
+[SENSOR] t=100392 temp=27.947 hum=44.177 jitter=407us
+
+[MAIN] shutting down...
+[PROCESSOR] stopped
+[ALERT] stopped
+[LOGGER] stopped
+[SENSOR] stopped after 120 samples
+
+================ SUMMARY ================
+uptime            : 60.1 s
+samples processed : 119
+buffer produced   : 119
+buffer consumed   : 119
+buffer overflow   : 0
+alerts TEMP_HIGH  : 17
+alerts HUMID_HIGH : 19
+alerts TEMP_SPIKE : 82
+log file          : /tmp/sms.log
+=========================================
+
+===== Jitter report: TARGET (SCHED_FIFO) =====
+samples : 120
+Min     : 257 us
+Avg     : 559.6 us
+Max     : 1042 us
+P99     : 893 us
+Histogram:
+  [    0,  100) us : 0 (0.0%)
+  [  100,  500) us : 44 (36.7%)
+  [  500, 1000) us : 75 (62.5%)
+  [ 1000,  inf) us : 1 (0.8%)
+[MAIN] jitter report written to /tmp/jitter_report.txt
+[MAIN] clean exit
+/ # echo "=========== /proc/sms_stats AFTER run ==========="
+=========== /proc/sms_stats AFTER run ===========
+/ # cat /proc/sms_stats
+sms_sensor driver statistics
+============================
+read_count       : 120
+last_temperature : 29.229 C
+last_humidity    : 68.420 %
+driver_uptime    : 116 s
+min_interval_ms  : 500
+/ # echo "=========== dmesg | grep sms_sensor ==========="
+=========== dmesg | grep sms_sensor ===========
+/ # dmesg | grep sms_sensor | tail -6
+sms_sensor_driver: loading out-of-tree module taints kernel.
+sms_sensor: ready (major=242, /dev/sms_sensor)
+sms_sensor: interval set to 500 ms
+/ # echo "=========== /tmp/sms.log (full) ==========="
+=========== /tmp/sms.log (full) ===========
+/ # cat /tmp/sms.log
+[2026-10-17 01:01:12.111] SENSOR ts=41285 temp=38.166 hum=43.843 jitter_us=856
+[2026-10-17 01:01:12.113] PROCESS ts=41285 temp=38.166 hum=43.843 avg10_t=38.166 avg10_h=43.843
+[2026-10-17 01:01:12.606] SENSOR ts=41787 temp=19.460 hum=34.971 jitter_us=635
+[2026-10-17 01:01:12.607] PROCESS ts=41787 temp=19.460 hum=34.971 avg10_t=28.813 avg10_h=39.407
+[2026-10-17 01:01:12.617] ALERT ts=41787 type=TEMP_SPIKE value=-18.706 threshold=5.000
+[2026-10-17 01:01:13.108] PROCESS ts=42289 temp=31.538 hum=63.977 avg10_t=29.721 avg10_h=47.597
+[2026-10-17 01:01:13.108] SENSOR ts=42289 temp=31.538 hum=63.977 jitter_us=420
+[2026-10-17 01:01:13.115] ALERT ts=42289 type=TEMP_SPIKE value=12.078 threshold=5.000
+[2026-10-17 01:01:13.611] PROCESS ts=42791 temp=31.332 hum=60.100 avg10_t=30.124 avg10_h=50.723
+[2026-10-17 01:01:13.611] SENSOR ts=42791 temp=31.332 hum=60.100 jitter_us=297
+[2026-10-17 01:01:14.112] PROCESS ts=43293 temp=16.498 hum=55.967 avg10_t=27.399 avg10_h=51.772
+[2026-10-17 01:01:14.113] SENSOR ts=43293 temp=16.498 hum=55.967 jitter_us=588
+[2026-10-17 01:01:14.130] ALERT ts=43293 type=TEMP_SPIKE value=-14.834 threshold=5.000
+[2026-10-17 01:01:14.614] SENSOR ts=43795 temp=25.271 hum=68.941 jitter_us=760
+[2026-10-17 01:01:14.614] PROCESS ts=43795 temp=25.271 hum=68.941 avg10_t=27.044 avg10_h=54.633
+[2026-10-17 01:01:14.629] ALERT ts=43795 type=TEMP_SPIKE value=8.773 threshold=5.000
+[2026-10-17 01:01:15.115] PROCESS ts=44295 temp=23.089 hum=74.240 avg10_t=26.479 avg10_h=57.434
+[2026-10-17 01:01:15.115] SENSOR ts=44295 temp=23.089 hum=74.240 jitter_us=590
+[2026-10-17 01:01:15.614] SENSOR ts=44796 temp=27.539 hum=55.788 jitter_us=504
+[2026-10-17 01:01:15.614] PROCESS ts=44796 temp=27.539 hum=55.788 avg10_t=26.612 avg10_h=57.228
+[2026-10-17 01:01:16.118] PROCESS ts=45298 temp=22.662 hum=67.045 avg10_t=26.173 avg10_h=58.319
+[2026-10-17 01:01:16.119] SENSOR ts=45298 temp=22.662 hum=67.045 jitter_us=608
+[2026-10-17 01:01:16.617] PROCESS ts=45798 temp=22.496 hum=64.073 avg10_t=25.805 avg10_h=58.894
+[2026-10-17 01:01:16.618] SENSOR ts=45798 temp=22.496 hum=64.073 jitter_us=586
+[2026-10-17 01:01:17.119] PROCESS ts=46300 temp=15.682 hum=52.354 avg10_t=23.557 avg10_h=59.746
+[2026-10-17 01:01:17.119] SENSOR ts=46300 temp=15.682 hum=52.354 jitter_us=742
+[2026-10-17 01:01:17.130] ALERT ts=46300 type=TEMP_SPIKE value=-6.814 threshold=5.000
+[2026-10-17 01:01:17.620] SENSOR ts=46801 temp=41.548 hum=76.737 jitter_us=469
+[2026-10-17 01:01:17.620] PROCESS ts=46801 temp=41.548 hum=76.737 avg10_t=25.765 avg10_h=63.922
+[2026-10-17 01:01:17.626] ALERT ts=46801 type=TEMP_HIGH value=41.548 threshold=40.000
+[2026-10-17 01:01:17.627] ALERT ts=46801 type=TEMP_SPIKE value=25.866 threshold=5.000
+[2026-10-17 01:01:18.120] SENSOR ts=47302 temp=16.468 hum=67.158 jitter_us=580
+[2026-10-17 01:01:18.120] PROCESS ts=47302 temp=16.468 hum=67.158 avg10_t=24.259 avg10_h=64.240
+[2026-10-17 01:01:18.125] ALERT ts=47302 type=TEMP_SPIKE value=-25.080 threshold=5.000
+[2026-10-17 01:01:18.622] PROCESS ts=47803 temp=37.535 hum=52.926 avg10_t=24.879 avg10_h=63.523
+[2026-10-17 01:01:18.622] SENSOR ts=47803 temp=37.535 hum=52.926 jitter_us=683
+[2026-10-17 01:01:18.640] ALERT ts=47803 type=TEMP_SPIKE value=21.067 threshold=5.000
+[2026-10-17 01:01:19.123] SENSOR ts=48304 temp=20.269 hum=77.898 jitter_us=690
+[2026-10-17 01:01:19.123] PROCESS ts=48304 temp=20.269 hum=77.898 avg10_t=25.256 avg10_h=65.716
+[2026-10-17 01:01:19.136] ALERT ts=48304 type=TEMP_SPIKE value=-17.266 threshold=5.000
+[2026-10-17 01:01:19.625] SENSOR ts=48806 temp=28.842 hum=44.432 jitter_us=469
+[2026-10-17 01:01:19.626] PROCESS ts=48806 temp=28.842 hum=44.432 avg10_t=25.613 avg10_h=63.265
+[2026-10-17 01:01:19.634] ALERT ts=48806 type=TEMP_SPIKE value=8.573 threshold=5.000
+[2026-10-17 01:01:20.124] SENSOR ts=49305 temp=44.491 hum=78.595 jitter_us=392
+[2026-10-17 01:01:20.125] PROCESS ts=49305 temp=44.491 hum=78.595 avg10_t=27.753 avg10_h=63.701
+[2026-10-17 01:01:20.128] ALERT ts=49305 type=TEMP_HIGH value=44.491 threshold=40.000
+[2026-10-17 01:01:20.130] ALERT ts=49305 type=TEMP_SPIKE value=15.649 threshold=5.000
+[2026-10-17 01:01:20.626] SENSOR ts=49807 temp=41.685 hum=70.054 jitter_us=631
+[2026-10-17 01:01:20.627] PROCESS ts=49807 temp=41.685 hum=70.054 avg10_t=29.168 avg10_h=65.127
+[2026-10-17 01:01:20.627] ALERT ts=49807 type=TEMP_HIGH value=41.685 threshold=40.000
+[2026-10-17 01:01:21.128] PROCESS ts=50308 temp=24.861 hum=60.146 avg10_t=29.388 avg10_h=64.437
+[2026-10-17 01:01:21.129] SENSOR ts=50308 temp=24.861 hum=60.146 jitter_us=462
+[2026-10-17 01:01:21.144] ALERT ts=50308 type=TEMP_SPIKE value=-16.824 threshold=5.000
+[2026-10-17 01:01:21.629] SENSOR ts=50810 temp=41.712 hum=83.859 jitter_us=442
+[2026-10-17 01:01:21.629] PROCESS ts=50810 temp=41.712 hum=83.859 avg10_t=31.309 avg10_h=66.416
+[2026-10-17 01:01:21.638] ALERT ts=50810 type=TEMP_HIGH value=41.712 threshold=40.000
+[2026-10-17 01:01:21.639] ALERT ts=50810 type=HUMID_HIGH value=83.859 threshold=80.000
+[2026-10-17 01:01:21.640] ALERT ts=50810 type=TEMP_SPIKE value=16.851 threshold=5.000
+[2026-10-17 01:01:22.130] PROCESS ts=51310 temp=31.698 hum=80.402 avg10_t=32.911 avg10_h=69.221
+[2026-10-17 01:01:22.130] SENSOR ts=51310 temp=31.698 hum=80.402 jitter_us=437
+[2026-10-17 01:01:22.137] ALERT ts=51310 type=HUMID_HIGH value=80.402 threshold=80.000
+[2026-10-17 01:01:22.138] ALERT ts=51310 type=TEMP_SPIKE value=-10.014 threshold=5.000
+[2026-10-17 01:01:22.632] SENSOR ts=51813 temp=23.242 hum=32.686 jitter_us=423
+[2026-10-17 01:01:22.632] PROCESS ts=51813 temp=23.242 hum=32.686 avg10_t=31.080 avg10_h=64.816
+[2026-10-17 01:01:22.635] ALERT ts=51813 type=TEMP_SPIKE value=-8.456 threshold=5.000
+[2026-10-17 01:01:23.133] SENSOR ts=52314 temp=19.996 hum=67.046 jitter_us=570
+[2026-10-17 01:01:23.134] PROCESS ts=52314 temp=19.996 hum=67.046 avg10_t=31.433 avg10_h=64.804
+[2026-10-17 01:01:23.636] PROCESS ts=52816 temp=31.018 hum=40.226 avg10_t=30.781 avg10_h=63.534
+[2026-10-17 01:01:23.636] SENSOR ts=52816 temp=31.018 hum=40.226 jitter_us=537
+[2026-10-17 01:01:23.650] ALERT ts=52816 type=TEMP_SPIKE value=11.022 threshold=5.000
+[2026-10-17 01:01:24.136] SENSOR ts=53318 temp=16.391 hum=88.489 jitter_us=610
+[2026-10-17 01:01:24.136] PROCESS ts=53318 temp=16.391 hum=88.489 avg10_t=30.394 avg10_h=64.594
+[2026-10-17 01:01:24.146] ALERT ts=53318 type=HUMID_HIGH value=88.489 threshold=80.000
+[2026-10-17 01:01:24.146] ALERT ts=53318 type=TEMP_SPIKE value=-14.627 threshold=5.000
+[2026-10-17 01:01:24.636] SENSOR ts=53818 temp=34.603 hum=67.037 jitter_us=703
+[2026-10-17 01:01:24.636] PROCESS ts=53818 temp=34.603 hum=67.037 avg10_t=30.970 avg10_h=66.854
+[2026-10-17 01:01:24.640] ALERT ts=53818 type=TEMP_SPIKE value=18.212 threshold=5.000
+[2026-10-17 01:01:25.138] SENSOR ts=54320 temp=34.320 hum=75.297 jitter_us=692
+[2026-10-17 01:01:25.139] PROCESS ts=54320 temp=34.320 hum=75.297 avg10_t=29.953 avg10_h=66.524
+[2026-10-17 01:01:25.638] SENSOR ts=54819 temp=17.498 hum=85.611 jitter_us=583
+[2026-10-17 01:01:25.638] PROCESS ts=54819 temp=17.498 hum=85.611 avg10_t=27.534 avg10_h=68.080
+[2026-10-17 01:01:25.650] ALERT ts=54819 type=HUMID_HIGH value=85.611 threshold=80.000
+[2026-10-17 01:01:25.650] ALERT ts=54819 type=TEMP_SPIKE value=-16.822 threshold=5.000
+[2026-10-17 01:01:26.139] SENSOR ts=55320 temp=28.838 hum=80.815 jitter_us=720
+[2026-10-17 01:01:26.139] PROCESS ts=55320 temp=28.838 hum=80.815 avg10_t=27.932 avg10_h=70.147
+[2026-10-17 01:01:26.147] ALERT ts=55320 type=HUMID_HIGH value=80.815 threshold=80.000
+[2026-10-17 01:01:26.147] ALERT ts=55320 type=TEMP_SPIKE value=11.340 threshold=5.000
+[2026-10-17 01:01:26.640] PROCESS ts=55821 temp=41.040 hum=70.958 avg10_t=27.864 avg10_h=68.857
+[2026-10-17 01:01:26.640] SENSOR ts=55821 temp=41.040 hum=70.958 jitter_us=1042
+[2026-10-17 01:01:26.645] ALERT ts=55821 type=TEMP_HIGH value=41.040 threshold=40.000
+[2026-10-17 01:01:26.645] ALERT ts=55821 type=TEMP_SPIKE value=12.202 threshold=5.000
+[2026-10-17 01:01:27.141] SENSOR ts=56322 temp=27.933 hum=81.488 jitter_us=617
+[2026-10-17 01:01:27.141] PROCESS ts=56322 temp=27.933 hum=81.488 avg10_t=27.488 avg10_h=68.965
+[2026-10-17 01:01:27.142] ALERT ts=56322 type=HUMID_HIGH value=81.488 threshold=80.000
+[2026-10-17 01:01:27.143] ALERT ts=56322 type=TEMP_SPIKE value=-13.107 threshold=5.000
+[2026-10-17 01:01:27.643] SENSOR ts=56823 temp=24.212 hum=57.059 jitter_us=582
+[2026-10-17 01:01:27.643] PROCESS ts=56823 temp=24.212 hum=57.059 avg10_t=27.585 avg10_h=71.403
+[2026-10-17 01:01:28.142] SENSOR ts=57324 temp=43.146 hum=87.264 jitter_us=303
+[2026-10-17 01:01:28.143] PROCESS ts=57324 temp=43.146 hum=87.264 avg10_t=29.900 avg10_h=73.424
+[2026-10-17 01:01:28.155] ALERT ts=57324 type=TEMP_HIGH value=43.146 threshold=40.000
+[2026-10-17 01:01:28.155] ALERT ts=57324 type=HUMID_HIGH value=87.264 threshold=80.000
+[2026-10-17 01:01:28.155] ALERT ts=57324 type=TEMP_SPIKE value=18.934 threshold=5.000
+[2026-10-17 01:01:28.644] SENSOR ts=57825 temp=35.849 hum=54.021 jitter_us=447
+[2026-10-17 01:01:28.644] PROCESS ts=57825 temp=35.849 hum=54.021 avg10_t=30.383 avg10_h=74.804
+[2026-10-17 01:01:28.651] ALERT ts=57825 type=TEMP_SPIKE value=-7.297 threshold=5.000
+[2026-10-17 01:01:29.145] PROCESS ts=58326 temp=24.407 hum=36.107 avg10_t=31.185 avg10_h=69.566
+[2026-10-17 01:01:29.145] SENSOR ts=58326 temp=24.407 hum=36.107 jitter_us=387
+[2026-10-17 01:01:29.146] ALERT ts=58326 type=TEMP_SPIKE value=-11.442 threshold=5.000
+[2026-10-17 01:01:29.646] PROCESS ts=58826 temp=37.240 hum=64.667 avg10_t=31.448 avg10_h=69.329
+[2026-10-17 01:01:29.647] SENSOR ts=58826 temp=37.240 hum=64.667 jitter_us=570
+[2026-10-17 01:01:29.662] ALERT ts=58826 type=TEMP_SPIKE value=12.833 threshold=5.000
+[2026-10-17 01:01:30.145] SENSOR ts=59326 temp=27.521 hum=78.004 jitter_us=278
+[2026-10-17 01:01:30.145] PROCESS ts=59326 temp=27.521 hum=78.004 avg10_t=30.768 avg10_h=69.599
+[2026-10-17 01:01:30.157] ALERT ts=59326 type=TEMP_SPIKE value=-9.719 threshold=5.000
+[2026-10-17 01:01:30.646] SENSOR ts=59827 temp=33.534 hum=61.689 jitter_us=666
+[2026-10-17 01:01:30.646] PROCESS ts=59827 temp=33.534 hum=61.689 avg10_t=32.372 avg10_h=67.207
+[2026-10-17 01:01:30.653] ALERT ts=59827 type=TEMP_SPIKE value=6.013 threshold=5.000
+[2026-10-17 01:01:31.147] PROCESS ts=60328 temp=20.955 hum=75.304 avg10_t=31.584 avg10_h=66.656
+[2026-10-17 01:01:31.148] SENSOR ts=60328 temp=20.955 hum=75.304 jitter_us=594
+[2026-10-17 01:01:31.149] ALERT ts=60328 type=TEMP_SPIKE value=-12.579 threshold=5.000
+[2026-10-17 01:01:31.648] SENSOR ts=60829 temp=31.102 hum=80.263 jitter_us=893
+[2026-10-17 01:01:31.649] PROCESS ts=60829 temp=31.102 hum=80.263 avg10_t=30.590 avg10_h=67.587
+[2026-10-17 01:01:31.663] ALERT ts=60829 type=HUMID_HIGH value=80.263 threshold=80.000
+[2026-10-17 01:01:31.664] ALERT ts=60829 type=TEMP_SPIKE value=10.147 threshold=5.000
+[2026-10-17 01:01:32.148] SENSOR ts=61330 temp=29.781 hum=48.844 jitter_us=632
+[2026-10-17 01:01:32.149] PROCESS ts=61330 temp=29.781 hum=48.844 avg10_t=30.775 avg10_h=64.322
+[2026-10-17 01:01:32.651] SENSOR ts=61831 temp=16.691 hum=35.491 jitter_us=628
+[2026-10-17 01:01:32.651] PROCESS ts=61831 temp=16.691 hum=35.491 avg10_t=30.023 avg10_h=62.165
+[2026-10-17 01:01:32.658] ALERT ts=61831 type=TEMP_SPIKE value=-13.090 threshold=5.000
+[2026-10-17 01:01:33.150] SENSOR ts=62331 temp=18.629 hum=85.258 jitter_us=430
+[2026-10-17 01:01:33.150] PROCESS ts=62331 temp=18.629 hum=85.258 avg10_t=27.571 avg10_h=61.965
+[2026-10-17 01:01:33.153] ALERT ts=62331 type=HUMID_HIGH value=85.258 threshold=80.000
+[2026-10-17 01:01:33.651] SENSOR ts=62833 temp=30.010 hum=82.324 jitter_us=541
+[2026-10-17 01:01:33.652] PROCESS ts=62833 temp=30.010 hum=82.324 avg10_t=26.987 avg10_h=64.795
+[2026-10-17 01:01:33.668] ALERT ts=62833 type=HUMID_HIGH value=82.324 threshold=80.000
+[2026-10-17 01:01:33.669] ALERT ts=62833 type=TEMP_SPIKE value=11.381 threshold=5.000
+[2026-10-17 01:01:34.152] SENSOR ts=63334 temp=44.446 hum=40.527 jitter_us=393
+[2026-10-17 01:01:34.153] PROCESS ts=63334 temp=44.446 hum=40.527 avg10_t=28.991 avg10_h=65.237
+[2026-10-17 01:01:34.165] ALERT ts=63334 type=TEMP_HIGH value=44.446 threshold=40.000
+[2026-10-17 01:01:34.165] ALERT ts=63334 type=TEMP_SPIKE value=14.436 threshold=5.000
+[2026-10-17 01:01:34.653] SENSOR ts=63834 temp=27.604 hum=53.267 jitter_us=694
+[2026-10-17 01:01:34.653] PROCESS ts=63834 temp=27.604 hum=53.267 avg10_t=28.027 avg10_h=64.097
+[2026-10-17 01:01:34.661] ALERT ts=63834 type=TEMP_SPIKE value=-16.842 threshold=5.000
+[2026-10-17 01:01:35.153] SENSOR ts=64334 temp=35.775 hum=70.579 jitter_us=313
+[2026-10-17 01:01:35.153] PROCESS ts=64334 temp=35.775 hum=70.579 avg10_t=28.853 avg10_h=63.355
+[2026-10-17 01:01:35.158] ALERT ts=64334 type=TEMP_SPIKE value=8.171 threshold=5.000
+[2026-10-17 01:01:35.654] SENSOR ts=64835 temp=26.267 hum=64.698 jitter_us=369
+[2026-10-17 01:01:35.654] PROCESS ts=64835 temp=26.267 hum=64.698 avg10_t=28.126 avg10_h=63.656
+[2026-10-17 01:01:35.656] ALERT ts=64835 type=TEMP_SPIKE value=-9.508 threshold=5.000
+[2026-10-17 01:01:36.155] SENSOR ts=65336 temp=31.303 hum=61.850 jitter_us=670
+[2026-10-17 01:01:36.156] PROCESS ts=65336 temp=31.303 hum=61.850 avg10_t=29.161 avg10_h=62.310
+[2026-10-17 01:01:36.172] ALERT ts=65336 type=TEMP_SPIKE value=5.036 threshold=5.000
+[2026-10-17 01:01:36.655] PROCESS ts=65836 temp=35.212 hum=69.838 avg10_t=29.572 avg10_h=61.268
+[2026-10-17 01:01:36.655] SENSOR ts=65836 temp=35.212 hum=69.838 jitter_us=442
+[2026-10-17 01:01:37.156] SENSOR ts=66337 temp=18.018 hum=65.673 jitter_us=641
+[2026-10-17 01:01:37.156] PROCESS ts=66337 temp=18.018 hum=65.673 avg10_t=28.396 avg10_h=62.950
+[2026-10-17 01:01:37.163] ALERT ts=66337 type=TEMP_SPIKE value=-17.194 threshold=5.000
+[2026-10-17 01:01:37.657] SENSOR ts=66839 temp=43.817 hum=40.330 jitter_us=780
+[2026-10-17 01:01:37.658] PROCESS ts=66839 temp=43.817 hum=40.330 avg10_t=31.108 avg10_h=63.434
+[2026-10-17 01:01:37.677] ALERT ts=66839 type=TEMP_HIGH value=43.817 threshold=40.000
+[2026-10-17 01:01:37.678] ALERT ts=66839 type=TEMP_SPIKE value=25.799 threshold=5.000
+[2026-10-17 01:01:38.159] SENSOR ts=67340 temp=40.602 hum=67.007 jitter_us=422
+[2026-10-17 01:01:38.159] PROCESS ts=67340 temp=40.602 hum=67.007 avg10_t=33.305 avg10_h=61.609
+[2026-10-17 01:01:38.174] ALERT ts=67340 type=TEMP_HIGH value=40.602 threshold=40.000
+[2026-10-17 01:01:38.659] SENSOR ts=67840 temp=23.801 hum=61.635 jitter_us=489
+[2026-10-17 01:01:38.659] PROCESS ts=67840 temp=23.801 hum=61.635 avg10_t=32.684 avg10_h=59.540
+[2026-10-17 01:01:38.670] ALERT ts=67840 type=TEMP_SPIKE value=-16.801 threshold=5.000
+[2026-10-17 01:01:39.161] PROCESS ts=68342 temp=19.041 hum=54.959 avg10_t=30.144 avg10_h=60.984
+[2026-10-17 01:01:39.161] SENSOR ts=68342 temp=19.041 hum=54.959 jitter_us=704
+[2026-10-17 01:01:39.662] SENSOR ts=68843 temp=33.145 hum=77.029 jitter_us=475
+[2026-10-17 01:01:39.663] PROCESS ts=68843 temp=33.145 hum=77.029 avg10_t=30.698 avg10_h=63.360
+[2026-10-17 01:01:39.681] ALERT ts=68843 type=TEMP_SPIKE value=14.104 threshold=5.000
+[2026-10-17 01:01:40.162] SENSOR ts=69343 temp=42.724 hum=44.129 jitter_us=648
+[2026-10-17 01:01:40.162] PROCESS ts=69343 temp=42.724 hum=44.129 avg10_t=31.393 avg10_h=60.715
+[2026-10-17 01:01:40.178] ALERT ts=69343 type=TEMP_HIGH value=42.724 threshold=40.000
+[2026-10-17 01:01:40.178] ALERT ts=69343 type=TEMP_SPIKE value=9.579 threshold=5.000
+[2026-10-17 01:01:40.664] SENSOR ts=69845 temp=43.189 hum=84.858 jitter_us=414
+[2026-10-17 01:01:40.664] PROCESS ts=69845 temp=43.189 hum=84.858 avg10_t=33.085 avg10_h=62.731
+[2026-10-17 01:01:40.676] ALERT ts=69845 type=TEMP_HIGH value=43.189 threshold=40.000
+[2026-10-17 01:01:40.677] ALERT ts=69845 type=HUMID_HIGH value=84.858 threshold=80.000
+[2026-10-17 01:01:41.165] PROCESS ts=70345 temp=17.248 hum=69.898 avg10_t=31.680 avg10_h=63.536
+[2026-10-17 01:01:41.165] SENSOR ts=70345 temp=17.248 hum=69.898 jitter_us=784
+[2026-10-17 01:01:41.173] ALERT ts=70345 type=TEMP_SPIKE value=-25.941 threshold=5.000
+[2026-10-17 01:01:41.664] PROCESS ts=70845 temp=29.120 hum=47.651 avg10_t=31.070 avg10_h=61.317
+[2026-10-17 01:01:41.664] SENSOR ts=70845 temp=29.120 hum=47.651 jitter_us=571
+[2026-10-17 01:01:41.669] ALERT ts=70845 type=TEMP_SPIKE value=11.872 threshold=5.000
+[2026-10-17 01:01:42.164] SENSOR ts=71346 temp=33.508 hum=86.777 jitter_us=536
+[2026-10-17 01:01:42.165] PROCESS ts=71346 temp=33.508 hum=86.777 avg10_t=32.620 avg10_h=63.427
+[2026-10-17 01:01:42.186] ALERT ts=71346 type=HUMID_HIGH value=86.777 threshold=80.000
+[2026-10-17 01:01:42.666] PROCESS ts=71847 temp=30.231 hum=86.680 avg10_t=31.261 avg10_h=68.062
+[2026-10-17 01:01:42.666] SENSOR ts=71847 temp=30.231 hum=86.680 jitter_us=779
+[2026-10-17 01:01:42.680] ALERT ts=71847 type=HUMID_HIGH value=86.680 threshold=80.000
+[2026-10-17 01:01:43.165] SENSOR ts=72347 temp=30.239 hum=88.541 jitter_us=701
+[2026-10-17 01:01:43.165] PROCESS ts=72347 temp=30.239 hum=88.541 avg10_t=30.225 avg10_h=70.216
+[2026-10-17 01:01:43.177] ALERT ts=72347 type=HUMID_HIGH value=88.541 threshold=80.000
+[2026-10-17 01:01:43.668] SENSOR ts=72849 temp=27.556 hum=41.706 jitter_us=547
+[2026-10-17 01:01:43.668] PROCESS ts=72849 temp=27.556 hum=41.706 avg10_t=30.600 avg10_h=68.223
+[2026-10-17 01:01:44.168] SENSOR ts=73349 temp=37.642 hum=31.648 jitter_us=409
+[2026-10-17 01:01:44.169] PROCESS ts=73349 temp=37.642 hum=31.648 avg10_t=32.460 avg10_h=65.892
+[2026-10-17 01:01:44.188] ALERT ts=73349 type=TEMP_SPIKE value=10.086 threshold=5.000
+[2026-10-17 01:01:44.670] SENSOR ts=73851 temp=35.780 hum=33.706 jitter_us=539
+[2026-10-17 01:01:44.670] PROCESS ts=73851 temp=35.780 hum=33.706 avg10_t=32.724 avg10_h=61.559
+[2026-10-17 01:01:45.173] PROCESS ts=74353 temp=37.414 hum=78.256 avg10_t=32.193 avg10_h=64.972
+[2026-10-17 01:01:45.173] SENSOR ts=74353 temp=37.414 hum=78.256 jitter_us=550
+[2026-10-17 01:01:45.673] PROCESS ts=74855 temp=19.820 hum=67.822 avg10_t=29.856 avg10_h=63.269
+[2026-10-17 01:01:45.674] SENSOR ts=74855 temp=19.820 hum=67.822 jitter_us=732
+[2026-10-17 01:01:45.677] ALERT ts=74855 type=TEMP_SPIKE value=-17.594 threshold=5.000
+[2026-10-17 01:01:46.176] PROCESS ts=75356 temp=18.620 hum=77.232 avg10_t=29.993 avg10_h=64.002
+[2026-10-17 01:01:46.177] SENSOR ts=75356 temp=18.620 hum=77.232 jitter_us=410
+[2026-10-17 01:01:46.675] SENSOR ts=75856 temp=34.191 hum=81.967 jitter_us=723
+[2026-10-17 01:01:46.675] PROCESS ts=75856 temp=34.191 hum=81.967 avg10_t=30.500 avg10_h=67.434
+[2026-10-17 01:01:46.689] ALERT ts=75856 type=HUMID_HIGH value=81.967 threshold=80.000
+[2026-10-17 01:01:46.689] ALERT ts=75856 type=TEMP_SPIKE value=15.571 threshold=5.000
+[2026-10-17 01:01:47.175] SENSOR ts=76356 temp=34.541 hum=71.998 jitter_us=446
+[2026-10-17 01:01:47.176] PROCESS ts=76356 temp=34.541 hum=71.998 avg10_t=30.603 avg10_h=65.956
+[2026-10-17 01:01:47.675] SENSOR ts=76856 temp=25.374 hum=53.354 jitter_us=439
+[2026-10-17 01:01:47.675] PROCESS ts=76856 temp=25.374 hum=53.354 avg10_t=30.118 avg10_h=62.623
+[2026-10-17 01:01:47.680] ALERT ts=76856 type=TEMP_SPIKE value=-9.167 threshold=5.000
+[2026-10-17 01:01:48.176] SENSOR ts=77358 temp=39.571 hum=30.820 jitter_us=403
+[2026-10-17 01:01:48.177] PROCESS ts=77358 temp=39.571 hum=30.820 avg10_t=31.051 avg10_h=56.851
+[2026-10-17 01:01:48.196] ALERT ts=77358 type=TEMP_SPIKE value=14.197 threshold=5.000
+[2026-10-17 01:01:48.678] SENSOR ts=77859 temp=40.539 hum=67.737 jitter_us=391
+[2026-10-17 01:01:48.678] PROCESS ts=77859 temp=40.539 hum=67.737 avg10_t=32.349 avg10_h=59.454
+[2026-10-17 01:01:48.692] ALERT ts=77859 type=TEMP_HIGH value=40.539 threshold=40.000
+[2026-10-17 01:01:49.179] SENSOR ts=78360 temp=24.460 hum=75.821 jitter_us=598
+[2026-10-17 01:01:49.179] PROCESS ts=78360 temp=24.460 hum=75.821 avg10_t=31.031 avg10_h=63.871
+[2026-10-17 01:01:49.188] ALERT ts=78360 type=TEMP_SPIKE value=-16.079 threshold=5.000
+[2026-10-17 01:01:49.679] SENSOR ts=78860 temp=16.844 hum=55.851 jitter_us=842
+[2026-10-17 01:01:49.679] PROCESS ts=78860 temp=16.844 hum=55.851 avg10_t=29.137 avg10_h=66.086
+[2026-10-17 01:01:49.685] ALERT ts=78860 type=TEMP_SPIKE value=-7.616 threshold=5.000
+[2026-10-17 01:01:50.180] SENSOR ts=79361 temp=21.132 hum=73.111 jitter_us=726
+[2026-10-17 01:01:50.180] PROCESS ts=79361 temp=21.132 hum=73.111 avg10_t=27.509 avg10_h=65.571
+[2026-10-17 01:01:50.683] PROCESS ts=79863 temp=22.474 hum=58.470 avg10_t=27.775 avg10_h=64.636
+[2026-10-17 01:01:50.684] SENSOR ts=79863 temp=22.474 hum=58.470 jitter_us=418
+[2026-10-17 01:01:51.182] SENSOR ts=80363 temp=40.945 hum=47.250 jitter_us=695
+[2026-10-17 01:01:51.183] PROCESS ts=80363 temp=40.945 hum=47.250 avg10_t=30.007 avg10_h=61.638
+[2026-10-17 01:01:51.195] ALERT ts=80363 type=TEMP_HIGH value=40.945 threshold=40.000
+[2026-10-17 01:01:51.195] ALERT ts=80363 type=TEMP_SPIKE value=18.471 threshold=5.000
+[2026-10-17 01:01:51.683] PROCESS ts=80864 temp=37.197 hum=75.985 avg10_t=30.308 avg10_h=61.040
+[2026-10-17 01:01:51.683] SENSOR ts=80864 temp=37.197 hum=75.985 jitter_us=551
+[2026-10-17 01:01:52.183] SENSOR ts=81364 temp=27.534 hum=38.568 jitter_us=599
+[2026-10-17 01:01:52.183] PROCESS ts=81364 temp=27.534 hum=38.568 avg10_t=29.607 avg10_h=57.697
+[2026-10-17 01:01:52.187] ALERT ts=81364 type=TEMP_SPIKE value=-9.663 threshold=5.000
+[2026-10-17 01:01:52.683] SENSOR ts=81864 temp=40.222 hum=58.313 jitter_us=385
+[2026-10-17 01:01:52.683] PROCESS ts=81864 temp=40.222 hum=58.313 avg10_t=31.092 avg10_h=58.193
+[2026-10-17 01:01:52.684] ALERT ts=81864 type=TEMP_HIGH value=40.222 threshold=40.000
+[2026-10-17 01:01:52.685] ALERT ts=81864 type=TEMP_SPIKE value=12.688 threshold=5.000
+[2026-10-17 01:01:53.185] SENSOR ts=82366 temp=37.750 hum=75.238 jitter_us=651
+[2026-10-17 01:01:53.185] PROCESS ts=82366 temp=37.750 hum=75.238 avg10_t=30.910 avg10_h=62.634
+[2026-10-17 01:01:53.687] PROCESS ts=82867 temp=31.433 hum=38.938 avg10_t=29.999 avg10_h=59.755
+[2026-10-17 01:01:53.687] SENSOR ts=82867 temp=31.433 hum=38.938 jitter_us=459
+[2026-10-17 01:01:53.697] ALERT ts=82867 type=TEMP_SPIKE value=-6.317 threshold=5.000
+[2026-10-17 01:01:54.185] SENSOR ts=83367 temp=37.496 hum=45.963 jitter_us=416
+[2026-10-17 01:01:54.186] PROCESS ts=83367 temp=37.496 hum=45.963 avg10_t=31.303 avg10_h=56.769
+[2026-10-17 01:01:54.197] ALERT ts=83367 type=TEMP_SPIKE value=6.063 threshold=5.000
+[2026-10-17 01:01:54.687] SENSOR ts=83868 temp=20.462 hum=78.158 jitter_us=468
+[2026-10-17 01:01:54.688] PROCESS ts=83868 temp=20.462 hum=78.158 avg10_t=31.664 avg10_h=58.999
+[2026-10-17 01:01:54.695] ALERT ts=83868 type=TEMP_SPIKE value=-17.034 threshold=5.000
+[2026-10-17 01:01:55.187] PROCESS ts=84368 temp=27.826 hum=76.625 avg10_t=32.334 avg10_h=59.351
+[2026-10-17 01:01:55.187] SENSOR ts=84368 temp=27.826 hum=76.625 jitter_us=614
+[2026-10-17 01:01:55.192] ALERT ts=84368 type=TEMP_SPIKE value=7.364 threshold=5.000
+[2026-10-17 01:01:55.688] SENSOR ts=84869 temp=18.895 hum=53.902 jitter_us=520
+[2026-10-17 01:01:55.688] PROCESS ts=84869 temp=18.895 hum=53.902 avg10_t=31.976 avg10_h=58.894
+[2026-10-17 01:01:55.689] ALERT ts=84869 type=TEMP_SPIKE value=-8.931 threshold=5.000
+[2026-10-17 01:01:56.188] PROCESS ts=85369 temp=26.492 hum=74.251 avg10_t=30.531 avg10_h=61.594
+[2026-10-17 01:01:56.189] SENSOR ts=85369 temp=26.492 hum=74.251 jitter_us=357
+[2026-10-17 01:01:56.205] ALERT ts=85369 type=TEMP_SPIKE value=7.597 threshold=5.000
+[2026-10-17 01:01:56.689] PROCESS ts=85870 temp=30.881 hum=76.361 avg10_t=29.899 avg10_h=61.632
+[2026-10-17 01:01:56.689] SENSOR ts=85870 temp=30.881 hum=76.361 jitter_us=327
+[2026-10-17 01:01:57.191] SENSOR ts=86372 temp=34.122 hum=58.534 jitter_us=597
+[2026-10-17 01:01:57.191] PROCESS ts=86372 temp=34.122 hum=58.534 avg10_t=30.558 avg10_h=63.628
+[2026-10-17 01:01:57.692] SENSOR ts=86873 temp=27.122 hum=58.247 jitter_us=571
+[2026-10-17 01:01:57.692] PROCESS ts=86873 temp=27.122 hum=58.247 avg10_t=29.248 avg10_h=63.622
+[2026-10-17 01:01:57.694] ALERT ts=86873 type=TEMP_SPIKE value=-7.000 threshold=5.000
+[2026-10-17 01:01:58.193] SENSOR ts=87373 temp=32.751 hum=37.398 jitter_us=605
+[2026-10-17 01:01:58.193] PROCESS ts=87373 temp=32.751 hum=37.398 avg10_t=28.748 avg10_h=59.838
+[2026-10-17 01:01:58.209] ALERT ts=87373 type=TEMP_SPIKE value=5.629 threshold=5.000
+[2026-10-17 01:01:58.691] SENSOR ts=87873 temp=38.817 hum=85.137 jitter_us=384
+[2026-10-17 01:01:58.691] PROCESS ts=87873 temp=38.817 hum=85.137 avg10_t=29.486 avg10_h=64.458
+[2026-10-17 01:01:58.708] ALERT ts=87873 type=HUMID_HIGH value=85.137 threshold=80.000
+[2026-10-17 01:01:58.708] ALERT ts=87873 type=TEMP_SPIKE value=6.066 threshold=5.000
+[2026-10-17 01:01:59.192] SENSOR ts=88373 temp=34.527 hum=60.584 jitter_us=571
+[2026-10-17 01:01:59.192] PROCESS ts=88373 temp=34.527 hum=60.584 avg10_t=29.189 avg10_h=65.920
+[2026-10-17 01:01:59.693] SENSOR ts=88874 temp=19.300 hum=73.443 jitter_us=429
+[2026-10-17 01:01:59.693] PROCESS ts=88874 temp=19.300 hum=73.443 avg10_t=29.073 avg10_h=65.448
+[2026-10-17 01:01:59.699] ALERT ts=88874 type=TEMP_SPIKE value=-15.227 threshold=5.000
+[2026-10-17 01:02:00.193] SENSOR ts=89374 temp=33.075 hum=83.892 jitter_us=486
+[2026-10-17 01:02:00.193] PROCESS ts=89374 temp=33.075 hum=83.892 avg10_t=29.598 avg10_h=66.175
+[2026-10-17 01:02:00.196] ALERT ts=89374 type=HUMID_HIGH value=83.892 threshold=80.000
+[2026-10-17 01:02:00.197] ALERT ts=89374 type=TEMP_SPIKE value=13.775 threshold=5.000
+[2026-10-17 01:02:00.693] SENSOR ts=89874 temp=15.155 hum=58.368 jitter_us=617
+[2026-10-17 01:02:00.693] PROCESS ts=89874 temp=15.155 hum=58.368 avg10_t=29.224 avg10_h=66.621
+[2026-10-17 01:02:00.712] ALERT ts=89874 type=TEMP_SPIKE value=-17.920 threshold=5.000
+[2026-10-17 01:02:01.195] PROCESS ts=90375 temp=26.735 hum=74.723 avg10_t=29.248 avg10_h=66.669
+[2026-10-17 01:02:01.196] SENSOR ts=90375 temp=26.735 hum=74.723 jitter_us=455
+[2026-10-17 01:02:01.210] ALERT ts=90375 type=TEMP_SPIKE value=11.580 threshold=5.000
+[2026-10-17 01:02:01.694] PROCESS ts=90875 temp=18.465 hum=60.888 avg10_t=28.007 avg10_h=65.121
+[2026-10-17 01:02:01.694] SENSOR ts=90875 temp=18.465 hum=60.888 jitter_us=660
+[2026-10-17 01:02:01.705] ALERT ts=90875 type=TEMP_SPIKE value=-8.270 threshold=5.000
+[2026-10-17 01:02:02.194] PROCESS ts=91375 temp=29.738 hum=46.036 avg10_t=27.568 avg10_h=63.872
+[2026-10-17 01:02:02.195] SENSOR ts=91375 temp=29.738 hum=46.036 jitter_us=257
+[2026-10-17 01:02:02.201] ALERT ts=91375 type=TEMP_SPIKE value=11.273 threshold=5.000
+[2026-10-17 01:02:02.695] SENSOR ts=91877 temp=17.091 hum=86.302 jitter_us=700
+[2026-10-17 01:02:02.696] PROCESS ts=91877 temp=17.091 hum=86.302 avg10_t=26.565 avg10_h=66.677
+[2026-10-17 01:02:02.697] ALERT ts=91877 type=HUMID_HIGH value=86.302 threshold=80.000
+[2026-10-17 01:02:02.697] ALERT ts=91877 type=TEMP_SPIKE value=-12.647 threshold=5.000
+[2026-10-17 01:02:03.197] SENSOR ts=92378 temp=36.864 hum=51.790 jitter_us=337
+[2026-10-17 01:02:03.197] PROCESS ts=92378 temp=36.864 hum=51.790 avg10_t=26.977 avg10_h=68.116
+[2026-10-17 01:02:03.212] ALERT ts=92378 type=TEMP_SPIKE value=19.773 threshold=5.000
+[2026-10-17 01:02:03.697] SENSOR ts=92878 temp=19.801 hum=57.922 jitter_us=626
+[2026-10-17 01:02:03.698] PROCESS ts=92878 temp=19.801 hum=57.922 avg10_t=25.075 avg10_h=65.395
+[2026-10-17 01:02:03.709] ALERT ts=92878 type=TEMP_SPIKE value=-17.063 threshold=5.000
+[2026-10-17 01:02:04.199] SENSOR ts=93380 temp=25.393 hum=59.551 jitter_us=735
+[2026-10-17 01:02:04.199] PROCESS ts=93380 temp=25.393 hum=59.551 avg10_t=24.162 avg10_h=65.291
+[2026-10-17 01:02:04.205] ALERT ts=93380 type=TEMP_SPIKE value=5.592 threshold=5.000
+[2026-10-17 01:02:04.699] PROCESS ts=93880 temp=26.956 hum=62.915 avg10_t=24.927 avg10_h=64.239
+[2026-10-17 01:02:04.699] SENSOR ts=93880 temp=26.956 hum=62.915 jitter_us=767
+[2026-10-17 01:02:05.200] SENSOR ts=94381 temp=26.635 hum=33.911 jitter_us=585
+[2026-10-17 01:02:05.200] PROCESS ts=94381 temp=26.635 hum=33.911 avg10_t=24.283 avg10_h=59.241
+[2026-10-17 01:02:05.699] SENSOR ts=94881 temp=16.956 hum=39.414 jitter_us=601
+[2026-10-17 01:02:05.699] PROCESS ts=94881 temp=16.956 hum=39.414 avg10_t=24.463 avg10_h=57.345
+[2026-10-17 01:02:05.708] ALERT ts=94881 type=TEMP_SPIKE value=-9.679 threshold=5.000
+[2026-10-17 01:02:06.202] SENSOR ts=95383 temp=17.854 hum=56.078 jitter_us=370
+[2026-10-17 01:02:06.202] PROCESS ts=95383 temp=17.854 hum=56.078 avg10_t=23.575 avg10_h=55.481
+[2026-10-17 01:02:06.703] PROCESS ts=95885 temp=21.769 hum=58.056 avg10_t=23.906 avg10_h=55.198
+[2026-10-17 01:02:06.703] SENSOR ts=95885 temp=21.769 hum=58.056 jitter_us=509
+[2026-10-17 01:02:07.204] PROCESS ts=96385 temp=16.744 hum=50.785 avg10_t=22.606 avg10_h=55.672
+[2026-10-17 01:02:07.204] SENSOR ts=96385 temp=16.744 hum=50.785 jitter_us=430
+[2026-10-17 01:02:07.217] ALERT ts=96385 type=TEMP_SPIKE value=-5.025 threshold=5.000
+[2026-10-17 01:02:07.705] SENSOR ts=96886 temp=40.338 hum=42.212 jitter_us=620
+[2026-10-17 01:02:07.705] PROCESS ts=96886 temp=40.338 hum=42.212 avg10_t=24.931 avg10_h=51.263
+[2026-10-17 01:02:07.715] ALERT ts=96886 type=TEMP_HIGH value=40.338 threshold=40.000
+[2026-10-17 01:02:07.715] ALERT ts=96886 type=TEMP_SPIKE value=23.594 threshold=5.000
+[2026-10-17 01:02:08.204] SENSOR ts=97386 temp=18.104 hum=65.155 jitter_us=645
+[2026-10-17 01:02:08.204] PROCESS ts=97386 temp=18.104 hum=65.155 avg10_t=23.055 avg10_h=52.600
+[2026-10-17 01:02:08.211] ALERT ts=97386 type=TEMP_SPIKE value=-22.234 threshold=5.000
+[2026-10-17 01:02:08.705] SENSOR ts=97888 temp=43.942 hum=54.837 jitter_us=563
+[2026-10-17 01:02:08.706] PROCESS ts=97888 temp=43.942 hum=54.837 avg10_t=25.469 avg10_h=52.291
+[2026-10-17 01:02:08.727] ALERT ts=97888 type=TEMP_HIGH value=43.942 threshold=40.000
+[2026-10-17 01:02:08.728] ALERT ts=97888 type=TEMP_SPIKE value=25.838 threshold=5.000
+[2026-10-17 01:02:09.207] SENSOR ts=98388 temp=26.430 hum=46.791 jitter_us=561
+[2026-10-17 01:02:09.207] PROCESS ts=98388 temp=26.430 hum=46.791 avg10_t=25.573 avg10_h=51.015
+[2026-10-17 01:02:09.225] ALERT ts=98388 type=TEMP_SPIKE value=-17.512 threshold=5.000
+[2026-10-17 01:02:09.709] SENSOR ts=98889 temp=32.404 hum=50.976 jitter_us=777
+[2026-10-17 01:02:09.709] PROCESS ts=98889 temp=32.404 hum=50.976 avg10_t=26.118 avg10_h=49.822
+[2026-10-17 01:02:09.721] ALERT ts=98889 type=TEMP_SPIKE value=5.974 threshold=5.000
+[2026-10-17 01:02:10.207] SENSOR ts=99389 temp=43.389 hum=61.898 jitter_us=614
+[2026-10-17 01:02:10.207] PROCESS ts=99389 temp=43.389 hum=61.898 avg10_t=27.793 avg10_h=52.620
+[2026-10-17 01:02:10.217] ALERT ts=99389 type=TEMP_HIGH value=43.389 threshold=40.000
+[2026-10-17 01:02:10.217] ALERT ts=99389 type=TEMP_SPIKE value=10.985 threshold=5.000
+[2026-10-17 01:02:10.710] SENSOR ts=99891 temp=25.724 hum=88.027 jitter_us=705
+[2026-10-17 01:02:10.711] PROCESS ts=99891 temp=25.724 hum=88.027 avg10_t=28.670 avg10_h=57.482
+[2026-10-17 01:02:10.712] ALERT ts=99891 type=HUMID_HIGH value=88.027 threshold=80.000
+[2026-10-17 01:02:10.713] ALERT ts=99891 type=TEMP_SPIKE value=-17.665 threshold=5.000
+[2026-10-17 01:02:11.212] PROCESS ts=100392 temp=27.947 hum=44.177 avg10_t=29.679 avg10_h=56.291
+[2026-10-17 01:02:11.212] SENSOR ts=100392 temp=27.947 hum=44.177 jitter_us=407
+/ # echo "=========== /tmp/jitter_report.txt ==========="
+=========== /tmp/jitter_report.txt ===========
+/ # cat /tmp/jitter_report.txt
+===== Jitter report: TARGET (SCHED_FIFO) =====
+samples : 120
+Min     : 257 us
+Avg     : 559.6 us
+Max     : 1042 us
+P99     : 893 us
+Histogram:
+  [    0,  100) us : 0 (0.0%)
+  [  100,  500) us : 44 (36.7%)
+  [  500, 1000) us : 75 (62.5%)
+  [ 1000,  inf) us : 1 (0.8%)
+/ # poweroff -f
+Flash device refused suspend due to active operation (state 20)
+Flash device refused suspend due to active operation (state 20)
+reboot: Power down

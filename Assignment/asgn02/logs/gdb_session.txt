@@ -1,0 +1,117 @@
+
+########## GDB multi-thread debug: sms_app_x86 (Scenario A) ##########
+--- set breakpoints in Processor and Alert threads ---
+Breakpoint 1 at 0x3d60: file processor_thread.c, line 36.
+Breakpoint 2 at 0x4040: file alert_thread.c, line 27.
+warning: Error disabling address space randomization: Function not implemented
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7f31b29fe640 (LWP 44046)]
+[New Thread 0x7f31b29bd640 (LWP 44047)]
+[New Thread 0x7f31b297c640 (LWP 44048)]
+[Switching to Thread 0x7f31b29bd640 (LWP 44047)]
+
+Thread 3 "sms_app_x86" hit Breakpoint 1, processor_thread (arg=0x55c2023b5100 <g_ctx>) at processor_thread.c:36
+36	{
+
+--- stopped at processor_thread: all threads ---
+  Id   Target Id                                       Frame 
+  1    Thread 0x7f31b29ff740 (LWP 44043) "sms_app_x86" clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:62
+  2    Thread 0x7f31b29fe640 (LWP 44046) "sensor"      0x00007f31b2ae77b8 in __GI___clock_nanosleep (clock_id=clock_id@entry=1, flags=flags@entry=1, req=req@entry=0x7f31b29fdcc0, rem=rem@entry=0x0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+* 3    Thread 0x7f31b29bd640 (LWP 44047) "sms_app_x86" processor_thread (arg=0x55c2023b5100 <g_ctx>) at processor_thread.c:36
+  4    Thread 0x7f31b297c640 (LWP 44048) "sms_app_x86" clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:62
+#0  processor_thread (arg=0x55c2023b5100 <g_ctx>) at processor_thread.c:36
+#1  0x00007f31b2a96a83 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#2  0x00007f31b2b288e0 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+--- shared circular buffer state (read under gdb, no mutex held) ---
+$1 = 0
+$2 = 0
+$3 = 0
+$4 = 0
+$5 = 0
+$6 = 0
+
+--- call stack of every thread ---
+
+Thread 4 (Thread 0x7f31b297c640 (LWP 44048) "sms_app_x86"):
+#0  clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:62
+#1  0x0000000000000000 in ?? ()
+
+Thread 3 (Thread 0x7f31b29bd640 (LWP 44047) "sms_app_x86"):
+#0  processor_thread (arg=0x55c2023b5100 <g_ctx>) at processor_thread.c:36
+#1  0x00007f31b2a96a83 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#2  0x00007f31b2b288e0 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 2 (Thread 0x7f31b29fe640 (LWP 44046) "sensor"):
+#0  0x00007f31b2ae77b8 in __GI___clock_nanosleep (clock_id=clock_id@entry=1, flags=flags@entry=1, req=req@entry=0x7f31b29fdcc0, rem=rem@entry=0x0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x000055c2023b0335 in sensor_thread (arg=0x55c2023b5100 <g_ctx>) at sensor_thread.c:131
+#2  0x00007f31b2a96a83 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#3  0x00007f31b2b288e0 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 1 (Thread 0x7f31b29ff740 (LWP 44043) "sms_app_x86"):
+#0  clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:62
+#1  0x00007f31b2b28931 in __GI___clone_internal (cl_args=cl_args@entry=0x7ffd2622d310, func=func@entry=0x7f31b2a96790 <start_thread>, arg=arg@entry=0x7f31b297c640) at ../sysdeps/unix/sysv/linux/clone-internal.c:54
+#2  0x00007f31b2a96699 in create_thread (pd=pd@entry=0x7f31b297c640, attr=attr@entry=0x7ffd2622d5b0, stopped_start=stopped_start@entry=0x7ffd2622d42e, stackaddr=stackaddr@entry=0x7f31b293c000, stacksize=261888, thread_ran=thread_ran@entry=0x7ffd2622d42f) at ./nptl/pthread_create.c:295
+#3  0x00007f31b2a971c0 in __pthread_create_2_1 (newthread=newthread@entry=0x7ffd2622d580, attr=attr@entry=0x7ffd2622d5b0, start_routine=<optimized out>, arg=arg@entry=0x55c2023b5100 <g_ctx>) at ./nptl/pthread_create.c:828
+#4  0x000055c2023afca2 in main (argc=<optimized out>, argv=<optimized out>) at sms_app.c:174
+[New Thread 0x7f31b293b640 (LWP 44049)]
+[Switching to Thread 0x7f31b297c640 (LWP 44048)]
+
+Thread 4 "sms_app_x86" hit Breakpoint 2, alert_thread (arg=0x55c2023b5100 <g_ctx>) at alert_thread.c:27
+27	{
+
+--- next stop ---
+  Id   Target Id                                       Frame 
+  1    Thread 0x7f31b29ff740 (LWP 44043) "sms_app_x86" 0x00007f31b2ae77b8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffd2622d510, rem=rem@entry=0x7ffd2622d510) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+  2    Thread 0x7f31b29fe640 (LWP 44046) "sensor"      0x00007f31b2ae77b8 in __GI___clock_nanosleep (clock_id=clock_id@entry=1, flags=flags@entry=1, req=req@entry=0x7f31b29fdcc0, rem=rem@entry=0x0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+  3    Thread 0x7f31b29bd640 (LWP 44047) "process"     __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55c2023b57c0 <g_ctx+1728>) at ./nptl/futex-internal.c:57
+* 4    Thread 0x7f31b297c640 (LWP 44048) "sms_app_x86" alert_thread (arg=0x55c2023b5100 <g_ctx>) at alert_thread.c:27
+  5    Thread 0x7f31b293b640 (LWP 44049) "logger"      __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55c2023bd860 <g_ctx+34656>) at ./nptl/futex-internal.c:57
+
+Thread 5 (Thread 0x7f31b293b640 (LWP 44049) "logger"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55c2023bd860 <g_ctx+34656>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55c2023bd860 <g_ctx+34656>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55c2023bd860 <g_ctx+34656>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007f31b2a95a01 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55c2023bd810 <g_ctx+34576>, cond=0x55c2023bd838 <g_ctx+34616>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x55c2023bd838 <g_ctx+34616>, mutex=mutex@entry=0x55c2023bd810 <g_ctx+34576>) at ./nptl/pthread_cond_wait.c:627
+#5  0x000055c2023b1d63 in lq_pop (q=q@entry=0x55c2023b57f8 <g_ctx+1784>, out=out@entry=0x7f31b293abc0) at log_queue.c:46
+#6  0x000055c2023b15db in logger_thread (arg=0x55c2023b5100 <g_ctx>) at logger_thread.c:50
+#7  0x00007f31b2a96a83 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007f31b2b288e0 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 4 (Thread 0x7f31b297c640 (LWP 44048) "sms_app_x86"):
+#0  alert_thread (arg=0x55c2023b5100 <g_ctx>) at alert_thread.c:27
+#1  0x00007f31b2a96a83 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#2  0x00007f31b2b288e0 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 3 (Thread 0x7f31b29bd640 (LWP 44047) "process"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55c2023b57c0 <g_ctx+1728>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55c2023b57c0 <g_ctx+1728>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55c2023b57c0 <g_ctx+1728>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007f31b2a95a01 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55c2023b5770 <g_ctx+1648>, cond=0x55c2023b5798 <g_ctx+1688>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x55c2023b5798 <g_ctx+1688>, mutex=mutex@entry=0x55c2023b5770 <g_ctx+1648>) at ./nptl/pthread_cond_wait.c:627
+#5  0x000055c2023b1a7b in cb_pop (cb=cb@entry=0x55c2023b5140 <g_ctx+64>, out=out@entry=0x7f31b29bcc50) at circular_buffer.c:76
+#6  0x000055c2023b0ddd in processor_thread (arg=0x55c2023b5100 <g_ctx>) at processor_thread.c:51
+#7  0x00007f31b2a96a83 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007f31b2b288e0 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 2 (Thread 0x7f31b29fe640 (LWP 44046) "sensor"):
+#0  0x00007f31b2ae77b8 in __GI___clock_nanosleep (clock_id=clock_id@entry=1, flags=flags@entry=1, req=req@entry=0x7f31b29fdcc0, rem=rem@entry=0x0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x000055c2023b0335 in sensor_thread (arg=0x55c2023b5100 <g_ctx>) at sensor_thread.c:131
+#2  0x00007f31b2a96a83 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#3  0x00007f31b2b288e0 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 1 (Thread 0x7f31b29ff740 (LWP 44043) "sms_app_x86"):
+#0  0x00007f31b2ae77b8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffd2622d510, rem=rem@entry=0x7ffd2622d510) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007f31b2aec637 in __GI___nanosleep (req=req@entry=0x7ffd2622d510, rem=rem@entry=0x7ffd2622d510) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00007f31b2aec56e in __sleep (seconds=0, seconds@entry=1) at ../sysdeps/posix/sleep.c:55
+#3  0x000055c2023afcee in main (argc=<optimized out>, argv=<optimized out>) at sms_app.c:183
+[Thread 0x7f31b293b640 (LWP 44049) exited]
+[Thread 0x7f31b29bd640 (LWP 44047) exited]
+[Thread 0x7f31b297c640 (LWP 44048) exited]
+[Thread 0x7f31b29fe640 (LWP 44046) exited]
+[Inferior 1 (process 44043) exited normally]
+
+--- finished ---
+No threads.

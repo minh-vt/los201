@@ -1,0 +1,14 @@
+===== Jitter report: TARGET (SCHED_FIFO) =====
+samples : 1051
+Min     : 143 us
+Avg     : 292.1 us
+Max     : 533 us
+P99     : 441 us
+Histogram:
+  [    0,  100) us : 0 (0.0%)
+  [  100,  500) us : 1050 (99.9%)
+  [  500, 1000) us : 1 (0.1%)
+  [ 1000,  inf) us : 0 (0.0%)
+[MAIN] jitter report written to /tmp/jitter_other.txt
+[MAIN] clean exit
+===== Jitter report: TARGET (SCHED_FIFO) =====

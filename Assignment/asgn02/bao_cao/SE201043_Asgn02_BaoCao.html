@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>SE201043 - Assignment 02</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+  body { font-family: "Noto Sans","DejaVu Sans",Arial,sans-serif; font-size: 12pt; line-height: 1.55; color:#1a1a1a; margin:0; }
+  h1 { font-size: 21pt; text-align:center; margin:0 0 2px 0; }
+  h2 { font-size: 14pt; text-align:center; color:#2E75B6; margin:0 0 16px 0; font-weight:600; }
+  h3 { font-size: 14pt; color:#1F4E79; border-bottom:2px solid #2E75B6; padding-bottom:3px; margin-top:24px; page-break-after:avoid; }
+  h4 { font-size: 12.5pt; color:#2E75B6; margin:16px 0 6px 0; page-break-after:avoid; }
+  p { margin:7px 0; text-align:justify; }
+  ul,ol { margin:6px 0 8px 0; padding-left:24px; }
+  li { margin:4px 0; }
+  table { border-collapse:collapse; width:100%; margin:10px 0; font-size:10.5pt; }
+  th,td { border:1px solid #9dc3e6; padding:5px 7px; vertical-align:top; }
+  th { background:#2E75B6; color:#fff; }
+  tr:nth-child(even) td { background:#f2f7fc; }
+  .info td:first-child { width:32%; font-weight:600; background:#eaf2fa; }
+  pre { font-family:"DejaVu Sans Mono",monospace; font-size:9.5pt; background:#f4f6f8;
+        border:1px solid #d6dde4; border-left:4px solid #2E75B6; padding:9px 11px; border-radius:3px;
+        white-space:pre-wrap; page-break-inside:avoid; }
+  code { font-family:"DejaVu Sans Mono",monospace; font-size:10pt; }
+  .diagram { background:#0f172a; color:#cbd5e1; padding:12px; border-radius:4px;
+             font-family:"DejaVu Sans Mono",monospace; font-size:7.8pt; line-height:1.32;
+             white-space:pre; overflow:hidden; }
+  .shot { text-align:center; margin:12px 0 4px 0; page-break-inside:avoid; }
+  .shot img { max-width:100%; max-height:175mm; height:auto; border:1px solid #b9c6d3; border-radius:3px; }
+  .cap { font-size:10pt; font-style:italic; color:#555; margin:4px 0 14px 0; text-align:center; }
+  .note { background:#fff8e1; border-left:4px solid #f0ad4e; padding:8px 11px; margin:10px 0; font-size:10.5pt; }
+  .ok { background:#eafaf1; border-left:4px solid #27ae60; padding:8px 11px; margin:10px 0; font-size:10.5pt; }
+  .pagebreak { page-break-before:always; }
+  .q { background:#eef4fb; border-left:4px solid #2E75B6; padding:7px 11px; margin:14px 0 6px 0; font-weight:600; }
+</style>
+</head>
+<body>
+
+<h1>ASSIGNMENT 02 – SENSOR MONITORING SYSTEM</h1>
+<h2>Multi-thread · IPC · Kernel Driver · Memory · Debug · Real-Time (LOS201 Capstone)</h2>
+
+<h3>Mục 0: Thông tin sinh viên &amp; môi trường</h3>
+<table class="info">
+  <tr><td>Họ và tên / MSSV</td><td>Vũ Tùng Minh – SE201043</td></tr>
+  <tr><td>Lớp</td><td>AS2105 – LOS201 Embedded Linux Systems</td></tr>
+  <tr><td>Ngày thực hiện</td><td>17/10/2026</td></tr>
+  <tr><td>Target</td><td>ARMv7-A Cortex-A9 – QEMU <code>vexpress-a9</code>, 2 vCPU, 512 MB, Linux 5.15.0</td></tr>
+  <tr><td>Kernel target</td><td>5.15.0 + <code>CONFIG_POSIX_MQUEUE=y</code>, <code>CONFIG_HIGH_RES_TIMERS=y</code>, <code>CONFIG_HZ_1000=y</code></td></tr>
+  <tr><td>Toolchain / host</td><td><code>arm-linux-gnueabihf-gcc 11.4.0</code>; CachyOS x86_64 + Ubuntu 22.04 container (Podman); QEMU 6.2.0; Valgrind 3.18.1; strace 5.16; perf 5.15; GDB 12.1</td></tr>
+</table>
+
+<h3>Mục 1: Thiết kế kiến trúc</h3>
+<h4>1.1. Sơ đồ hệ thống</h4>
+<div class="diagram">
+┌──────────────────────────── KERNEL SPACE ────────────────────────────────┐
+│  sms_sensor_driver.ko  (major 242)                                       │
+│    /dev/sms_sensor  read() -> "<ts_ms>,<temp>,<humid>\n"                  │
+│                     ioctl SMS_SET_INTERVAL (min interval ms)              │
+│    /proc/sms_stats  read_count, last_temp/humid, uptime                   │
+└───────────────────────────────▲──────────────────────────────────────────┘
+                                 │ read()/ioctl()      (driver mode)
+┌───────────────────────────────┴──────────────────────────────────────────┐
+│                           sms_app  (USER SPACE)                          │
+│  ┌───────────────┐   cb_push    ┌───────────────────┐  mq_send  ┌──────┐ │
+│  │ SENSOR thread │────────────► │  shared_buffer    │ ────────► │POSIX │ │
+│  │ SCHED_FIFO 50 │              │ circular 64 slots │           │ mq   │ │
+│  │ clock_nanosleep│              │ mutex + cond vars │           │ /sms_│ │
+│  │ jitter meter  │              └─────────▲─────────┘           │alarm │ │
+│  └───────────────┘                        │ cb_pop (blocking)   └──┬───┘ │
+│                                    ┌──────┴─────────┐  mq_receive  │     │
+│                                    │PROCESSOR thread│◄─────────────┘     │
+│                                    │ rolling avg 10 │  ┌───────────────┐ │
+│                                    │ threshold det. │─►│ ALERT thread  │ │
+│                                    └──────┬─────────┘  │ stderr + count│ │
+│                                           │ lq_push     └──────┬────────┘ │
+│                                    ┌──────▼─────────┐  lq_push  │        │
+│                                    │  log_queue     │◄──────────┘        │
+│                                    │ mutex + cond   │                    │
+│                                    └──────┬─────────┘                    │
+│                                    ┌──────▼─────────┐                     │
+│                                    │ LOGGER thread  │──►/tmp/sms.log      │
+│                                    │ flush 5s, 1MiB │   (rotate .1)       │
+│                                    └────────────────┘                     │
+└───────────────────────────────────────────────────────────────────────────┘
+</div>
+
+<h4>1.2. State machine của ứng dụng</h4>
+<pre>          sms_app [-i -t -h -d -v -s -o -j]
+                  │
+        ┌─────────▼─────────┐   open driver / ioctl interval / mq_open /
+        │       INIT        │   cb_init / lq_init / mlockall / setrlimit
+        └─────────┬─────────┘
+     error │      │ ok: create 4 threads
+           ▼      ▼
+     ┌──────────┐  ┌──────────────────────────────┐
+     │  EXIT≠0  │  │          RUNNING             │◄──┐ samples, alerts,
+     └──────────┘  │  (sleep loop, 1 s granularity)│   │ logs flow
+                   └──────────────┬───────────────┘   │
+        SIGINT/SIGTERM  hoặc  hết -d  │                 │
+                                      ▼                 │
+                        ┌───────────────────────────┐   │
+                        │        SHUTDOWN           │───┘  (until joined)
+                        │ stop=1; cb/lq_shutdown;   │
+                        │ join 4 threads; mq_close  │
+                        │ unlink; jitter report;    │
+                        │ close(fd); summary        │
+                        └─────────────┬─────────────┘
+                                      ▼
+                                  EXIT = 0</pre>
+
+<h4>1.3. Giải thích các quyết định thiết kế</h4>
+<ul>
+<li><b>Circular buffer thay vì linked list:</b> kích thước cố định 64 phần tử được cấp phát <b>một lần</b> khi khởi động, không <code>malloc/free</code> trong vòng lặp nóng ⇒ không phân mảnh heap, không rủi ro leak, độ phức tạp O(1) cho push/pop, hành vi dự đoán được trong hệ thống RT. Linked list sẽ cấp phát động mỗi mẫu, gây jitter do <code>malloc</code> và tăng nguy cơ leak.</li>
+<li><b>POSIX message queue cho alarm thay vì shared memory:</b> alarm là sự kiện <b>rời rạc, có thứ tự, cần "đánh thức"</b> một thread đang block; mqueue cho sẵn <code>mq_send/mq_receive</code> với hàng đợi có biên và độ ưu tiên message. Shared memory thuần sẽ phải tự xây cơ chế đồng bộ và báo hiệu, dễ sai. Mqueue là message-oriented nên khớp tự nhiên với ngữ nghĩa "mỗi alarm là một message có kiểu + giá trị".</li>
+<li><b>Logger thread tách riêng:</b> I/O ghi file chậm và có thể block (page cache, flash). Nếu Sensor/Processor ghi log trực tiếp, chu kỳ lấy mẫu sẽ bị ảnh hưởng. Tách logger + <code>log_queue</code> biến ghi log thành bất đồng bộ: producer chỉ <code>lq_push</code> (O(1)), còn ghi đĩa/flush/rotate do một thread riêng lo. Đây là mô hình producer-consumer kinh điển để bảo vệ deadline.</li>
+<li><b>Sensor Thread dùng SCHED_FIFO + clock_nanosleep(TIMER_ABSTIME) + 0 giới hạn động:</b> deadline tuyệt đối không trôi; RT priority đảm bảo thread lấy mẫu chạy trước các thread CFS (processor/alert/logger) để không bỏ mẫu.</li>
+</ul>
+
+<div class="pagebreak"></div>
+<h3>Mục 2: Phân tích đồng bộ thread</h3>
+<h4>2.1. Shared data và cơ chế bảo vệ</h4>
+<table>
+  <tr><th>Shared data</th><th>Thread ghi</th><th>Thread đọc</th><th>Cơ chế bảo vệ</th></tr>
+  <tr><td><code>CircularBuffer</code> (items/head/tail/size)</td><td>Sensor</td><td>Processor</td><td><code>cb-&gt;mutex</code> + <code>not_empty</code>/<code>not_full</code></td></tr>
+  <tr><td>log queue <code>items/head/tail/size</code></td><td>Sensor, Processor, Alert</td><td>Logger</td><td><code>lq-&gt;mutex</code> + <code>not_empty</code></td></tr>
+  <tr><td><code>total_samples</code>, <code>total_alerts[]</code></td><td>Processor, Alert</td><td>main (summary)</td><td><code>stats_mutex</code></td></tr>
+  <tr><td><code>alarm_mq</code></td><td>Processor (mq_send)</td><td>Alert (mq_timedreceive)</td><td>kernel mqueue (nguyên tử, có biên)</td></tr>
+  <tr><td><code>stop</code></td><td>signal handler / main</td><td>mọi thread</td><td><code>volatile sig_atomic_t</code> + barrier cond broadcast</td></tr>
+</table>
+
+<h4>2.2. Chứng minh không deadlock (lock-order analysis)</h4>
+<p>Bốn điều kiện Coffman cần cho deadlock: mutual exclusion, hold-and-wait, no preemption, circular wait. Trong SMS, <b>không thread nào giữ đồng thời hai lock</b>: mỗi vùng găng chỉ <code>lock</code> đúng một mutex (<code>cb-&gt;mutex</code> <i>hoặc</i> <code>lq-&gt;mutex</code> <i>hoặc</i> <code>stats_mutex</code>) rồi <code>unlock</code> trước khi thực hiện thao tác cần lock khác. Vì vậy <b>không tồn tại cạnh "hold-and-wait" giữa hai lock</b> ⇒ đồ thị cấp phát tài nguyên (Resource Allocation Graph) không thể có chu trình ⇒ không deadlock. Khi cần gửi message trong lúc đang giữ lock, code cố tình copy ra biến cục bộ rồi mới gọi <code>mq_send</code> sau khi unlock, đảm bảo thứ tự lock là tuyến tính (mỗi thread chỉ một lock tại một thời điểm).</p>
+
+<h4>2.3. Race condition đã phát hiện và sửa</h4>
+<div class="note"><b>Race #1 – cờ dừng bị cache:</b> phiên bản đầu khai báo <code>int stop;</code> và signal handler ghi <code>stop = 1</code>. Trình biên dịch có thể giữ <code>stop</code> trong thanh ghi ở vòng lặp Sensor nên thread không bao giờ thấy thay đổi ⇒ chương trình không thoát sạch. <b>Sửa:</b> đổi thành <code>volatile sig_atomic_t stop;</code> và đánh thức các thread đang block bằng broadcast cond (vì cond/ mqueue không tự biết cờ dừng).</div>
+<div class="note"><b>Race #2 – byte padding chưa khởi tạo khi gửi qua mqueue:</b> <code>AlarmMsg</code> có 4 byte padding giữa <code>int type</code> và <code>double value</code>; <code>mq_send()</code> gửi cả <code>sizeof(msg)</code> nên Valgrind báo <i>“Syscall param mq_timedsend(msg_ptr) points to uninitialised byte(s)”</i> (159 lỗi). <b>Sửa:</b> <code>memset(&amp;msg, 0, sizeof(msg))</code> trước khi điền trường ⇒ Valgrind sạch 0 lỗi.</div>
+<div class="note"><b>Race #3 (hiệu năng) – busy-poll mqueue:</b> vì queue mở <code>O_NONBLOCK</code> để sender không block, đầu nhận <code>mq_timedreceive()</code> trả <code>EAGAIN</code> ngay khi rỗng khiến Alert Thread quay nóng 2,14&nbsp;triệu lần trong 20&nbsp;s. <b>Sửa:</b> khi <code>EAGAIN</code> thì <code>nanosleep(20&nbsp;ms)</code> rồi thử lại ⇒ giảm ~2000 lần số syscall (xem Mục 4).</div>
+
+<div class="pagebreak"></div>
+<h3>Mục 3: Tích hợp Driver &amp; Kiểm chứng (Task 2)</h3>
+<p>Driver <code>sms_sensor.ko</code> đăng ký char device <code>/dev/sms_sensor</code> major 242, tạo <code>/proc/sms_stats</code> và hỗ trợ <code>ioctl SMS_SET_INTERVAL</code>. Ứng dụng mở device bằng <code>open()</code> (đường dẫn từ <code>#define</code>), cấu hình interval khớp tham số <code>-i</code>, xử lý <code>EAGAIN</code> bằng retry và đóng fd khi shutdown. Kết quả 60&nbsp;s với <code>-i 500</code>:</p>
+<table>
+  <tr><th>Chỉ số</th><th>Trước chạy</th><th>Sau chạy 60 s</th><th>Kỳ vọng đề bài</th></tr>
+  <tr><td><code>read_count</code> (/proc/sms_stats)</td><td>0</td><td><b>120</b></td><td>≈120 (±10)</td></tr>
+  <tr><td><code>min_interval_ms</code></td><td>100 (mặc định)</td><td>500 (do ioctl)</td><td>khớp <code>-i</code></td></tr>
+  <tr><td>samples processed</td><td>–</td><td>119</td><td>–</td></tr>
+  <tr><td>buffer overflow</td><td>–</td><td>0</td><td>0</td></tr>
+</table>
+<div class="shot"><img src="sms_boot_driver.png"></div>
+<div class="cap">Hình 1: QEMU boot – rcS nạp <code>sms_sensor_driver.ko</code>, đăng ký <code>/dev/sms_sensor</code> (242,0) và <code>/proc/sms_stats</code> hiển thị thống kê trước khi chạy.</div>
+
+<div class="shot"><img src="sms_app_run.png"></div>
+<div class="cap">Hình 2: <code>sms_app -i 500 -d 60 -v</code> – 4 thread khởi động, Sensor đọc mẫu và in jitter, Alert in cảnh báo TEMP_HIGH/HUMID_HIGH/TEMP_SPIKE ra stderr.</div>
+
+<div class="shot"><img src="sms_summary.png"></div>
+<div class="cap">Hình 3: Shutdown sạch sau 60 s – tổng kết samples/alerts/overflow, báo cáo jitter; <code>/proc/sms_stats</code> sau chạy xác nhận read_count = 120.</div>
+
+<div class="shot"><img src="sms_log.png"></div>
+<div class="cap">Hình 4: <code>/tmp/sms.log</code> do Logger Thread tạo – mỗi dòng có timestamp đầy đủ và entry từ cả ba nguồn SENSOR/PROCESS/ALERT.</div>
+
+<div class="pagebreak"></div>
+<h3>Mục 4: Debug &amp; Profiling (Task 3)</h3>
+<h4>4.1. GDB – debug đa luồng (Kịch bản A)</h4>
+<p>Đặt breakpoint trong Processor và Alert thread, chạy với <code>--sim</code>, quan sát trạng thái tất cả thread và các biến của circular buffer. Session xác nhận mỗi thread đang block đúng chỗ đồng bộ: sensor ngủ trên <code>clock_nanosleep</code>, processor chờ cond <code>not_empty</code> trong <code>cb_pop</code>, logger chờ <code>lq_pop</code>, alert trong <code>mq_timedreceive</code>.</p>
+<div class="shot"><img src="sms_gdb.png"></div>
+<div class="cap">Hình 5: <code>info threads</code> + <code>thread apply all bt</code>; con trỏ buffer <code>head/tail/size</code> đọc trực tiếp từ <code>g_ctx</code>.</div>
+
+<h4>4.2. Valgrind – rò rỉ bộ nhớ</h4>
+<p>Chạy bản x86_64 (<code>--sim</code>) dưới memcheck 30 s:</p>
+<div class="shot"><img src="sms_valgrind.png"></div>
+<div class="cap">Hình 6: HEAP SUMMARY <b>0 bytes in use at exit</b>, 18 allocs = 18 frees, <b>0 errors</b> – không có <code>definitely/indirectly lost</code>.</div>
+
+<h4>4.3. strace – system call pattern</h4>
+<p><code>strace -f -c</code> trong 20 s. Trước tối ưu, syscall trội là <code>mq_timedreceive</code> với <b>2.143.153</b> lần (busy-poll). Sau khi sửa, còn <b>1058</b> lần – ứng dụng chuyển từ thiên I/O/bận sang chờ đúng cách.</p>
+<div class="shot"><img src="sms_strace_before.png"></div>
+<div class="cap">Hình 7a: strace TRƯỚC – <code>mq_timedreceive</code> 2,14M call, CPU gần 1 core.</div>
+<div class="shot"><img src="sms_strace_after.png"></div>
+<div class="cap">Hình 7b: strace SAU – <code>clock_nanosleep</code>/<code>futex</code> chiếm thời gian, <code>mq_timedreceive</code> chỉ còn 1058 call.</div>
+
+<h4>4.4. perf – CPU hotspot</h4>
+<p><code>perf record --all-user -g</code> trên host rồi <code>perf report</code>. Trước tối ưu, thread <b>alert</b> chiếm phần lớn CPU: ~30% trong <code>__vdso_clock_gettime</code> và ~19% trong <code>mq_timedreceive</code> – đúng dấu hiệu quay nóng do <code>O_NONBLOCK</code>. Sau khi thêm <code>nanosleep</code> khi EAGAIN, <code>perf stat</code> cho thấy <b>task-clock giảm từ 15.003 ms xuống 62 ms</b> cho cùng thời lượng 15 s (0.987 → 0.004 CPU).</p>
+<div class="shot"><img src="sms_perf_before.png"></div>
+<div class="cap">Hình 8: perf report TRƯỚC – hotspot nằm ở Alert Thread (<code>clock_gettime</code> + <code>mq_timedreceive</code>).</div>
+
+<div class="pagebreak"></div>
+<h3>Mục 5: Real-Time &amp; Tối ưu hóa (Task 4)</h3>
+<h4>5.1. Đo jitter Sensor Thread – SCHED_FIFO vs SCHED_OTHER</h4>
+<p>Chạy hai lần, mỗi lần <code>-i 200</code> trong 60 s (≥1000 mẫu), khác nhau ở cờ <code>-o</code> (SCHED_OTHER). Sensor Thread dùng <code>clock_nanosleep(CLOCK_MONOTONIC, TIMER_ABSTIME)</code>, đo <code>actual&nbsp;−&nbsp;expected</code> mỗi chu kỳ.</p>
+<table>
+  <tr><th>Chỉ số</th><th>SCHED_FIFO (prio 50)</th><th>SCHED_OTHER (CFS)</th><th>Cải thiện</th></tr>
+  <tr><td>Samples</td><td>1051</td><td>1051</td><td>–</td></tr>
+  <tr><td>Min latency</td><td>109 µs</td><td>143 µs</td><td>−24%</td></tr>
+  <tr><td>Avg latency</td><td>162.2 µs</td><td>292.1 µs</td><td><b>−44.5%</b></td></tr>
+  <tr><td>P99 latency</td><td>286 µs</td><td>441 µs</td><td><b>−35.1%</b></td></tr>
+  <tr><td>Max latency</td><td>431 µs</td><td>533 µs</td><td>−19.1%</td></tr>
+  <tr><td>Histogram &lt;500 µs</td><td>100.0%</td><td>99.9%</td><td>–</td></tr>
+</table>
+<div class="shot"><img src="sms_jitter_cmp.png" style="max-width:72%"></div>
+<div class="cap">Hình 9: Báo cáo jitter (Min/Avg/Max/P99 + histogram) cho hai chế độ lập lịch. (Lưu ý: ứng dụng in nhãn chung “SCHED_FIFO”; lần chạy thứ hai thực tế dùng cờ <code>-o</code> = SCHED_OTHER.)</div>
+
+<h4>5.2. Phân tích &amp; trả lời câu hỏi Task 4</h4>
+<div class="q">SCHED_FIFO có cải thiện jitter so với SCHED_OTHER không? Bao nhiêu % ở P99?</div>
+<p>Có. Ở P99, jitter giảm từ <b>441 µs xuống 286 µs (~35%)</b>; trung bình giảm ~44%. Nguyên nhân: Sensor Thread FIFO luôn được đưa lên chạy trước các thread CFS (processor/alert/logger) khi thức giấc, nên ít bị trễ do tranh CPU; CFS chia sẻ CPU công bằng nên thread lấy mẫu phải chờ khi các thread khác đang chạy.</p>
+<div class="q">Ngưỡng jitter tối đa chấp nhận được cho hệ thống đọc cảm biến chu kỳ 500 ms? Kết quả có đạt không?</div>
+<p>Với cảm biến công nghiệp chu kỳ 500 ms, sai số cho phép thường ≤ vài % chu kỳ, tức khoảng <b>&lt; 5 ms</b> (nhiều hệ thống còn yêu cầu &lt; 1 ms). Kết quả FIFO có Max 431 µs và P99 286 µs – <b>đạt</b> ngưỡng &lt; 5 ms một cách thoải mái và cả &lt; 1 ms.</p>
+<div class="q">Nếu cần giảm jitter hơn nữa thì làm gì?</div>
+<ul>
+<li><b>PREEMPT_RT kernel:</b> biến hầu hết IRQ handler thành kernel thread ưu tiên, loại bỏ vùng không thể preempt – đây là cải thiện lớn nhất (kết quả QEMU ở trên còn bị ảnh hưởng bởi nhân PREEMPT_NONE).</li>
+<li><b>CPU isolation / cpuset:</b> cô lập một core cho Sensor Thread (<code>isolcpus</code> / cpuset) để không bị các task khác chen vào.</li>
+<li><b>IRQ affinity:</b> gom ngắt (timer, mạng) sang core khác với core chạy sensor; tăng <code>HZ</code>/dùng hrtimer (đã bật HIGH_RES_TIMERS + HZ=1000).</li>
+<li><b>Giảm công việc trong đường nóng:</b> tránh <code>printf</code> trong Sensor khi verbose, ưu tiên biến atomic thay vì lock, dùng <code>mlockall</code> (đã làm) để tránh page fault.</li>
+</ul>
+
+<div class="pagebreak"></div>
+<h3>Mục 6: Đo lường bộ nhớ (Task 2)</h3>
+<p>Chạy <code>sms_app -i 500 -d 120</code> trong QEMU, đọc <code>/proc/PID/status</code> tại T=5 s, 30 s, 55 s và <code>/proc/PID/maps</code>.</p>
+<table>
+  <tr><th>Chỉ số</th><th>T = 5 s</th><th>T = 30 s</th><th>T = 55 s</th><th>Xu hướng</th></tr>
+  <tr><td>VmSize</td><td>3 648 kB</td><td>3 648 kB</td><td>3 648 kB</td><td>không đổi</td></tr>
+  <tr><td>VmRSS</td><td>2 536 kB</td><td>2 536 kB</td><td>2 536 kB</td><td><b>không tăng</b> (no leak)</td></tr>
+  <tr><td>VmData</td><td>2 128 kB</td><td>2 128 kB</td><td>2 128 kB</td><td>không đổi</td></tr>
+  <tr><td>Threads</td><td>5</td><td>5</td><td>5</td><td>main + 4 worker</td></tr>
+</table>
+<p>RSS phẳng suốt thời gian chạy chứng minh circular buffer (cấp phát 64 slot một lần) và log queue (128 slot cố định) không phình theo thời gian – khớp với kết quả Valgrind 0 byte lost.</p>
+<div class="shot"><img src="sms_mem.png"></div>
+<div class="cap">Hình 10: VmRSS/VmSize tại 3 thời điểm và 5+ vùng trong <code>/proc/PID/maps</code>.</div>
+<p><b>Giải thích các vùng trong maps (ứng dụng static nên không có shared libs):</b></p>
+<ol>
+<li><code>00010000-00083000 r-xp /usr/bin/sms_app</code> – <b>text</b> (mã máy).</li>
+<li><code>00093000-00095000 r--p /usr/bin/sms_app</code> – <b>rodata</b> (hằng, chuỗi).</li>
+<li><code>00095000-00097000 rw-p /usr/bin/sms_app</code> – <b>data + bss</b> (biến toàn cục <code>g_ctx</code>).</li>
+<li><code>00097000-00188000 rw-p [heap]</code> – <b>heap</b> (các cấp phát nhỏ, buffer libc).</li>
+<li><code>76e8f000-…-76f92000</code> – <b>4 thread stack</b> (mỗi stack 256 kB + 1 guard page <code>---p</code>), tương ứng sensor/processor/alert/logger.</li>
+<li><code>7ea78000-7ea99000 [stack]</code> – stack của main; <code>[vdso]/[vvar]/[sigpage]/[vectors]</code> – vùng nhân hỗ trợ syscall/signal.</li>
+</ol>
+
+<h3>Mục 7: Reflection</h3>
+<h4>7.1. Kỹ năng khó nhất và cách vượt qua</h4>
+<p>Khó nhất là <b>đồng bộ hóa nhiều thread</b> và <b>đảm bảo shutdown sạch</b>: một thread đang block trên condition variable sẽ không tự biết cờ <code>stop</code> đã bật. Ban đầu chương trình treo ở <code>pthread_join</code> vì Processor/Logger vẫn nằm trong <code>pthread_cond_wait</code>. Tôi giải quyết bằng cách thêm hàm <code>cb_shutdown()</code>/<code>lq_shutdown()</code> broadcast cho mọi waiter, và cho Alert Thread dùng <code>mq_timedreceive</code> với timeout để định kỳ kiểm tra cờ dừng. Đây là bài học về việc thiết kế "wake-up path" ngay từ đầu chứ không phải thêm sau.</p>
+<h4>7.2. Nếu làm lại sẽ thiết kế khác gì</h4>
+<p>Tôi sẽ dùng <b>eventfd + epoll</b> hoặc một "shutdown pipe" để đánh thức đồng loạt thay vì broadcast từng cấu trúc, và tách rõ <b>driver abstraction layer</b> (một interface <code>sensor_source</code>) ngay từ đầu để chế độ <code>--sim</code> không cần rẽ nhánh trong vòng lặp. Tôi cũng sẽ thêm <b>unit test cho circular buffer</b> (đẩy/pop đồng thời) và dùng <code>perf</code> ngay từ khi viết thay vì phát hiện busy-poll muộn.</p>
+<h4>7.3. Kỹ năng dùng nhiều nhất khi đi làm</h4>
+<p><b>Đọc và gỡ lỗi ở tầng hệ thống</b>: dùng <code>dmesg</code>/<code>strace</code>/<code>perf</code>/<code>/proc</code> để lần ra nguyên nhân thay vì đoán; cùng với <b>quản lý đồng bộ và vòng đời tài nguyên</b> trong đa luồng. Đây là những thứ xuất hiện hàng ngày khi phát triển firmware dịch vụ chạy dài.</p>
+<h4>7.4. Cải tiến muốn thêm cho SMS</h4>
+<p>Thêm <b>publish MQTT/HTTP</b> để đẩy dữ liệu cảm biến ra dashboard, và <b>lưu cấu hình/ngưỡng xuống JFFS2</b> trên NAND để giữ cấu hình qua reset (tái dùng kiến thức MTD/JFFS2 của LAB-02). Ngoài ra có thể thêm adaptive sampling: khi phát hiện bất thường thì tự giảm chu kỳ lấy mẫu để bám sát hiện tượng.</p>
+
+<div class="ok"><b>Kết luận:</b> Hệ thống chạy 60 s ổn định với 4 thread song song, 119 mẫu, 0 buffer overflow, 120 lần đọc driver (khớp kỳ vọng), shutdown sạch qua SIGINT. Valgrind 0 leak/0 lỗi; jitter SCHED_FIFO P99 286 µs (tốt hơn CFS ~35%); perf phát hiện và tối ưu được hotspot giảm ~240× CPU.</div>
+
+</body>
+</html>

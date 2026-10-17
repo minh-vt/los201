@@ -1,0 +1,293 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 185  of event 'cpu_core/cycles:u/'
+# Event count (approx.): 13137623
+#
+# Children      Self  Command  Shared Object     Symbol                  
+# ........  ........  .......  ................  ........................
+#
+    27.14%     0.00%  alert    [unknown]         [.] 0x383931323937313d
+            |
+            ---0x383931323937313d
+               |          
+               |--7.85%--alert_thread
+               |          
+               |--5.66%--clock_gettime
+               |          
+               |--3.72%--mq_timedreceive
+               |          
+                --3.68%--clock_nanosleep
+
+    15.24%     0.00%  process  [unknown]         [.] 0000000000000000
+            |
+            ---0
+               |          
+                --14.33%--0x7f93ece4d440
+                          |          
+                           --12.82%--0x7f93ecc6e54a
+
+    14.33%     0.00%  process  [unknown]         [.] 0x69667a7400524944
+            |
+            ---0x69667a7400524944
+               0
+               0x7f93ece4d440
+               |          
+                --12.82%--0x7f93ecc6e54a
+
+    14.33%     0.00%  process  [unknown]         [.] 0x00007f93ece4d440
+            |
+            ---0x7f93ece4d440
+               |          
+                --12.82%--0x7f93ecc6e54a
+
+    12.82%     0.00%  process  libc.so.6         [.] 0x00007f93ecc6e54a
+            |
+            ---0x7f93ecc6e54a
+
+    12.51%     0.00%  logger   [unknown]         [.] 0x00007f93ecf38010
+            |
+            ---0x7f93ecf38010
+               |          
+               |--4.45%--__strftime_l
+               |          
+               |--3.80%--__vdso_time
+               |          
+                --2.02%--clock_gettime
+
+     7.85%     7.85%  alert    sms_app_x86       [.] alert_thread
+            |
+            ---0x383931323937313d
+               alert_thread
+
+     5.66%     3.72%  alert    libc.so.6         [.] clock_gettime
+            |          
+             --3.72%--0x383931323937313d
+                       clock_gettime
+
+     5.41%     0.00%  logger   [unknown]         [.] 0x0000001100000007
+            |
+            ---0x1100000007
+               |          
+                --3.17%--0x7f93eccf532c
+                          |          
+                           --2.29%--0x7f93eccf6f13
+
+     4.93%     0.00%  process  [unknown]         [.] 0x00007f93ecffcc30
+            |
+            ---0x7f93ecffcc30
+
+     4.57%     0.00%  logger   libc.so.6         [.] 0x00007f93eccf532c
+            |
+            ---0x7f93eccf532c
+               |          
+                --2.29%--0x7f93eccf6f13
+
+     4.56%     0.00%  logger   [unknown]         [.] 0000000000000000
+            |
+            ---0
+
+     4.45%     0.50%  logger   libc.so.6         [.] __strftime_l
+            |          
+             --3.95%--__strftime_l
+
+     3.80%     3.80%  logger   [vdso]            [.] __vdso_time
+            |
+            ---0x7f93ecf38010
+               __vdso_time
+
+     3.72%     3.72%  alert    libc.so.6         [.] mq_timedreceive
+            |
+            ---0x383931323937313d
+               mq_timedreceive
+
+     3.68%     1.83%  alert    libc.so.6         [.] clock_nanosleep
+     3.32%     3.32%  logger   libc.so.6         [.] pthread_cond_wait
+     2.81%     0.00%  process  [unknown]         [.] 0x4044000000000000
+            |
+            ---0x4044000000000000
+
+     2.59%     0.00%  logger   [unknown]         [.] 0x00007f93ecf7ab70
+            |
+            ---0x7f93ecf7ab70
+
+     2.42%     2.42%  process  libc.so.6         [.] pthread_cond_wait
+     2.37%     2.37%  alert    [vdso]            [.] __vdso_clock_gettime
+            |
+            ---0x383931323937313d
+
+     2.29%     0.00%  logger   libc.so.6         [.] 0x00007f93eccf6f13
+            |
+            ---0x7f93eccf6f13
+
+     2.11%     0.00%  logger   [unknown]         [.] 0x0000000000000003
+            |
+            ---0x3
+
+     2.02%     1.36%  logger   libc.so.6         [.] clock_gettime
+
+
+# Samples: 215  of event 'cpu_atom/cycles:u/'
+# Event count (approx.): 18470473
+#
+# Children      Self  Command      Shared Object         Symbol                  
+# ........  ........  ...........  ....................  ........................
+#
+    40.58%     0.00%  alert        [unknown]             [.] 0x383931323937313d
+            |
+            ---0x383931323937313d
+               |          
+               |--9.58%--clock_nanosleep
+               |          
+               |--9.42%--alert_thread
+               |          
+               |--7.53%--clock_gettime
+               |          
+               |--4.27%--mq_timedreceive
+               |          
+               |--3.18%--__vdso_clock_gettime
+               |          
+                --2.55%--__errno_location
+
+     9.91%     9.91%  alert        sms_app_x86           [.] alert_thread
+            |
+            ---0x383931323937313d
+               |          
+                --9.42%--alert_thread
+
+     9.58%     3.01%  alert        libc.so.6             [.] clock_nanosleep
+            |          
+            |--6.56%--clock_nanosleep
+            |          
+             --3.01%--0x383931323937313d
+                       clock_nanosleep
+
+     8.02%     0.00%  sensor       [unknown]             [.] 0x69667a7400524944
+            |
+            ---0x69667a7400524944
+               0
+               0x7f93ece4d440
+               |          
+                --6.77%--0x7f93ecc6e54a
+
+     8.02%     0.00%  sensor       [unknown]             [.] 0000000000000000
+            |
+            ---0
+               0x7f93ece4d440
+               |          
+                --6.77%--0x7f93ecc6e54a
+
+     8.02%     0.00%  sensor       [unknown]             [.] 0x00007f93ece4d440
+            |
+            ---0x7f93ece4d440
+               |          
+                --6.77%--0x7f93ecc6e54a
+
+     7.53%     4.64%  alert        libc.so.6             [.] clock_gettime
+            |          
+            |--4.64%--0x383931323937313d
+            |          clock_gettime
+            |          
+             --2.89%--clock_gettime
+
+     7.42%     0.00%  logger       [unknown]             [.] 0000000000000000
+            |
+            ---0
+               |          
+                --6.17%--__isoc23_sscanf
+
+     6.84%     6.84%  alert        libc.so.6             [.] 0x00000000000b5a22
+            |
+            ---0x383931323937313d
+               |          
+                --6.56%--clock_nanosleep
+
+     6.77%     0.00%  sensor       libc.so.6             [.] 0x00007f93ecc6e54a
+            |
+            ---0x7f93ecc6e54a
+
+     6.17%     0.61%  logger       libc.so.6             [.] __isoc23_sscanf
+            |          
+             --5.56%--__isoc23_sscanf
+
+     4.35%     0.00%  logger       libc.so.6             [.] 0x00007f93eccf532c
+            |
+            ---0x7f93eccf532c
+
+     4.27%     4.00%  alert        libc.so.6             [.] mq_timedreceive
+            |          
+             --4.00%--0x383931323937313d
+                       mq_timedreceive
+
+     3.82%     3.82%  alert        [vdso]                [.] __vdso_clock_gettime
+            |
+            ---0x383931323937313d
+               |          
+                --3.18%--__vdso_clock_gettime
+
+     3.78%     0.00%  sensor       [unknown]             [.] 0x3931323937313d73
+            |
+            ---0x3931323937313d73
+
+     3.69%     0.00%  alert        [unknown]             [.] 0x69667a7400524944
+            |
+            ---0x69667a7400524944
+               0
+               0x7f93ece4d440
+               |          
+                --3.27%--0x7f93ecc6e54a
+
+     3.69%     0.00%  alert        [unknown]             [.] 0000000000000000
+            |
+            ---0
+               0x7f93ece4d440
+               |          
+                --3.27%--0x7f93ecc6e54a
+
+     3.69%     0.00%  alert        [unknown]             [.] 0x00007f93ece4d440
+            |
+            ---0x7f93ece4d440
+               |          
+                --3.27%--0x7f93ecc6e54a
+
+     3.56%     0.00%  sensor       [unknown]             [.] 0x00007f93ed03dc90
+            |
+            ---0x7f93ed03dc90
+
+     3.55%     0.00%  logger       [unknown]             [.] 0x0000001100000008
+            |
+            ---0x1100000008
+               |          
+                --3.19%--0x7f93eccf532c
+
+     3.27%     0.00%  alert        libc.so.6             [.] 0x00007f93ecc6e54a
+            |
+            ---0x7f93ecc6e54a
+
+     3.27%     0.00%  logger       [unknown]             [.] 0x00007f93ecf38010
+            |
+            ---0x7f93ecf38010
+
+     3.17%     2.45%  sensor       libc.so.6             [.] clock_gettime
+     2.78%     0.00%  logger       [unknown]             [.] 0x00007f93ecf7ab70
+            |
+            ---0x7f93ecf7ab70
+
+     2.55%     2.55%  alert        libc.so.6             [.] __errno_location
+            |
+            ---0x383931323937313d
+               __errno_location
+
+     2.25%     2.25%  alert        sms_app_x86           [.] 0x0000000000002504
+            |
+            ---0x383931323937313d
+               clock_gettime
+
+     2.24%     2.24%  sensor       sms_app_x86           [.] sensor_thread
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

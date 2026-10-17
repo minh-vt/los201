@@ -1,0 +1,7 @@
+sms_sensor driver statistics
+============================
+read_count       : 0
+last_temperature : 25.000 C
+last_humidity    : 55.000 %
+driver_uptime    : 21 s
+min_interval_ms  : 100

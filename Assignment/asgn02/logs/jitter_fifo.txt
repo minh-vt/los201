@@ -1,0 +1,1545 @@
+=== HOST (Ubuntu 22.04): $ qemu-system-arm -M vexpress-a9 -cpu cortex-a9 -m 512M -smp 2 -nographic \
+       -kernel /work/Assignment/asgn02/output/zImage \
+       -dtb /work/Assignment/asgn02/output/vexpress-v2p-ca9.dtb \
+       -initrd /work/Assignment/asgn02/output/initramfs_asgn2.cpio.gz \
+       -append 'console=ttyAMA0,115200 rdinit=/sbin/init mem=512M'
+
+qemu: module audio-audio-pa not found, do you want to install qemu-system-gui package?
+qemu: module audio-audio-jack not found, do you want to install qemu-system-gui package?
+qemu: module audio-audio-sdl not found, do you want to install qemu-system-gui package?
+qemu: module audio-audio-pa not found, do you want to install qemu-system-gui package?
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+Booting Linux on physical CPU 0x0
+Linux version 5.15.0 (root@minhvt) (arm-linux-gnueabihf-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #3 SMP Sat Oct 17 00:33:47 UTC 2026
+CPU: ARMv7 Processor [410fc090] revision 0 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+OF: fdt: Machine model: V2P-CA9
+Memory policy: Data cache writealloc
+Reserved memory: created DMA memory pool at 0x4c000000, size 8 MiB
+OF: reserved mem: initialized node vram@4c000000, compatible id shared-dma-pool
+cma: Reserved 16 MiB at 0x7f000000
+Zone ranges:
+  Normal   [mem 0x0000000060000000-0x000000007fffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000060000000-0x000000007fffffff]
+Initmem setup node 0 [mem 0x0000000060000000-0x000000007fffffff]
+percpu: Embedded 15 pages/cpu s30668 r8192 d22580 u61440
+Built 1 zonelists, mobility grouping on.  Total pages: 130048
+Kernel command line: console=ttyAMA0,115200 rdinit=/sbin/init mem=512M
+printk: log_buf_len individual max cpu contribution: 4096 bytes
+printk: log_buf_len total cpu_extra contributions: 12288 bytes
+printk: log_buf_len min size: 16384 bytes
+printk: log_buf_len: 32768 bytes
+printk: early log buf free: 14992(91%)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+mem auto-init: stack:off, heap alloc:off, heap free:off
+Memory: 488356K/524288K available (8192K kernel code, 594K rwdata, 1772K rodata, 1024K init, 150K bss, 19548K reserved, 16384K cma-reserved)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+trace event string verifier disabled
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU event tracing is enabled.
+rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+L2C: platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C: DT/platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 dynamic clock gating disabled, standby mode disabled
+L2C-310 cache controller enabled, 8 ways, 128 kB
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x46420001
+random: get_random_bytes called from start_kernel+0x4e4/0x69c with crng_init=0
+sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+clocksource: arm,sp804: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275 ns
+Failed to initialize '/bus@40000000/motherboard-bus@40000000/iofpga@7,00000000/timer@12000': -22
+smp_twd: clock not found -2
+Console: colour dummy device 80x30
+Calibrating local timer... 100.40MHz.
+Calibrating delay loop... 1888.25 BogoMIPS (lpj=944128)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+CPU: Testing write buffer coherency: ok
+CPU0: Spectre v2: using BPIALL workaround
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x60100000 - 0x60100060
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU1: Spectre v2: using BPIALL workaround
+CPU2: failed to boot: -38
+CPU3: failed to boot: -38
+smp: Brought up 1 node, 2 CPUs
+SMP: Total of 2 processors activated (3940.35 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 0
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+hw-breakpoint: debug architecture 0x4 unsupported.
+Serial: AMBA PL011 UART driver
+irq: type mismatch, failed to map hwirq-75 for interrupt-controller@1e001000!
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource arm,sp804
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+TCP bind hash table entries: 4096 (order: 3, 32768 bytes, linear)
+TCP: Hash tables configured (established 4096 bind 4096)
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+Unpacking initramfs...
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, 5 counters available
+workingset: timestamp_bits=30 max_order=17 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+9p: Installing v9fs 9p2000 file system support
+io scheduler mq-deadline registered
+io scheduler kyber registered
+sii902x 0-0060: supply iovcc not found, using dummy regulator
+sii902x 0-0060: supply cvcc12 not found, using dummy regulator
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x40000000-0x43ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x44000000-0x47ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+Concatenating MTD devices:
+(0): "40000000.flash"
+(1): "40000000.flash"
+into device "40000000.flash"
+Freeing initrd memory: 2524K
+physmap-flash 48000000.psram: physmap platform flash device: [mem 0x48000000-0x49ffffff]
+libphy: Fixed MDIO Bus: probed
+libphy: smsc911x-mdio: probed
+smsc911x 4e000000.ethernet eth0: MAC Address: 52:54:00:12:34:56
+isp1760 4f000000.usb: isp1760 bus width: 32, oc: digital
+isp1760 4f000000.usb: NXP ISP1760 USB Host Controller
+isp1760 4f000000.usb: new USB bus registered, assigned bus number 1
+isp1760 4f000000.usb: Scratch test failed. 0x00000000
+isp1760 4f000000.usb: can't setup: -19
+isp1760 4f000000.usb: USB bus 1 deregistered
+usbcore: registered new interface driver usb-storage
+ledtrig-cpu: registered to indicate activity on CPUs
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered PF_PACKET protocol family
+9pnet: Installing 9P2000 support
+Registering SWP/SWPB emulation handler
+aaci-pl041 10004000.aaci: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+aaci-pl041 10004000.aaci: FIFO 512 entries
+mmci-pl18x 10005000.mmci: Got CD GPIO
+mmci-pl18x 10005000.mmci: Got WP GPIO
+mmci-pl18x 10005000.mmci: mmc0: PL181 manf 41 rev0 at 0x10005000 irq 33,34 (pio)
+10009000.uart: ttyAMA0 at MMIO 0x10009000 (irq = 37, base_baud = 0) is a PL011 rev1
+printk: console [ttyAMA0] enabled
+1000a000.uart: ttyAMA1 at MMIO 0x1000a000 (irq = 38, base_baud = 0) is a PL011 rev1
+1000b000.uart: ttyAMA2 at MMIO 0x1000b000 (irq = 39, base_baud = 0) is a PL011 rev1
+1000c000.uart: ttyAMA3 at MMIO 0x1000c000 (irq = 40, base_baud = 0) is a PL011 rev1
+rtc-pl031 10017000.rtc: registered as rtc0
+rtc-pl031 10017000.rtc: setting system clock to 2026-10-17T00:45:57 UTC (1792197957)
+amba 10020000.clcd: Fixing up cyclic dependency with 0-0039
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+sii902x 0-0039: supply iovcc not found, using dummy regulator
+sii902x 0-0039: supply cvcc12 not found, using dummy regulator
+i2c i2c-0: Added multiplexed i2c bus 2
+drm-clcd-pl111 1001f000.clcd: assigned reserved memory node vram@4c000000
+drm-clcd-pl111 1001f000.clcd: using device-specific reserved memory
+drm-clcd-pl111 1001f000.clcd: core tile graphics present
+drm-clcd-pl111 1001f000.clcd: this device will be deactivated
+drm-clcd-pl111 1001f000.clcd: Versatile Express init failed - -19
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+drm-clcd-pl111 10020000.clcd: found bridge on endpoint 0
+drm-clcd-pl111 10020000.clcd: Using non-panel bridge
+[drm] Initialized pl111 1.0.0 20170317 for 10020000.clcd on minor 0
+input: AT Raw Set 2 keyboard as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10006000.kmi/serio0/input/input0
+Console: switching to colour frame buffer device 128x48
+drm-clcd-pl111 10020000.clcd: [drm] fb0: pl111 frame buffer device
+ALSA device list:
+  #0: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+Freeing unused kernel image (initmem) memory: 1024K
+Run /sbin/init as init process
+[ SMS ] starting system initialization...
+sms_sensor_driver: loading out-of-tree module taints kernel.
+sms_sensor: ready (major=242, /dev/sms_sensor)
+[ SMS ] sms_sensor_driver loaded OK
+[ SMS ] ready. Run: sms_app -i 500 -d 60 -v
+
+Please press Enter to activate this console. input: ImExPS/2 Generic Explorer Mouse as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+
+/ # random: fast init done
+echo "===== JITTER RUN: SCHED_FIFO (i=200ms, ~1050 samples) ====="
+===== JITTER RUN: SCHED_FIFO (i=200ms, ~1050 samples) =====
+/ # sms_app -i 200 -d 210 -j /tmp/jitter_fifo.txt
+=== Sensor Monitoring System (SMS) - LAB/ASSIGNMENT-02 ===
+interval=200 ms  temp_thr=40.0 C  hum_thr=80.0 %  duration=210 s  driver mode
+sms_sensor: interval set to 200 ms
+[INIT] driver interval set to 200 ms
+[INIT] mlockall OK (pages locked, no page-fault jitter)
+[SENSOR] SCHED_FIFO prio 50 : OK
+[INIT] 4 threads running (sensor, processor, alert, logger)
+[PROCESSOR] started
+[ALERT] started
+[LOGGER] writing to /tmp/sms.log
+[ALERT][17076] TEMP_HIGH: VALUE 44.417 THRESHOLD 40.000
+[ALERT][17076] TEMP_SPIKE: VALUE 20.766 THRESHOLD 5.000
+[ALERT][17276] TEMP_SPIKE: VALUE -24.447 THRESHOLD 5.000
+[ALERT][17476] TEMP_SPIKE: VALUE 15.776 THRESHOLD 5.000
+[ALERT][17676] TEMP_SPIKE: VALUE -12.505 THRESHOLD 5.000
+[ALERT][17876] TEMP_SPIKE: VALUE -6.095 THRESHOLD 5.000
+[ALERT][18076] HUMID_HIGH: VALUE 89.208 THRESHOLD 80.000
+[ALERT][18076] TEMP_SPIKE: VALUE 21.313 THRESHOLD 5.000
+[ALERT][18476] TEMP_HIGH: VALUE 43.670 THRESHOLD 40.000
+[ALERT][18676] TEMP_SPIKE: VALUE -27.092 THRESHOLD 5.000
+[ALERT][18876] TEMP_SPIKE: VALUE 17.756 THRESHOLD 5.000
+[ALERT][19076] TEMP_SPIKE: VALUE -15.306 THRESHOLD 5.000
+[ALERT][19276] TEMP_SPIKE: VALUE 5.474 THRESHOLD 5.000
+[ALERT][19476] HUMID_HIGH: VALUE 86.656 THRESHOLD 80.000
+[ALERT][19676] TEMP_SPIKE: VALUE 10.671 THRESHOLD 5.000
+[ALERT][19876] TEMP_SPIKE: VALUE -11.241 THRESHOLD 5.000
+[ALERT][20076] TEMP_SPIKE: VALUE 7.097 THRESHOLD 5.000
+[ALERT][20276] TEMP_SPIKE: VALUE -14.367 THRESHOLD 5.000
+[ALERT][20676] TEMP_SPIKE: VALUE -5.264 THRESHOLD 5.000
+[ALERT][21076] TEMP_SPIKE: VALUE 15.531 THRESHOLD 5.000
+[ALERT][21276] TEMP_SPIKE: VALUE -5.004 THRESHOLD 5.000
+[ALERT][21476] HUMID_HIGH: VALUE 84.364 THRESHOLD 80.000
+[ALERT][21676] HUMID_HIGH: VALUE 86.470 THRESHOLD 80.000
+[ALERT][21676] TEMP_SPIKE: VALUE -14.202 THRESHOLD 5.000
+[ALERT][22076] TEMP_SPIKE: VALUE 17.837 THRESHOLD 5.000
+[ALERT][22276] TEMP_SPIKE: VALUE -11.637 THRESHOLD 5.000
+[ALERT][22476] TEMP_SPIKE: VALUE -8.330 THRESHOLD 5.000
+[ALERT][22876] HUMID_HIGH: VALUE 84.819 THRESHOLD 80.000
+[ALERT][22876] TEMP_SPIKE: VALUE 15.186 THRESHOLD 5.000
+[ALERT][23076] TEMP_SPIKE: VALUE -11.008 THRESHOLD 5.000
+[ALERT][23276] TEMP_SPIKE: VALUE 7.413 THRESHOLD 5.000
+[ALERT][23676] TEMP_SPIKE: VALUE -14.643 THRESHOLD 5.000
+[ALERT][23876] TEMP_SPIKE: VALUE 6.347 THRESHOLD 5.000
+[ALERT][24276] TEMP_SPIKE: VALUE 12.691 THRESHOLD 5.000
+[ALERT][24476] TEMP_SPIKE: VALUE -7.589 THRESHOLD 5.000
+[ALERT][25076] TEMP_SPIKE: VALUE -7.114 THRESHOLD 5.000
+[ALERT][25276] TEMP_HIGH: VALUE 44.260 THRESHOLD 40.000
+[ALERT][25276] TEMP_SPIKE: VALUE 23.264 THRESHOLD 5.000
+[ALERT][25676] HUMID_HIGH: VALUE 80.517 THRESHOLD 80.000
+[ALERT][25676] TEMP_SPIKE: VALUE -21.713 THRESHOLD 5.000
+[ALERT][26076] TEMP_SPIKE: VALUE 22.029 THRESHOLD 5.000
+[ALERT][26276] TEMP_SPIKE: VALUE -18.306 THRESHOLD 5.000
+[ALERT][26476] TEMP_SPIKE: VALUE 17.159 THRESHOLD 5.000
+[ALERT][26676] TEMP_SPIKE: VALUE -16.118 THRESHOLD 5.000
+[ALERT][26876] HUMID_HIGH: VALUE 88.125 THRESHOLD 80.000
+[ALERT][26876] TEMP_SPIKE: VALUE 13.465 THRESHOLD 5.000
+[ALERT][27076] TEMP_SPIKE: VALUE -6.305 THRESHOLD 5.000
+[ALERT][27276] TEMP_SPIKE: VALUE 11.963 THRESHOLD 5.000
+[ALERT][27676] TEMP_SPIKE: VALUE -9.088 THRESHOLD 5.000
+[ALERT][27876] TEMP_HIGH: VALUE 43.430 THRESHOLD 40.000
+[ALERT][27876] TEMP_SPIKE: VALUE 12.563 THRESHOLD 5.000
+[ALERT][28076] TEMP_SPIKE: VALUE -8.399 THRESHOLD 5.000
+[ALERT][28476] HUMID_HIGH: VALUE 89.434 THRESHOLD 80.000
+[ALERT][28476] TEMP_SPIKE: VALUE -11.290 THRESHOLD 5.000
+[ALERT][28676] TEMP_SPIKE: VALUE 16.732 THRESHOLD 5.000
+[ALERT][29076] TEMP_SPIKE: VALUE -18.171 THRESHOLD 5.000
+[ALERT][29276] TEMP_SPIKE: VALUE 9.962 THRESHOLD 5.000
+[ALERT][29476] TEMP_SPIKE: VALUE 7.845 THRESHOLD 5.000
+[ALERT][29676] TEMP_SPIKE: VALUE -20.203 THRESHOLD 5.000
+[ALERT][29876] TEMP_HIGH: VALUE 41.717 THRESHOLD 40.000
+[ALERT][29876] TEMP_SPIKE: VALUE 23.875 THRESHOLD 5.000
+[ALERT][30076] TEMP_SPIKE: VALUE -26.608 THRESHOLD 5.000
+[ALERT][30276] TEMP_SPIKE: VALUE 8.820 THRESHOLD 5.000
+[ALERT][30476] TEMP_SPIKE: VALUE 12.599 THRESHOLD 5.000
+[ALERT][30876] TEMP_HIGH: VALUE 42.562 THRESHOLD 40.000
+[ALERT][30876] TEMP_SPIKE: VALUE 7.507 THRESHOLD 5.000
+[ALERT][31076] TEMP_SPIKE: VALUE -17.553 THRESHOLD 5.000
+[ALERT][31476] TEMP_SPIKE: VALUE 9.505 THRESHOLD 5.000
+[ALERT][31876] TEMP_HIGH: VALUE 43.149 THRESHOLD 40.000
+[ALERT][31876] TEMP_SPIKE: VALUE 11.056 THRESHOLD 5.000
+[ALERT][32076] TEMP_HIGH: VALUE 40.895 THRESHOLD 40.000
+[ALERT][32276] TEMP_SPIKE: VALUE -23.702 THRESHOLD 5.000
+[ALERT][32476] TEMP_SPIKE: VALUE 5.458 THRESHOLD 5.000
+[ALERT][32876] TEMP_SPIKE: VALUE 9.914 THRESHOLD 5.000
+[ALERT][33276] TEMP_SPIKE: VALUE -10.476 THRESHOLD 5.000
+[ALERT][33476] HUMID_HIGH: VALUE 80.253 THRESHOLD 80.000
+[ALERT][33676] TEMP_HIGH: VALUE 40.438 THRESHOLD 40.000
+[ALERT][33676] TEMP_SPIKE: VALUE 17.446 THRESHOLD 5.000
+[ALERT][34076] HUMID_HIGH: VALUE 83.462 THRESHOLD 80.000
+[ALERT][34076] TEMP_SPIKE: VALUE -9.586 THRESHOLD 5.000
+[ALERT][34276] TEMP_SPIKE: VALUE -8.582 THRESHOLD 5.000
+[ALERT][34476] TEMP_HIGH: VALUE 44.263 THRESHOLD 40.000
+[ALERT][34476] TEMP_SPIKE: VALUE 25.856 THRESHOLD 5.000
+[ALERT][34676] HUMID_HIGH: VALUE 86.137 THRESHOLD 80.000
+[ALERT][34676] TEMP_SPIKE: VALUE -13.803 THRESHOLD 5.000
+[ALERT][34876] HUMID_HIGH: VALUE 88.280 THRESHOLD 80.000
+[ALERT][35276] TEMP_SPIKE: VALUE -13.965 THRESHOLD 5.000
+[ALERT][35676] TEMP_SPIKE: VALUE 8.309 THRESHOLD 5.000
+[ALERT][35876] TEMP_SPIKE: VALUE 9.645 THRESHOLD 5.000
+[ALERT][36276] TEMP_HIGH: VALUE 40.051 THRESHOLD 40.000
+[ALERT][36276] HUMID_HIGH: VALUE 82.919 THRESHOLD 80.000
+[ALERT][36276] TEMP_SPIKE: VALUE 5.357 THRESHOLD 5.000
+[ALERT][36476] TEMP_HIGH: VALUE 43.947 THRESHOLD 40.000
+[ALERT][36476] HUMID_HIGH: VALUE 88.587 THRESHOLD 80.000
+[ALERT][36676] TEMP_HIGH: VALUE 42.239 THRESHOLD 40.000
+[ALERT][36876] TEMP_SPIKE: VALUE -21.390 THRESHOLD 5.000
+[ALERT][37076] TEMP_HIGH: VALUE 41.520 THRESHOLD 40.000
+[ALERT][37076] TEMP_SPIKE: VALUE 20.671 THRESHOLD 5.000
+[ALERT][37276] HUMID_HIGH: VALUE 83.593 THRESHOLD 80.000
+[ALERT][37276] TEMP_SPIKE: VALUE -8.928 THRESHOLD 5.000
+[ALERT][37476] TEMP_SPIKE: VALUE 6.051 THRESHOLD 5.000
+[ALERT][37676] TEMP_SPIKE: VALUE -5.625 THRESHOLD 5.000
+[ALERT][37876] TEMP_SPIKE: VALUE -11.089 THRESHOLD 5.000
+[ALERT][38076] TEMP_SPIKE: VALUE 9.007 THRESHOLD 5.000
+[ALERT][38476] TEMP_SPIKE: VALUE -9.313 THRESHOLD 5.000
+[ALERT][38676] HUMID_HIGH: VALUE 88.660 THRESHOLD 80.000
+[ALERT][38676] TEMP_SPIKE: VALUE 9.105 THRESHOLD 5.000
+[ALERT][39076] TEMP_HIGH: VALUE 44.475 THRESHOLD 40.000
+[ALERT][39076] TEMP_SPIKE: VALUE 14.868 THRESHOLD 5.000
+[ALERT][39276] TEMP_HIGH: VALUE 42.179 THRESHOLD 40.000
+[ALERT][39276] HUMID_HIGH: VALUE 81.556 THRESHOLD 80.000
+[ALERT][39476] TEMP_SPIKE: VALUE -8.359 THRESHOLD 5.000
+[ALERT][40076] TEMP_HIGH: VALUE 40.575 THRESHOLD 40.000
+[ALERT][40076] TEMP_SPIKE: VALUE 5.027 THRESHOLD 5.000
+[ALERT][40276] HUMID_HIGH: VALUE 82.464 THRESHOLD 80.000
+[ALERT][40276] TEMP_SPIKE: VALUE -10.173 THRESHOLD 5.000
+[ALERT][40876] TEMP_SPIKE: VALUE -12.517 THRESHOLD 5.000
+[ALERT][41076] TEMP_SPIKE: VALUE 14.135 THRESHOLD 5.000
+[ALERT][41276] TEMP_HIGH: VALUE 43.575 THRESHOLD 40.000
+[ALERT][41276] HUMID_HIGH: VALUE 86.985 THRESHOLD 80.000
+[ALERT][41276] TEMP_SPIKE: VALUE 11.563 THRESHOLD 5.000
+[ALERT][41476] HUMID_HIGH: VALUE 87.124 THRESHOLD 80.000
+[ALERT][41476] TEMP_SPIKE: VALUE -12.463 THRESHOLD 5.000
+[ALERT][41676] HUMID_HIGH: VALUE 83.450 THRESHOLD 80.000
+[ALERT][41876] TEMP_SPIKE: VALUE -18.446 THRESHOLD 5.000
+[ALERT][42076] TEMP_SPIKE: VALUE 14.904 THRESHOLD 5.000
+[ALERT][42276] TEMP_SPIKE: VALUE -5.856 THRESHOLD 5.000
+[ALERT][42476] TEMP_SPIKE: VALUE 7.014 THRESHOLD 5.000
+[ALERT][42676] TEMP_SPIKE: VALUE -14.642 THRESHOLD 5.000
+[ALERT][42876] TEMP_HIGH: VALUE 44.906 THRESHOLD 40.000
+[ALERT][42876] TEMP_SPIKE: VALUE 27.792 THRESHOLD 5.000
+[ALERT][43076] TEMP_SPIKE: VALUE -19.624 THRESHOLD 5.000
+[ALERT][43276] TEMP_HIGH: VALUE 41.999 THRESHOLD 40.000
+[ALERT][43276] HUMID_HIGH: VALUE 82.315 THRESHOLD 80.000
+[ALERT][43276] TEMP_SPIKE: VALUE 16.717 THRESHOLD 5.000
+[ALERT][43476] TEMP_SPIKE: VALUE -18.867 THRESHOLD 5.000
+[ALERT][43676] HUMID_HIGH: VALUE 80.586 THRESHOLD 80.000
+[ALERT][43676] TEMP_SPIKE: VALUE 14.124 THRESHOLD 5.000
+[ALERT][43876] TEMP_HIGH: VALUE 42.526 THRESHOLD 40.000
+[ALERT][43876] TEMP_SPIKE: VALUE 5.270 THRESHOLD 5.000
+[ALERT][44076] TEMP_SPIKE: VALUE -10.192 THRESHOLD 5.000
+[ALERT][44276] TEMP_HIGH: VALUE 42.221 THRESHOLD 40.000
+[ALERT][44276] TEMP_SPIKE: VALUE 9.887 THRESHOLD 5.000
+[ALERT][44476] TEMP_HIGH: VALUE 43.036 THRESHOLD 40.000
+[ALERT][44676] TEMP_SPIKE: VALUE -24.538 THRESHOLD 5.000
+[ALERT][44876] TEMP_HIGH: VALUE 42.125 THRESHOLD 40.000
+[ALERT][44876] TEMP_SPIKE: VALUE 23.627 THRESHOLD 5.000
+[ALERT][45076] TEMP_HIGH: VALUE 44.127 THRESHOLD 40.000
+[ALERT][45076] HUMID_HIGH: VALUE 80.782 THRESHOLD 80.000
+[ALERT][45276] HUMID_HIGH: VALUE 86.090 THRESHOLD 80.000
+[ALERT][45276] TEMP_SPIKE: VALUE -22.270 THRESHOLD 5.000
+[ALERT][45876] HUMID_HIGH: VALUE 82.402 THRESHOLD 80.000
+[ALERT][45876] TEMP_SPIKE: VALUE 16.852 THRESHOLD 5.000
+[ALERT][46076] TEMP_HIGH: VALUE 42.732 THRESHOLD 40.000
+[ALERT][46276] TEMP_SPIKE: VALUE -20.837 THRESHOLD 5.000
+[ALERT][46676] TEMP_HIGH: VALUE 40.897 THRESHOLD 40.000
+[ALERT][46676] HUMID_HIGH: VALUE 81.740 THRESHOLD 80.000
+[ALERT][46676] TEMP_SPIKE: VALUE 22.896 THRESHOLD 5.000
+[ALERT][46876] TEMP_SPIKE: VALUE -16.515 THRESHOLD 5.000
+[ALERT][47076] TEMP_SPIKE: VALUE -7.902 THRESHOLD 5.000
+[ALERT][47476] TEMP_HIGH: VALUE 41.931 THRESHOLD 40.000
+[ALERT][47476] TEMP_SPIKE: VALUE 26.126 THRESHOLD 5.000
+[ALERT][47676] TEMP_SPIKE: VALUE -23.273 THRESHOLD 5.000
+[ALERT][47876] TEMP_SPIKE: VALUE 16.707 THRESHOLD 5.000
+[ALERT][48076] TEMP_SPIKE: VALUE -14.101 THRESHOLD 5.000
+[ALERT][48276] TEMP_SPIKE: VALUE 18.370 THRESHOLD 5.000
+[ALERT][48476] TEMP_SPIKE: VALUE -23.945 THRESHOLD 5.000
+[ALERT][48676] TEMP_SPIKE: VALUE 16.398 THRESHOLD 5.000
+[ALERT][48876] TEMP_SPIKE: VALUE -5.921 THRESHOLD 5.000
+[ALERT][49276] TEMP_SPIKE: VALUE -10.436 THRESHOLD 5.000
+[ALERT][49476] TEMP_SPIKE: VALUE 9.263 THRESHOLD 5.000
+[ALERT][49676] TEMP_SPIKE: VALUE -9.278 THRESHOLD 5.000
+[ALERT][50076] TEMP_HIGH: VALUE 44.395 THRESHOLD 40.000
+[ALERT][50076] TEMP_SPIKE: VALUE 27.417 THRESHOLD 5.000
+[ALERT][50276] TEMP_HIGH: VALUE 40.774 THRESHOLD 40.000
+[ALERT][50276] HUMID_HIGH: VALUE 89.142 THRESHOLD 80.000
+[ALERT][50476] TEMP_SPIKE: VALUE -11.656 THRESHOLD 5.000
+[ALERT][50676] TEMP_SPIKE: VALUE -12.902 THRESHOLD 5.000
+[ALERT][50876] TEMP_SPIKE: VALUE 18.397 THRESHOLD 5.000
+[ALERT][51076] TEMP_SPIKE: VALUE -8.166 THRESHOLD 5.000
+[ALERT][51476] TEMP_SPIKE: VALUE 6.909 THRESHOLD 5.000
+[ALERT][51676] TEMP_SPIKE: VALUE 5.443 THRESHOLD 5.000
+[ALERT][52276] TEMP_SPIKE: VALUE -12.904 THRESHOLD 5.000
+[ALERT][52676] TEMP_SPIKE: VALUE 8.803 THRESHOLD 5.000
+[ALERT][52876] HUMID_HIGH: VALUE 83.128 THRESHOLD 80.000
+[ALERT][53076] TEMP_HIGH: VALUE 42.700 THRESHOLD 40.000
+[ALERT][53076] TEMP_SPIKE: VALUE 11.714 THRESHOLD 5.000
+[ALERT][53276] HUMID_HIGH: VALUE 89.409 THRESHOLD 80.000
+[ALERT][53276] TEMP_SPIKE: VALUE -22.827 THRESHOLD 5.000
+[ALERT][53476] TEMP_SPIKE: VALUE 8.558 THRESHOLD 5.000
+[ALERT][53676] TEMP_SPIKE: VALUE 8.160 THRESHOLD 5.000
+[ALERT][53876] HUMID_HIGH: VALUE 88.937 THRESHOLD 80.000
+[ALERT][54076] TEMP_SPIKE: VALUE -9.087 THRESHOLD 5.000
+[ALERT][54276] HUMID_HIGH: VALUE 86.327 THRESHOLD 80.000
+[ALERT][54276] TEMP_SPIKE: VALUE -15.099 THRESHOLD 5.000
+[ALERT][54476] TEMP_SPIKE: VALUE 24.652 THRESHOLD 5.000
+[ALERT][54676] TEMP_HIGH: VALUE 43.517 THRESHOLD 40.000
+[ALERT][54876] TEMP_HIGH: VALUE 43.672 THRESHOLD 40.000
+[ALERT][55076] TEMP_SPIKE: VALUE -12.998 THRESHOLD 5.000
+[ALERT][55476] HUMID_HIGH: VALUE 80.579 THRESHOLD 80.000
+[ALERT][55876] HUMID_HIGH: VALUE 80.871 THRESHOLD 80.000
+[ALERT][56076] HUMID_HIGH: VALUE 80.380 THRESHOLD 80.000
+[ALERT][56076] TEMP_SPIKE: VALUE 12.057 THRESHOLD 5.000
+[ALERT][56276] TEMP_HIGH: VALUE 41.887 THRESHOLD 40.000
+[ALERT][56276] TEMP_SPIKE: VALUE 5.057 THRESHOLD 5.000
+[ALERT][56476] TEMP_SPIKE: VALUE -11.893 THRESHOLD 5.000
+[ALERT][56676] TEMP_SPIKE: VALUE 9.253 THRESHOLD 5.000
+[ALERT][56876] TEMP_SPIKE: VALUE -9.202 THRESHOLD 5.000
+[ALERT][57476] TEMP_SPIKE: VALUE -16.716 THRESHOLD 5.000
+[ALERT][58276] TEMP_SPIKE: VALUE 10.167 THRESHOLD 5.000
+[ALERT][58476] HUMID_HIGH: VALUE 89.322 THRESHOLD 80.000
+[ALERT][59276] TEMP_SPIKE: VALUE 13.088 THRESHOLD 5.000
+[ALERT][59476] HUMID_HIGH: VALUE 83.053 THRESHOLD 80.000
+[ALERT][59476] TEMP_SPIKE: VALUE -18.496 THRESHOLD 5.000
+[ALERT][59676] TEMP_SPIKE: VALUE 23.756 THRESHOLD 5.000
+[ALERT][59876] HUMID_HIGH: VALUE 83.822 THRESHOLD 80.000
+[ALERT][59876] TEMP_SPIKE: VALUE -23.397 THRESHOLD 5.000
+[ALERT][60076] TEMP_HIGH: VALUE 44.491 THRESHOLD 40.000
+[ALERT][60076] HUMID_HIGH: VALUE 84.958 THRESHOLD 80.000
+[ALERT][60076] TEMP_SPIKE: VALUE 28.166 THRESHOLD 5.000
+[ALERT][60276] TEMP_SPIKE: VALUE -7.002 THRESHOLD 5.000
+[ALERT][60476] TEMP_SPIKE: VALUE -19.971 THRESHOLD 5.000
+[ALERT][60876] TEMP_HIGH: VALUE 44.945 THRESHOLD 40.000
+[ALERT][60876] TEMP_SPIKE: VALUE 28.416 THRESHOLD 5.000
+[ALERT][61076] TEMP_HIGH: VALUE 42.597 THRESHOLD 40.000
+[ALERT][61276] TEMP_SPIKE: VALUE -17.597 THRESHOLD 5.000
+[ALERT][61876] TEMP_SPIKE: VALUE 15.027 THRESHOLD 5.000
+[ALERT][62076] TEMP_SPIKE: VALUE -14.767 THRESHOLD 5.000
+[ALERT][62276] HUMID_HIGH: VALUE 85.342 THRESHOLD 80.000
+[ALERT][62876] TEMP_SPIKE: VALUE 9.479 THRESHOLD 5.000
+[ALERT][63076] TEMP_SPIKE: VALUE -19.497 THRESHOLD 5.000
+[ALERT][63276] TEMP_HIGH: VALUE 42.295 THRESHOLD 40.000
+[ALERT][63276] TEMP_SPIKE: VALUE 24.323 THRESHOLD 5.000
+[ALERT][63476] TEMP_SPIKE: VALUE -7.904 THRESHOLD 5.000
+[ALERT][63876] TEMP_HIGH: VALUE 41.758 THRESHOLD 40.000
+[ALERT][63876] TEMP_SPIKE: VALUE 8.931 THRESHOLD 5.000
+[ALERT][64276] TEMP_HIGH: VALUE 41.540 THRESHOLD 40.000
+[ALERT][64476] TEMP_HIGH: VALUE 41.750 THRESHOLD 40.000
+[ALERT][64676] TEMP_HIGH: VALUE 40.054 THRESHOLD 40.000
+[ALERT][64876] TEMP_HIGH: VALUE 40.029 THRESHOLD 40.000
+[ALERT][65076] TEMP_SPIKE: VALUE -9.454 THRESHOLD 5.000
+[ALERT][65276] TEMP_HIGH: VALUE 44.011 THRESHOLD 40.000
+[ALERT][65276] TEMP_SPIKE: VALUE 13.436 THRESHOLD 5.000
+[ALERT][65476] TEMP_SPIKE: VALUE -10.463 THRESHOLD 5.000
+[ALERT][65676] TEMP_SPIKE: VALUE -17.166 THRESHOLD 5.000
+[ALERT][66076] TEMP_SPIKE: VALUE 11.326 THRESHOLD 5.000
+[ALERT][66276] TEMP_HIGH: VALUE 40.674 THRESHOLD 40.000
+[ALERT][66276] HUMID_HIGH: VALUE 81.584 THRESHOLD 80.000
+[ALERT][66276] TEMP_SPIKE: VALUE 11.959 THRESHOLD 5.000
+[ALERT][66476] TEMP_HIGH: VALUE 43.345 THRESHOLD 40.000
+[ALERT][66676] TEMP_SPIKE: VALUE -8.469 THRESHOLD 5.000
+[ALERT][67076] TEMP_HIGH: VALUE 42.815 THRESHOLD 40.000
+[ALERT][67076] TEMP_SPIKE: VALUE 10.446 THRESHOLD 5.000
+[ALERT][67276] HUMID_HIGH: VALUE 85.258 THRESHOLD 80.000
+[ALERT][67276] TEMP_SPIKE: VALUE -7.268 THRESHOLD 5.000
+[ALERT][67476] TEMP_HIGH: VALUE 41.407 THRESHOLD 40.000
+[ALERT][67476] TEMP_SPIKE: VALUE 5.860 THRESHOLD 5.000
+[ALERT][67676] TEMP_HIGH: VALUE 43.331 THRESHOLD 40.000
+[ALERT][67876] TEMP_HIGH: VALUE 44.487 THRESHOLD 40.000
+[ALERT][68076] TEMP_SPIKE: VALUE -26.219 THRESHOLD 5.000
+[ALERT][68476] TEMP_SPIKE: VALUE 12.803 THRESHOLD 5.000
+[ALERT][68676] TEMP_SPIKE: VALUE 5.726 THRESHOLD 5.000
+[ALERT][68876] TEMP_SPIKE: VALUE -12.567 THRESHOLD 5.000
+[ALERT][69476] TEMP_SPIKE: VALUE -6.344 THRESHOLD 5.000
+[ALERT][69676] HUMID_HIGH: VALUE 81.411 THRESHOLD 80.000
+[ALERT][69676] TEMP_SPIKE: VALUE -6.760 THRESHOLD 5.000
+[ALERT][69876] TEMP_HIGH: VALUE 43.712 THRESHOLD 40.000
+[ALERT][69876] TEMP_SPIKE: VALUE 27.652 THRESHOLD 5.000
+[ALERT][70076] TEMP_SPIKE: VALUE -5.911 THRESHOLD 5.000
+[ALERT][70276] TEMP_HIGH: VALUE 42.317 THRESHOLD 40.000
+[ALERT][70476] TEMP_SPIKE: VALUE -16.921 THRESHOLD 5.000
+[ALERT][70676] TEMP_SPIKE: VALUE 6.186 THRESHOLD 5.000
+[ALERT][71076] TEMP_SPIKE: VALUE 6.938 THRESHOLD 5.000
+[ALERT][71276] TEMP_SPIKE: VALUE -13.057 THRESHOLD 5.000
+[ALERT][71476] TEMP_SPIKE: VALUE 7.303 THRESHOLD 5.000
+[ALERT][71676] TEMP_SPIKE: VALUE -12.892 THRESHOLD 5.000
+[ALERT][71876] TEMP_HIGH: VALUE 44.054 THRESHOLD 40.000
+[ALERT][71876] TEMP_SPIKE: VALUE 28.137 THRESHOLD 5.000
+[ALERT][72076] TEMP_SPIKE: VALUE -9.859 THRESHOLD 5.000
+[ALERT][72276] HUMID_HIGH: VALUE 84.874 THRESHOLD 80.000
+[ALERT][72676] TEMP_HIGH: VALUE 43.719 THRESHOLD 40.000
+[ALERT][72676] HUMID_HIGH: VALUE 80.083 THRESHOLD 80.000
+[ALERT][72676] TEMP_SPIKE: VALUE 9.276 THRESHOLD 5.000
+[ALERT][72876] TEMP_SPIKE: VALUE -7.218 THRESHOLD 5.000
+[ALERT][73276] TEMP_HIGH: VALUE 40.819 THRESHOLD 40.000
+[ALERT][73276] TEMP_SPIKE: VALUE 6.046 THRESHOLD 5.000
+[ALERT][73676] TEMP_SPIKE: VALUE -18.723 THRESHOLD 5.000
+[ALERT][74076] TEMP_SPIKE: VALUE -6.727 THRESHOLD 5.000
+[ALERT][74276] HUMID_HIGH: VALUE 81.625 THRESHOLD 80.000
+[ALERT][74276] TEMP_SPIKE: VALUE 8.512 THRESHOLD 5.000
+[ALERT][74476] TEMP_SPIKE: VALUE -7.760 THRESHOLD 5.000
+[ALERT][74676] TEMP_SPIKE: VALUE 10.712 THRESHOLD 5.000
+[ALERT][74876] TEMP_HIGH: VALUE 44.634 THRESHOLD 40.000
+[ALERT][74876] TEMP_SPIKE: VALUE 18.056 THRESHOLD 5.000
+[ALERT][75076] TEMP_SPIKE: VALUE -20.335 THRESHOLD 5.000
+[ALERT][75476] HUMID_HIGH: VALUE 83.689 THRESHOLD 80.000
+[ALERT][75476] TEMP_SPIKE: VALUE -8.499 THRESHOLD 5.000
+[ALERT][75676] TEMP_SPIKE: VALUE 14.175 THRESHOLD 5.000
+[ALERT][75876] TEMP_SPIKE: VALUE -19.250 THRESHOLD 5.000
+[ALERT][76076] HUMID_HIGH: VALUE 87.709 THRESHOLD 80.000
+[ALERT][76076] TEMP_SPIKE: VALUE 8.361 THRESHOLD 5.000
+[ALERT][76276] TEMP_SPIKE: VALUE -8.404 THRESHOLD 5.000
+[ALERT][76676] HUMID_HIGH: VALUE 86.895 THRESHOLD 80.000
+[ALERT][76876] TEMP_HIGH: VALUE 42.543 THRESHOLD 40.000
+[ALERT][76876] TEMP_SPIKE: VALUE 26.742 THRESHOLD 5.000
+[ALERT][77076] TEMP_SPIKE: VALUE -13.404 THRESHOLD 5.000
+[ALERT][77476] TEMP_SPIKE: VALUE 5.649 THRESHOLD 5.000
+[ALERT][77676] TEMP_SPIKE: VALUE -18.619 THRESHOLD 5.000
+[ALERT][78076] TEMP_SPIKE: VALUE 20.964 THRESHOLD 5.000
+[ALERT][78276] TEMP_SPIKE: VALUE -13.035 THRESHOLD 5.000
+[ALERT][78476] TEMP_SPIKE: VALUE 9.373 THRESHOLD 5.000
+[ALERT][78676] HUMID_HIGH: VALUE 88.423 THRESHOLD 80.000
+[ALERT][78876] TEMP_SPIKE: VALUE -9.462 THRESHOLD 5.000
+[ALERT][79476] TEMP_SPIKE: VALUE 11.949 THRESHOLD 5.000
+[ALERT][79676] TEMP_SPIKE: VALUE -22.489 THRESHOLD 5.000
+[ALERT][79876] TEMP_HIGH: VALUE 40.691 THRESHOLD 40.000
+[ALERT][79876] HUMID_HIGH: VALUE 80.504 THRESHOLD 80.000
+[ALERT][79876] TEMP_SPIKE: VALUE 24.894 THRESHOLD 5.000
+[ALERT][80276] TEMP_SPIKE: VALUE -11.195 THRESHOLD 5.000
+[ALERT][80476] TEMP_HIGH: VALUE 43.864 THRESHOLD 40.000
+[ALERT][80476] TEMP_SPIKE: VALUE 18.184 THRESHOLD 5.000
+[ALERT][80676] TEMP_SPIKE: VALUE -5.818 THRESHOLD 5.000
+[ALERT][80876] TEMP_SPIKE: VALUE -18.388 THRESHOLD 5.000
+[ALERT][81076] HUMID_HIGH: VALUE 84.908 THRESHOLD 80.000
+[ALERT][81076] TEMP_SPIKE: VALUE 12.360 THRESHOLD 5.000
+[ALERT][81276] TEMP_SPIKE: VALUE -11.441 THRESHOLD 5.000
+[ALERT][81476] TEMP_SPIKE: VALUE -5.436 THRESHOLD 5.000
+[ALERT][81676] TEMP_SPIKE: VALUE 7.551 THRESHOLD 5.000
+[ALERT][81876] TEMP_HIGH: VALUE 44.674 THRESHOLD 40.000
+[ALERT][81876] TEMP_SPIKE: VALUE 21.982 THRESHOLD 5.000
+[ALERT][82076] TEMP_HIGH: VALUE 40.585 THRESHOLD 40.000
+[ALERT][82276] TEMP_SPIKE: VALUE -9.754 THRESHOLD 5.000
+[ALERT][82476] HUMID_HIGH: VALUE 83.243 THRESHOLD 80.000
+[ALERT][82676] TEMP_SPIKE: VALUE -8.946 THRESHOLD 5.000
+[ALERT][82876] TEMP_HIGH: VALUE 43.640 THRESHOLD 40.000
+[ALERT][82876] TEMP_SPIKE: VALUE 18.522 THRESHOLD 5.000
+[ALERT][83076] TEMP_SPIKE: VALUE -12.925 THRESHOLD 5.000
+[ALERT][83476] TEMP_SPIKE: VALUE 9.584 THRESHOLD 5.000
+[ALERT][83676] TEMP_SPIKE: VALUE -21.977 THRESHOLD 5.000
+[ALERT][84076] HUMID_HIGH: VALUE 89.689 THRESHOLD 80.000
+[ALERT][84276] HUMID_HIGH: VALUE 87.578 THRESHOLD 80.000
+[ALERT][84276] TEMP_SPIKE: VALUE 14.957 THRESHOLD 5.000
+[ALERT][84676] TEMP_SPIKE: VALUE -18.054 THRESHOLD 5.000
+[ALERT][85076] TEMP_SPIKE: VALUE -7.670 THRESHOLD 5.000
+[ALERT][85676] HUMID_HIGH: VALUE 87.613 THRESHOLD 80.000
+[ALERT][86076] TEMP_SPIKE: VALUE 9.490 THRESHOLD 5.000
+[ALERT][86276] HUMID_HIGH: VALUE 82.592 THRESHOLD 80.000
+[ALERT][86276] TEMP_SPIKE: VALUE 9.544 THRESHOLD 5.000
+[ALERT][86476] TEMP_SPIKE: VALUE -15.835 THRESHOLD 5.000
+[ALERT][86676] TEMP_SPIKE: VALUE 17.301 THRESHOLD 5.000
+[ALERT][86876] TEMP_SPIKE: VALUE -5.671 THRESHOLD 5.000
+[ALERT][87076] TEMP_SPIKE: VALUE -11.498 THRESHOLD 5.000
+[ALERT][87476] TEMP_SPIKE: VALUE 15.611 THRESHOLD 5.000
+[ALERT][87676] TEMP_SPIKE: VALUE -13.332 THRESHOLD 5.000
+[ALERT][87876] HUMID_HIGH: VALUE 83.237 THRESHOLD 80.000
+[ALERT][88276] TEMP_SPIKE: VALUE 5.910 THRESHOLD 5.000
+[ALERT][88476] TEMP_SPIKE: VALUE -6.551 THRESHOLD 5.000
+[ALERT][88876] TEMP_SPIKE: VALUE 8.155 THRESHOLD 5.000
+[ALERT][89076] TEMP_SPIKE: VALUE -16.781 THRESHOLD 5.000
+[ALERT][89276] TEMP_SPIKE: VALUE 21.601 THRESHOLD 5.000
+[ALERT][89476] HUMID_HIGH: VALUE 84.295 THRESHOLD 80.000
+[ALERT][89476] TEMP_SPIKE: VALUE -6.990 THRESHOLD 5.000
+[ALERT][89676] HUMID_HIGH: VALUE 82.346 THRESHOLD 80.000
+[ALERT][89876] TEMP_HIGH: VALUE 44.474 THRESHOLD 40.000
+[ALERT][89876] TEMP_SPIKE: VALUE 15.848 THRESHOLD 5.000
+[ALERT][90076] HUMID_HIGH: VALUE 82.391 THRESHOLD 80.000
+[ALERT][90076] TEMP_SPIKE: VALUE -23.421 THRESHOLD 5.000
+[ALERT][90276] TEMP_HIGH: VALUE 43.691 THRESHOLD 40.000
+[ALERT][90276] TEMP_SPIKE: VALUE 22.638 THRESHOLD 5.000
+[ALERT][90476] HUMID_HIGH: VALUE 84.154 THRESHOLD 80.000
+[ALERT][90476] TEMP_SPIKE: VALUE -19.080 THRESHOLD 5.000
+[ALERT][90676] HUMID_HIGH: VALUE 85.775 THRESHOLD 80.000
+[ALERT][90676] TEMP_SPIKE: VALUE 11.360 THRESHOLD 5.000
+[ALERT][90876] HUMID_HIGH: VALUE 88.169 THRESHOLD 80.000
+[ALERT][91076] TEMP_SPIKE: VALUE -11.535 THRESHOLD 5.000
+[ALERT][91276] HUMID_HIGH: VALUE 82.569 THRESHOLD 80.000
+[ALERT][91276] TEMP_SPIKE: VALUE -8.524 THRESHOLD 5.000
+[ALERT][91676] TEMP_SPIKE: VALUE -5.338 THRESHOLD 5.000
+[ALERT][91876] TEMP_SPIKE: VALUE 14.700 THRESHOLD 5.000
+[ALERT][92076] TEMP_SPIKE: VALUE 6.959 THRESHOLD 5.000
+[ALERT][92476] HUMID_HIGH: VALUE 81.301 THRESHOLD 80.000
+[ALERT][92476] TEMP_SPIKE: VALUE -13.238 THRESHOLD 5.000
+[ALERT][92676] TEMP_SPIKE: VALUE -5.315 THRESHOLD 5.000
+[ALERT][92876] HUMID_HIGH: VALUE 84.090 THRESHOLD 80.000
+[ALERT][92876] TEMP_SPIKE: VALUE 20.390 THRESHOLD 5.000
+[ALERT][93076] TEMP_SPIKE: VALUE -5.959 THRESHOLD 5.000
+[ALERT][93676] HUMID_HIGH: VALUE 86.112 THRESHOLD 80.000
+[ALERT][93676] TEMP_SPIKE: VALUE -5.125 THRESHOLD 5.000
+[ALERT][93876] HUMID_HIGH: VALUE 80.242 THRESHOLD 80.000
+[ALERT][94076] TEMP_SPIKE: VALUE 7.838 THRESHOLD 5.000
+[ALERT][94276] TEMP_SPIKE: VALUE -9.006 THRESHOLD 5.000
+[ALERT][94476] TEMP_HIGH: VALUE 40.266 THRESHOLD 40.000
+[ALERT][94476] HUMID_HIGH: VALUE 82.299 THRESHOLD 80.000
+[ALERT][94476] TEMP_SPIKE: VALUE 9.683 THRESHOLD 5.000
+[ALERT][95076] TEMP_HIGH: VALUE 43.615 THRESHOLD 40.000
+[ALERT][95076] TEMP_SPIKE: VALUE 7.739 THRESHOLD 5.000
+[ALERT][95276] TEMP_SPIKE: VALUE -21.577 THRESHOLD 5.000
+[ALERT][95476] TEMP_HIGH: VALUE 44.632 THRESHOLD 40.000
+[ALERT][95476] TEMP_SPIKE: VALUE 22.594 THRESHOLD 5.000
+[ALERT][95676] TEMP_SPIKE: VALUE -15.205 THRESHOLD 5.000
+[ALERT][96076] TEMP_SPIKE: VALUE -5.954 THRESHOLD 5.000
+[ALERT][96276] TEMP_SPIKE: VALUE 8.431 THRESHOLD 5.000
+[ALERT][96676] TEMP_SPIKE: VALUE -12.446 THRESHOLD 5.000
+[ALERT][97076] HUMID_HIGH: VALUE 80.718 THRESHOLD 80.000
+[ALERT][97276] HUMID_HIGH: VALUE 88.444 THRESHOLD 80.000
+[ALERT][97276] TEMP_SPIKE: VALUE 9.226 THRESHOLD 5.000
+[ALERT][97876] TEMP_HIGH: VALUE 40.965 THRESHOLD 40.000
+[ALERT][97876] HUMID_HIGH: VALUE 88.529 THRESHOLD 80.000
+[ALERT][97876] TEMP_SPIKE: VALUE 21.046 THRESHOLD 5.000
+[ALERT][98076] TEMP_SPIKE: VALUE -14.373 THRESHOLD 5.000
+[ALERT][98476] HUMID_HIGH: VALUE 83.943 THRESHOLD 80.000
+[ALERT][98476] TEMP_SPIKE: VALUE -13.566 THRESHOLD 5.000
+[ALERT][98676] HUMID_HIGH: VALUE 81.956 THRESHOLD 80.000
+[ALERT][98876] TEMP_SPIKE: VALUE 18.226 THRESHOLD 5.000
+[ALERT][99276] TEMP_SPIKE: VALUE -7.492 THRESHOLD 5.000
+[ALERT][99476] TEMP_HIGH: VALUE 43.440 THRESHOLD 40.000
+[ALERT][99476] TEMP_SPIKE: VALUE 18.099 THRESHOLD 5.000
+[ALERT][99676] HUMID_HIGH: VALUE 81.493 THRESHOLD 80.000
+[ALERT][99676] TEMP_SPIKE: VALUE -27.909 THRESHOLD 5.000
+[ALERT][99876] TEMP_SPIKE: VALUE 11.178 THRESHOLD 5.000
+[ALERT][100076] HUMID_HIGH: VALUE 89.337 THRESHOLD 80.000
+[ALERT][100076] TEMP_SPIKE: VALUE 6.579 THRESHOLD 5.000
+[ALERT][100276] TEMP_HIGH: VALUE 42.019 THRESHOLD 40.000
+[ALERT][100276] TEMP_SPIKE: VALUE 8.731 THRESHOLD 5.000
+[ALERT][100476] TEMP_SPIKE: VALUE -23.270 THRESHOLD 5.000
+[ALERT][100876] TEMP_SPIKE: VALUE 11.138 THRESHOLD 5.000
+[ALERT][101076] HUMID_HIGH: VALUE 85.394 THRESHOLD 80.000
+[ALERT][101076] TEMP_SPIKE: VALUE -10.418 THRESHOLD 5.000
+[ALERT][101276] HUMID_HIGH: VALUE 81.838 THRESHOLD 80.000
+[ALERT][101276] TEMP_SPIKE: VALUE 6.929 THRESHOLD 5.000
+[ALERT][101676] TEMP_HIGH: VALUE 40.792 THRESHOLD 40.000
+[ALERT][101676] HUMID_HIGH: VALUE 87.609 THRESHOLD 80.000
+[ALERT][101676] TEMP_SPIKE: VALUE 9.574 THRESHOLD 5.000
+[ALERT][101876] TEMP_SPIKE: VALUE -20.361 THRESHOLD 5.000
+[ALERT][102076] TEMP_SPIKE: VALUE 17.033 THRESHOLD 5.000
+[ALERT][102276] HUMID_HIGH: VALUE 89.005 THRESHOLD 80.000
+[ALERT][102276] TEMP_SPIKE: VALUE -19.318 THRESHOLD 5.000
+[ALERT][102476] TEMP_SPIKE: VALUE 10.172 THRESHOLD 5.000
+[ALERT][102676] HUMID_HIGH: VALUE 82.888 THRESHOLD 80.000
+[ALERT][102876] TEMP_HIGH: VALUE 44.101 THRESHOLD 40.000
+[ALERT][102876] TEMP_SPIKE: VALUE 16.734 THRESHOLD 5.000
+[ALERT][103076] TEMP_SPIKE: VALUE -11.879 THRESHOLD 5.000
+[ALERT][103476] TEMP_SPIKE: VALUE -7.900 THRESHOLD 5.000
+[ALERT][103876] TEMP_HIGH: VALUE 43.145 THRESHOLD 40.000
+[ALERT][103876] TEMP_SPIKE: VALUE 18.143 THRESHOLD 5.000
+[ALERT][104076] TEMP_SPIKE: VALUE -6.179 THRESHOLD 5.000
+[ALERT][104476] TEMP_SPIKE: VALUE -13.032 THRESHOLD 5.000
+[ALERT][104876] TEMP_SPIKE: VALUE 9.261 THRESHOLD 5.000
+[ALERT][105076] TEMP_SPIKE: VALUE 6.224 THRESHOLD 5.000
+[ALERT][105476] TEMP_SPIKE: VALUE -6.181 THRESHOLD 5.000
+[ALERT][105676] TEMP_HIGH: VALUE 44.566 THRESHOLD 40.000
+[ALERT][105676] HUMID_HIGH: VALUE 85.047 THRESHOLD 80.000
+[ALERT][105676] TEMP_SPIKE: VALUE 17.362 THRESHOLD 5.000
+[ALERT][105876] TEMP_SPIKE: VALUE -21.009 THRESHOLD 5.000
+[ALERT][106276] TEMP_HIGH: VALUE 43.373 THRESHOLD 40.000
+[ALERT][106276] TEMP_SPIKE: VALUE 24.141 THRESHOLD 5.000
+[ALERT][106476] TEMP_SPIKE: VALUE -18.360 THRESHOLD 5.000
+[ALERT][106676] TEMP_SPIKE: VALUE -9.905 THRESHOLD 5.000
+[ALERT][106876] TEMP_SPIKE: VALUE 22.692 THRESHOLD 5.000
+[ALERT][107076] TEMP_SPIKE: VALUE -16.553 THRESHOLD 5.000
+[ALERT][107476] TEMP_HIGH: VALUE 42.442 THRESHOLD 40.000
+[ALERT][107476] TEMP_SPIKE: VALUE 16.841 THRESHOLD 5.000
+[ALERT][107676] TEMP_SPIKE: VALUE -25.372 THRESHOLD 5.000
+[ALERT][107876] TEMP_HIGH: VALUE 42.819 THRESHOLD 40.000
+[ALERT][107876] HUMID_HIGH: VALUE 89.467 THRESHOLD 80.000
+[ALERT][107876] TEMP_SPIKE: VALUE 25.749 THRESHOLD 5.000
+[ALERT][108076] TEMP_HIGH: VALUE 44.540 THRESHOLD 40.000
+[ALERT][108276] TEMP_SPIKE: VALUE -16.950 THRESHOLD 5.000
+[ALERT][108476] TEMP_SPIKE: VALUE -9.953 THRESHOLD 5.000
+[ALERT][108676] TEMP_SPIKE: VALUE 12.542 THRESHOLD 5.000
+[ALERT][109076] TEMP_HIGH: VALUE 40.469 THRESHOLD 40.000
+[ALERT][109076] HUMID_HIGH: VALUE 88.400 THRESHOLD 80.000
+[ALERT][109076] TEMP_SPIKE: VALUE 6.941 THRESHOLD 5.000
+[ALERT][109276] HUMID_HIGH: VALUE 81.398 THRESHOLD 80.000
+[ALERT][109476] TEMP_HIGH: VALUE 41.620 THRESHOLD 40.000
+[ALERT][109676] TEMP_SPIKE: VALUE -18.211 THRESHOLD 5.000
+[ALERT][109876] TEMP_SPIKE: VALUE -7.022 THRESHOLD 5.000
+[ALERT][110076] TEMP_SPIKE: VALUE 22.255 THRESHOLD 5.000
+[ALERT][110276] TEMP_SPIKE: VALUE -21.713 THRESHOLD 5.000
+[ALERT][110476] HUMID_HIGH: VALUE 89.642 THRESHOLD 80.000
+[ALERT][110676] TEMP_SPIKE: VALUE 13.257 THRESHOLD 5.000
+[ALERT][110876] HUMID_HIGH: VALUE 80.405 THRESHOLD 80.000
+[ALERT][111076] TEMP_SPIKE: VALUE 8.309 THRESHOLD 5.000
+[ALERT][111476] TEMP_SPIKE: VALUE -14.050 THRESHOLD 5.000
+[ALERT][111676] TEMP_SPIKE: VALUE 7.140 THRESHOLD 5.000
+[ALERT][111876] HUMID_HIGH: VALUE 85.669 THRESHOLD 80.000
+[ALERT][112276] TEMP_SPIKE: VALUE -9.532 THRESHOLD 5.000
+[ALERT][112476] TEMP_SPIKE: VALUE -14.029 THRESHOLD 5.000
+[ALERT][112676] TEMP_SPIKE: VALUE 22.668 THRESHOLD 5.000
+[ALERT][112876] TEMP_SPIKE: VALUE -10.097 THRESHOLD 5.000
+[ALERT][113476] TEMP_SPIKE: VALUE 15.331 THRESHOLD 5.000
+[ALERT][114276] HUMID_HIGH: VALUE 81.521 THRESHOLD 80.000
+[ALERT][114476] HUMID_HIGH: VALUE 89.151 THRESHOLD 80.000
+[ALERT][114676] TEMP_SPIKE: VALUE -6.506 THRESHOLD 5.000
+[ALERT][115476] TEMP_SPIKE: VALUE 8.215 THRESHOLD 5.000
+[ALERT][115676] TEMP_HIGH: VALUE 44.051 THRESHOLD 40.000
+[ALERT][115676] HUMID_HIGH: VALUE 89.416 THRESHOLD 80.000
+[ALERT][115676] TEMP_SPIKE: VALUE 7.213 THRESHOLD 5.000
+[ALERT][115876] TEMP_SPIKE: VALUE -16.392 THRESHOLD 5.000
+[ALERT][116276] TEMP_HIGH: VALUE 43.743 THRESHOLD 40.000
+[ALERT][116276] TEMP_SPIKE: VALUE 12.913 THRESHOLD 5.000
+[ALERT][116876] TEMP_SPIKE: VALUE -15.471 THRESHOLD 5.000
+[ALERT][117076] HUMID_HIGH: VALUE 84.407 THRESHOLD 80.000
+[ALERT][117076] TEMP_SPIKE: VALUE 12.663 THRESHOLD 5.000
+[ALERT][117276] HUMID_HIGH: VALUE 80.607 THRESHOLD 80.000
+[ALERT][117276] TEMP_SPIKE: VALUE -17.965 THRESHOLD 5.000
+[ALERT][117476] TEMP_HIGH: VALUE 42.410 THRESHOLD 40.000
+[ALERT][117476] TEMP_SPIKE: VALUE 23.863 THRESHOLD 5.000
+[ALERT][117676] TEMP_SPIKE: VALUE -9.270 THRESHOLD 5.000
+[ALERT][118276] TEMP_HIGH: VALUE 41.837 THRESHOLD 40.000
+[ALERT][118276] TEMP_SPIKE: VALUE 13.251 THRESHOLD 5.000
+[ALERT][118476] TEMP_SPIKE: VALUE -14.825 THRESHOLD 5.000
+[ALERT][118676] TEMP_SPIKE: VALUE 9.041 THRESHOLD 5.000
+[ALERT][119476] TEMP_SPIKE: VALUE -7.410 THRESHOLD 5.000
+[ALERT][119676] TEMP_SPIKE: VALUE 8.930 THRESHOLD 5.000
+[ALERT][120076] HUMID_HIGH: VALUE 85.192 THRESHOLD 80.000
+[ALERT][120076] TEMP_SPIKE: VALUE -9.713 THRESHOLD 5.000
+[ALERT][120276] TEMP_HIGH: VALUE 42.062 THRESHOLD 40.000
+[ALERT][120276] TEMP_SPIKE: VALUE 23.020 THRESHOLD 5.000
+[ALERT][120476] TEMP_SPIKE: VALUE -5.541 THRESHOLD 5.000
+[ALERT][120676] TEMP_SPIKE: VALUE -8.558 THRESHOLD 5.000
+[ALERT][121076] TEMP_SPIKE: VALUE 13.437 THRESHOLD 5.000
+[ALERT][121476] TEMP_HIGH: VALUE 41.729 THRESHOLD 40.000
+[ALERT][121476] HUMID_HIGH: VALUE 85.309 THRESHOLD 80.000
+[ALERT][121476] TEMP_SPIKE: VALUE 7.767 THRESHOLD 5.000
+[ALERT][121676] TEMP_HIGH: VALUE 40.542 THRESHOLD 40.000
+[ALERT][121876] TEMP_SPIKE: VALUE -5.005 THRESHOLD 5.000
+[ALERT][122276] TEMP_SPIKE: VALUE -18.572 THRESHOLD 5.000
+[ALERT][122476] TEMP_SPIKE: VALUE 11.627 THRESHOLD 5.000
+[ALERT][122876] TEMP_SPIKE: VALUE -12.339 THRESHOLD 5.000
+[ALERT][123276] TEMP_SPIKE: VALUE 17.785 THRESHOLD 5.000
+[ALERT][123476] TEMP_HIGH: VALUE 44.628 THRESHOLD 40.000
+[ALERT][123476] HUMID_HIGH: VALUE 82.580 THRESHOLD 80.000
+[ALERT][123476] TEMP_SPIKE: VALUE 9.840 THRESHOLD 5.000
+[ALERT][123676] TEMP_SPIKE: VALUE -19.714 THRESHOLD 5.000
+[ALERT][123876] HUMID_HIGH: VALUE 83.007 THRESHOLD 80.000
+[ALERT][123876] TEMP_SPIKE: VALUE 9.866 THRESHOLD 5.000
+[ALERT][124076] TEMP_SPIKE: VALUE -12.406 THRESHOLD 5.000
+[ALERT][124276] TEMP_SPIKE: VALUE 11.417 THRESHOLD 5.000
+[ALERT][124476] TEMP_SPIKE: VALUE -10.234 THRESHOLD 5.000
+[ALERT][125276] HUMID_HIGH: VALUE 81.935 THRESHOLD 80.000
+[ALERT][125476] HUMID_HIGH: VALUE 80.606 THRESHOLD 80.000
+[ALERT][125476] TEMP_SPIKE: VALUE 8.681 THRESHOLD 5.000
+[ALERT][125676] TEMP_HIGH: VALUE 42.256 THRESHOLD 40.000
+[ALERT][125676] HUMID_HIGH: VALUE 81.406 THRESHOLD 80.000
+[ALERT][125676] TEMP_SPIKE: VALUE 11.838 THRESHOLD 5.000
+[ALERT][125876] HUMID_HIGH: VALUE 87.883 THRESHOLD 80.000
+[ALERT][125876] TEMP_SPIKE: VALUE -18.740 THRESHOLD 5.000
+[ALERT][126076] TEMP_SPIKE: VALUE 14.780 THRESHOLD 5.000
+[ALERT][126276] TEMP_SPIKE: VALUE -9.623 THRESHOLD 5.000
+[ALERT][126476] TEMP_SPIKE: VALUE 7.903 THRESHOLD 5.000
+[ALERT][126676] TEMP_SPIKE: VALUE -10.629 THRESHOLD 5.000
+[ALERT][126876] TEMP_SPIKE: VALUE -5.833 THRESHOLD 5.000
+[ALERT][127076] TEMP_SPIKE: VALUE 7.519 THRESHOLD 5.000
+[ALERT][127276] HUMID_HIGH: VALUE 81.155 THRESHOLD 80.000
+[ALERT][127276] TEMP_SPIKE: VALUE 12.052 THRESHOLD 5.000
+[ALERT][127476] HUMID_HIGH: VALUE 85.026 THRESHOLD 80.000
+[ALERT][127476] TEMP_SPIKE: VALUE -6.646 THRESHOLD 5.000
+[ALERT][127676] TEMP_SPIKE: VALUE 5.368 THRESHOLD 5.000
+[ALERT][127876] TEMP_SPIKE: VALUE -20.435 THRESHOLD 5.000
+[ALERT][128076] TEMP_SPIKE: VALUE 11.513 THRESHOLD 5.000
+[ALERT][128276] TEMP_SPIKE: VALUE 7.083 THRESHOLD 5.000
+[ALERT][128476] HUMID_HIGH: VALUE 81.596 THRESHOLD 80.000
+[ALERT][128676] HUMID_HIGH: VALUE 82.018 THRESHOLD 80.000
+[ALERT][129076] TEMP_HIGH: VALUE 42.606 THRESHOLD 40.000
+[ALERT][129076] HUMID_HIGH: VALUE 82.909 THRESHOLD 80.000
+[ALERT][129076] TEMP_SPIKE: VALUE 14.420 THRESHOLD 5.000
+[ALERT][129276] TEMP_HIGH: VALUE 42.894 THRESHOLD 40.000
+[ALERT][129476] HUMID_HIGH: VALUE 81.875 THRESHOLD 80.000
+[ALERT][129476] TEMP_SPIKE: VALUE -21.650 THRESHOLD 5.000
+[ALERT][129676] TEMP_SPIKE: VALUE 7.418 THRESHOLD 5.000
+[ALERT][129876] TEMP_SPIKE: VALUE -8.862 THRESHOLD 5.000
+[ALERT][130076] TEMP_HIGH: VALUE 44.985 THRESHOLD 40.000
+[ALERT][130076] TEMP_SPIKE: VALUE 25.185 THRESHOLD 5.000
+[ALERT][130276] TEMP_SPIKE: VALUE -27.821 THRESHOLD 5.000
+[ALERT][130676] TEMP_SPIKE: VALUE 13.751 THRESHOLD 5.000
+[ALERT][131076] HUMID_HIGH: VALUE 82.065 THRESHOLD 80.000
+[ALERT][131076] TEMP_SPIKE: VALUE 10.322 THRESHOLD 5.000
+[ALERT][131276] TEMP_HIGH: VALUE 42.829 THRESHOLD 40.000
+[ALERT][131276] TEMP_SPIKE: VALUE 6.724 THRESHOLD 5.000
+[ALERT][131476] TEMP_SPIKE: VALUE -15.096 THRESHOLD 5.000
+[ALERT][131676] HUMID_HIGH: VALUE 84.623 THRESHOLD 80.000
+[ALERT][131676] TEMP_SPIKE: VALUE -8.392 THRESHOLD 5.000
+[ALERT][132076] TEMP_SPIKE: VALUE 16.302 THRESHOLD 5.000
+[ALERT][132276] TEMP_SPIKE: VALUE -16.258 THRESHOLD 5.000
+[ALERT][132476] TEMP_SPIKE: VALUE 7.565 THRESHOLD 5.000
+[ALERT][132676] TEMP_HIGH: VALUE 44.877 THRESHOLD 40.000
+[ALERT][132676] TEMP_SPIKE: VALUE 22.166 THRESHOLD 5.000
+[ALERT][132876] TEMP_SPIKE: VALUE -13.511 THRESHOLD 5.000
+[ALERT][133076] TEMP_HIGH: VALUE 44.158 THRESHOLD 40.000
+[ALERT][133076] TEMP_SPIKE: VALUE 12.792 THRESHOLD 5.000
+[ALERT][133276] TEMP_SPIKE: VALUE -14.012 THRESHOLD 5.000
+[ALERT][133476] TEMP_SPIKE: VALUE -5.681 THRESHOLD 5.000
+[ALERT][133676] TEMP_SPIKE: VALUE 5.033 THRESHOLD 5.000
+[ALERT][133876] TEMP_SPIKE: VALUE -14.229 THRESHOLD 5.000
+[ALERT][134076] TEMP_SPIKE: VALUE 16.954 THRESHOLD 5.000
+[ALERT][134476] HUMID_HIGH: VALUE 86.077 THRESHOLD 80.000
+[ALERT][134876] TEMP_HIGH: VALUE 40.407 THRESHOLD 40.000
+[ALERT][134876] TEMP_SPIKE: VALUE 5.923 THRESHOLD 5.000
+[ALERT][135076] TEMP_HIGH: VALUE 42.702 THRESHOLD 40.000
+[ALERT][135076] HUMID_HIGH: VALUE 81.671 THRESHOLD 80.000
+[ALERT][135276] TEMP_SPIKE: VALUE -7.416 THRESHOLD 5.000
+[ALERT][135476] TEMP_HIGH: VALUE 40.952 THRESHOLD 40.000
+[ALERT][135476] TEMP_SPIKE: VALUE 5.666 THRESHOLD 5.000
+[ALERT][135676] TEMP_SPIKE: VALUE -19.897 THRESHOLD 5.000
+[ALERT][135876] TEMP_SPIKE: VALUE 11.221 THRESHOLD 5.000
+[ALERT][136076] TEMP_SPIKE: VALUE -8.431 THRESHOLD 5.000
+[ALERT][136476] TEMP_SPIKE: VALUE 10.684 THRESHOLD 5.000
+[ALERT][136876] TEMP_SPIKE: VALUE 6.916 THRESHOLD 5.000
+[ALERT][137276] HUMID_HIGH: VALUE 83.594 THRESHOLD 80.000
+[ALERT][137676] TEMP_HIGH: VALUE 40.858 THRESHOLD 40.000
+[ALERT][137676] TEMP_SPIKE: VALUE 10.531 THRESHOLD 5.000
+[ALERT][137876] TEMP_SPIKE: VALUE -7.630 THRESHOLD 5.000
+[ALERT][138076] TEMP_SPIKE: VALUE -7.048 THRESHOLD 5.000
+[ALERT][138476] TEMP_SPIKE: VALUE -6.599 THRESHOLD 5.000
+[ALERT][138676] HUMID_HIGH: VALUE 82.150 THRESHOLD 80.000
+[ALERT][138676] TEMP_SPIKE: VALUE 12.290 THRESHOLD 5.000
+[ALERT][138876] TEMP_SPIKE: VALUE -15.656 THRESHOLD 5.000
+[ALERT][139076] TEMP_HIGH: VALUE 43.129 THRESHOLD 40.000
+[ALERT][139076] HUMID_HIGH: VALUE 84.741 THRESHOLD 80.000
+[ALERT][139076] TEMP_SPIKE: VALUE 24.242 THRESHOLD 5.000
+[ALERT][139276] TEMP_SPIKE: VALUE -9.952 THRESHOLD 5.000
+[ALERT][139476] TEMP_SPIKE: VALUE -10.410 THRESHOLD 5.000
+[ALERT][139876] TEMP_SPIKE: VALUE -10.121 THRESHOLD 5.000
+[ALERT][140076] TEMP_SPIKE: VALUE 23.082 THRESHOLD 5.000
+[ALERT][140476] TEMP_SPIKE: VALUE -22.567 THRESHOLD 5.000
+[ALERT][140676] TEMP_SPIKE: VALUE 15.989 THRESHOLD 5.000
+[ALERT][141076] TEMP_HIGH: VALUE 41.835 THRESHOLD 40.000
+[ALERT][141076] TEMP_SPIKE: VALUE 11.598 THRESHOLD 5.000
+[ALERT][141476] TEMP_HIGH: VALUE 44.148 THRESHOLD 40.000
+[ALERT][141476] TEMP_SPIKE: VALUE 5.780 THRESHOLD 5.000
+[ALERT][141676] HUMID_HIGH: VALUE 81.102 THRESHOLD 80.000
+[ALERT][141676] TEMP_SPIKE: VALUE -27.070 THRESHOLD 5.000
+[ALERT][141876] TEMP_SPIKE: VALUE 15.258 THRESHOLD 5.000
+[ALERT][142076] TEMP_SPIKE: VALUE -13.841 THRESHOLD 5.000
+[ALERT][142276] TEMP_SPIKE: VALUE 7.826 THRESHOLD 5.000
+[ALERT][142476] TEMP_SPIKE: VALUE -6.426 THRESHOLD 5.000
+[ALERT][142876] TEMP_SPIKE: VALUE 6.798 THRESHOLD 5.000
+[ALERT][143076] TEMP_SPIKE: VALUE -9.525 THRESHOLD 5.000
+[ALERT][143276] TEMP_SPIKE: VALUE 7.972 THRESHOLD 5.000
+[ALERT][143476] TEMP_HIGH: VALUE 40.481 THRESHOLD 40.000
+[ALERT][143476] HUMID_HIGH: VALUE 85.034 THRESHOLD 80.000
+[ALERT][143476] TEMP_SPIKE: VALUE 14.369 THRESHOLD 5.000
+[ALERT][143676] TEMP_HIGH: VALUE 43.799 THRESHOLD 40.000
+[ALERT][143676] HUMID_HIGH: VALUE 81.189 THRESHOLD 80.000
+[ALERT][143876] TEMP_SPIKE: VALUE -9.259 THRESHOLD 5.000
+[ALERT][144076] TEMP_SPIKE: VALUE -10.424 THRESHOLD 5.000
+[ALERT][144276] TEMP_HIGH: VALUE 43.338 THRESHOLD 40.000
+[ALERT][144276] TEMP_SPIKE: VALUE 19.222 THRESHOLD 5.000
+[ALERT][144476] TEMP_SPIKE: VALUE -12.363 THRESHOLD 5.000
+[ALERT][144676] TEMP_HIGH: VALUE 41.844 THRESHOLD 40.000
+[ALERT][144676] TEMP_SPIKE: VALUE 10.869 THRESHOLD 5.000
+[ALERT][144876] TEMP_SPIKE: VALUE -25.703 THRESHOLD 5.000
+[ALERT][145076] HUMID_HIGH: VALUE 81.831 THRESHOLD 80.000
+[ALERT][145076] TEMP_SPIKE: VALUE 6.954 THRESHOLD 5.000
+[ALERT][145476] TEMP_SPIKE: VALUE 9.418 THRESHOLD 5.000
+[ALERT][145876] TEMP_SPIKE: VALUE 7.588 THRESHOLD 5.000
+[ALERT][146076] TEMP_SPIKE: VALUE -12.055 THRESHOLD 5.000
+[ALERT][146276] TEMP_SPIKE: VALUE 10.657 THRESHOLD 5.000
+[ALERT][146476] TEMP_SPIKE: VALUE -19.363 THRESHOLD 5.000
+[ALERT][146876] TEMP_SPIKE: VALUE 11.178 THRESHOLD 5.000
+[ALERT][147076] TEMP_HIGH: VALUE 44.216 THRESHOLD 40.000
+[ALERT][147076] HUMID_HIGH: VALUE 87.891 THRESHOLD 80.000
+[ALERT][147076] TEMP_SPIKE: VALUE 16.007 THRESHOLD 5.000
+[ALERT][147276] TEMP_SPIKE: VALUE -18.333 THRESHOLD 5.000
+[ALERT][147476] TEMP_HIGH: VALUE 44.413 THRESHOLD 40.000
+[ALERT][147476] TEMP_SPIKE: VALUE 18.530 THRESHOLD 5.000
+[ALERT][147676] HUMID_HIGH: VALUE 88.210 THRESHOLD 80.000
+[ALERT][147676] TEMP_SPIKE: VALUE -18.588 THRESHOLD 5.000
+[ALERT][147876] TEMP_SPIKE: VALUE 9.525 THRESHOLD 5.000
+[ALERT][148276] TEMP_SPIKE: VALUE -19.907 THRESHOLD 5.000
+[ALERT][148676] TEMP_HIGH: VALUE 44.595 THRESHOLD 40.000
+[ALERT][148676] TEMP_SPIKE: VALUE 27.361 THRESHOLD 5.000
+[ALERT][148876] TEMP_SPIKE: VALUE -29.062 THRESHOLD 5.000
+[ALERT][149076] TEMP_SPIKE: VALUE 15.794 THRESHOLD 5.000
+[ALERT][149276] TEMP_SPIKE: VALUE 7.318 THRESHOLD 5.000
+[ALERT][149476] TEMP_SPIKE: VALUE -9.422 THRESHOLD 5.000
+[ALERT][150076] TEMP_SPIKE: VALUE -9.225 THRESHOLD 5.000
+[ALERT][150276] TEMP_HIGH: VALUE 44.413 THRESHOLD 40.000
+[ALERT][150276] TEMP_SPIKE: VALUE 25.440 THRESHOLD 5.000
+[ALERT][150476] TEMP_SPIKE: VALUE -15.195 THRESHOLD 5.000
+[ALERT][150876] TEMP_SPIKE: VALUE 12.217 THRESHOLD 5.000
+[ALERT][151076] TEMP_SPIKE: VALUE -6.108 THRESHOLD 5.000
+[ALERT][151276] TEMP_SPIKE: VALUE -6.518 THRESHOLD 5.000
+[ALERT][151476] HUMID_HIGH: VALUE 84.994 THRESHOLD 80.000
+[ALERT][151476] TEMP_SPIKE: VALUE -5.198 THRESHOLD 5.000
+[ALERT][151676] HUMID_HIGH: VALUE 88.955 THRESHOLD 80.000
+[ALERT][151876] TEMP_SPIKE: VALUE 6.998 THRESHOLD 5.000
+[ALERT][152076] TEMP_HIGH: VALUE 40.981 THRESHOLD 40.000
+[ALERT][152076] HUMID_HIGH: VALUE 86.052 THRESHOLD 80.000
+[ALERT][152076] TEMP_SPIKE: VALUE 8.022 THRESHOLD 5.000
+[ALERT][152276] TEMP_SPIKE: VALUE -22.750 THRESHOLD 5.000
+[ALERT][152476] HUMID_HIGH: VALUE 80.445 THRESHOLD 80.000
+[ALERT][152476] TEMP_SPIKE: VALUE 19.500 THRESHOLD 5.000
+[ALERT][152676] TEMP_SPIKE: VALUE -11.383 THRESHOLD 5.000
+[ALERT][153076] TEMP_SPIKE: VALUE 10.580 THRESHOLD 5.000
+[ALERT][153276] TEMP_SPIKE: VALUE -10.652 THRESHOLD 5.000
+[ALERT][153476] TEMP_SPIKE: VALUE 8.941 THRESHOLD 5.000
+[ALERT][153676] TEMP_SPIKE: VALUE -9.678 THRESHOLD 5.000
+[ALERT][154076] TEMP_SPIKE: VALUE -6.725 THRESHOLD 5.000
+[ALERT][154276] TEMP_SPIKE: VALUE 14.349 THRESHOLD 5.000
+[ALERT][154476] HUMID_HIGH: VALUE 87.098 THRESHOLD 80.000
+[ALERT][154476] TEMP_SPIKE: VALUE -17.532 THRESHOLD 5.000
+[ALERT][154676] TEMP_SPIKE: VALUE 10.006 THRESHOLD 5.000
+[ALERT][155076] TEMP_HIGH: VALUE 41.710 THRESHOLD 40.000
+[ALERT][155076] HUMID_HIGH: VALUE 86.609 THRESHOLD 80.000
+[ALERT][155076] TEMP_SPIKE: VALUE 9.559 THRESHOLD 5.000
+[ALERT][155276] TEMP_SPIKE: VALUE -12.656 THRESHOLD 5.000
+[ALERT][155476] TEMP_SPIKE: VALUE -10.509 THRESHOLD 5.000
+[ALERT][156076] TEMP_SPIKE: VALUE -8.111 THRESHOLD 5.000
+[ALERT][156276] TEMP_SPIKE: VALUE 20.419 THRESHOLD 5.000
+[ALERT][156476] TEMP_HIGH: VALUE 43.249 THRESHOLD 40.000
+[ALERT][156476] TEMP_SPIKE: VALUE 6.267 THRESHOLD 5.000
+[ALERT][156676] TEMP_SPIKE: VALUE -10.959 THRESHOLD 5.000
+[ALERT][156876] TEMP_SPIKE: VALUE -14.534 THRESHOLD 5.000
+[ALERT][157076] TEMP_HIGH: VALUE 42.595 THRESHOLD 40.000
+[ALERT][157076] HUMID_HIGH: VALUE 84.466 THRESHOLD 80.000
+[ALERT][157076] TEMP_SPIKE: VALUE 24.839 THRESHOLD 5.000
+[ALERT][157276] TEMP_SPIKE: VALUE -16.837 THRESHOLD 5.000
+[ALERT][157476] HUMID_HIGH: VALUE 88.210 THRESHOLD 80.000
+[ALERT][157476] TEMP_SPIKE: VALUE 9.767 THRESHOLD 5.000
+[ALERT][157676] TEMP_HIGH: VALUE 44.199 THRESHOLD 40.000
+[ALERT][157676] TEMP_SPIKE: VALUE 8.674 THRESHOLD 5.000
+[ALERT][157876] HUMID_HIGH: VALUE 80.829 THRESHOLD 80.000
+[ALERT][157876] TEMP_SPIKE: VALUE -22.082 THRESHOLD 5.000
+[ALERT][158076] TEMP_SPIKE: VALUE 13.791 THRESHOLD 5.000
+[ALERT][158276] HUMID_HIGH: VALUE 85.310 THRESHOLD 80.000
+[ALERT][158276] TEMP_SPIKE: VALUE -18.882 THRESHOLD 5.000
+[ALERT][158676] TEMP_SPIKE: VALUE 7.060 THRESHOLD 5.000
+[ALERT][159276] TEMP_SPIKE: VALUE 5.214 THRESHOLD 5.000
+[ALERT][159476] HUMID_HIGH: VALUE 88.513 THRESHOLD 80.000
+[ALERT][159476] TEMP_SPIKE: VALUE -8.631 THRESHOLD 5.000
+[ALERT][159876] TEMP_SPIKE: VALUE 6.066 THRESHOLD 5.000
+[ALERT][160076] TEMP_SPIKE: VALUE -12.944 THRESHOLD 5.000
+[ALERT][160276] TEMP_SPIKE: VALUE 11.285 THRESHOLD 5.000
+[ALERT][160476] TEMP_HIGH: VALUE 40.721 THRESHOLD 40.000
+[ALERT][160476] TEMP_SPIKE: VALUE 12.580 THRESHOLD 5.000
+[ALERT][160676] TEMP_SPIKE: VALUE -10.733 THRESHOLD 5.000
+[ALERT][160876] TEMP_SPIKE: VALUE -8.149 THRESHOLD 5.000
+[ALERT][161076] TEMP_SPIKE: VALUE 7.072 THRESHOLD 5.000
+[ALERT][161276] TEMP_SPIKE: VALUE -10.862 THRESHOLD 5.000
+[ALERT][161676] TEMP_HIGH: VALUE 40.655 THRESHOLD 40.000
+[ALERT][161676] TEMP_SPIKE: VALUE 20.743 THRESHOLD 5.000
+[ALERT][161876] TEMP_SPIKE: VALUE -21.064 THRESHOLD 5.000
+[ALERT][162076] TEMP_SPIKE: VALUE 15.007 THRESHOLD 5.000
+[ALERT][162276] TEMP_SPIKE: VALUE -12.580 THRESHOLD 5.000
+[ALERT][162476] TEMP_SPIKE: VALUE 7.728 THRESHOLD 5.000
+[ALERT][162676] TEMP_SPIKE: VALUE -14.290 THRESHOLD 5.000
+[ALERT][162876] TEMP_HIGH: VALUE 41.973 THRESHOLD 40.000
+[ALERT][162876] TEMP_SPIKE: VALUE 26.517 THRESHOLD 5.000
+[ALERT][163076] TEMP_SPIKE: VALUE -11.597 THRESHOLD 5.000
+[ALERT][163276] TEMP_SPIKE: VALUE 5.248 THRESHOLD 5.000
+[ALERT][163476] TEMP_SPIKE: VALUE -19.239 THRESHOLD 5.000
+[ALERT][163676] TEMP_HIGH: VALUE 43.730 THRESHOLD 40.000
+[ALERT][163676] TEMP_SPIKE: VALUE 27.345 THRESHOLD 5.000
+[ALERT][163876] TEMP_HIGH: VALUE 44.847 THRESHOLD 40.000
+[ALERT][164076] TEMP_SPIKE: VALUE -13.687 THRESHOLD 5.000
+[ALERT][164276] TEMP_HIGH: VALUE 42.185 THRESHOLD 40.000
+[ALERT][164276] TEMP_SPIKE: VALUE 11.025 THRESHOLD 5.000
+[ALERT][164476] TEMP_HIGH: VALUE 44.213 THRESHOLD 40.000
+[ALERT][164676] TEMP_SPIKE: VALUE -21.420 THRESHOLD 5.000
+[ALERT][164876] TEMP_SPIKE: VALUE 7.200 THRESHOLD 5.000
+[ALERT][165276] TEMP_SPIKE: VALUE 6.545 THRESHOLD 5.000
+[ALERT][165476] HUMID_HIGH: VALUE 84.005 THRESHOLD 80.000
+[ALERT][165476] TEMP_SPIKE: VALUE -8.504 THRESHOLD 5.000
+[ALERT][165676] TEMP_HIGH: VALUE 42.803 THRESHOLD 40.000
+[ALERT][165676] TEMP_SPIKE: VALUE 17.777 THRESHOLD 5.000
+[ALERT][165876] TEMP_SPIKE: VALUE -16.227 THRESHOLD 5.000
+[ALERT][166076] TEMP_SPIKE: VALUE 13.288 THRESHOLD 5.000
+[ALERT][166476] TEMP_SPIKE: VALUE -17.758 THRESHOLD 5.000
+[ALERT][166676] TEMP_HIGH: VALUE 44.345 THRESHOLD 40.000
+[ALERT][166676] HUMID_HIGH: VALUE 81.108 THRESHOLD 80.000
+[ALERT][166676] TEMP_SPIKE: VALUE 25.449 THRESHOLD 5.000
+[ALERT][166876] TEMP_SPIKE: VALUE -5.266 THRESHOLD 5.000
+[ALERT][167276] TEMP_HIGH: VALUE 41.294 THRESHOLD 40.000
+[ALERT][167476] TEMP_SPIKE: VALUE -15.635 THRESHOLD 5.000
+[ALERT][167676] HUMID_HIGH: VALUE 89.618 THRESHOLD 80.000
+[ALERT][167676] TEMP_SPIKE: VALUE 10.414 THRESHOLD 5.000
+[ALERT][167876] TEMP_SPIKE: VALUE -14.246 THRESHOLD 5.000
+[ALERT][168076] HUMID_HIGH: VALUE 84.788 THRESHOLD 80.000
+[ALERT][168076] TEMP_SPIKE: VALUE 6.276 THRESHOLD 5.000
+[ALERT][168276] TEMP_SPIKE: VALUE 10.314 THRESHOLD 5.000
+[ALERT][168476] TEMP_SPIKE: VALUE -7.493 THRESHOLD 5.000
+[ALERT][168676] TEMP_HIGH: VALUE 42.621 THRESHOLD 40.000
+[ALERT][168676] TEMP_SPIKE: VALUE 11.697 THRESHOLD 5.000
+[ALERT][168876] HUMID_HIGH: VALUE 82.286 THRESHOLD 80.000
+[ALERT][169076] TEMP_SPIKE: VALUE -12.535 THRESHOLD 5.000
+[ALERT][169276] TEMP_HIGH: VALUE 43.060 THRESHOLD 40.000
+[ALERT][169276] TEMP_SPIKE: VALUE 17.818 THRESHOLD 5.000
+[ALERT][169476] TEMP_SPIKE: VALUE -27.099 THRESHOLD 5.000
+[ALERT][169676] TEMP_SPIKE: VALUE 21.711 THRESHOLD 5.000
+[ALERT][169876] TEMP_SPIKE: VALUE -8.936 THRESHOLD 5.000
+[ALERT][170076] TEMP_SPIKE: VALUE -11.862 THRESHOLD 5.000
+[ALERT][170676] TEMP_SPIKE: VALUE 12.962 THRESHOLD 5.000
+[ALERT][170876] HUMID_HIGH: VALUE 82.946 THRESHOLD 80.000
+[ALERT][171076] TEMP_SPIKE: VALUE -11.240 THRESHOLD 5.000
+[ALERT][171276] TEMP_SPIKE: VALUE 11.070 THRESHOLD 5.000
+[ALERT][171476] TEMP_SPIKE: VALUE -5.098 THRESHOLD 5.000
+[ALERT][171676] TEMP_SPIKE: VALUE 5.079 THRESHOLD 5.000
+[ALERT][171876] TEMP_HIGH: VALUE 42.173 THRESHOLD 40.000
+[ALERT][171876] TEMP_SPIKE: VALUE 9.256 THRESHOLD 5.000
+[ALERT][172076] HUMID_HIGH: VALUE 80.106 THRESHOLD 80.000
+[ALERT][172076] TEMP_SPIKE: VALUE -20.922 THRESHOLD 5.000
+[ALERT][172276] TEMP_SPIKE: VALUE 13.019 THRESHOLD 5.000
+[ALERT][172676] TEMP_HIGH: VALUE 41.558 THRESHOLD 40.000
+[ALERT][172876] TEMP_SPIKE: VALUE -20.007 THRESHOLD 5.000
+[ALERT][173076] TEMP_SPIKE: VALUE 10.660 THRESHOLD 5.000
+[ALERT][173476] HUMID_HIGH: VALUE 80.795 THRESHOLD 80.000
+[ALERT][173476] TEMP_SPIKE: VALUE -9.046 THRESHOLD 5.000
+[ALERT][173876] TEMP_SPIKE: VALUE -10.190 THRESHOLD 5.000
+[ALERT][174676] TEMP_SPIKE: VALUE 21.772 THRESHOLD 5.000
+[ALERT][174876] HUMID_HIGH: VALUE 84.982 THRESHOLD 80.000
+[ALERT][175076] TEMP_SPIKE: VALUE -15.590 THRESHOLD 5.000
+[ALERT][175676] TEMP_SPIKE: VALUE 6.680 THRESHOLD 5.000
+[ALERT][176476] TEMP_SPIKE: VALUE -13.808 THRESHOLD 5.000
+[ALERT][176676] HUMID_HIGH: VALUE 85.705 THRESHOLD 80.000
+[ALERT][176876] HUMID_HIGH: VALUE 86.112 THRESHOLD 80.000
+[ALERT][176876] TEMP_SPIKE: VALUE 9.158 THRESHOLD 5.000
+[ALERT][177076] TEMP_HIGH: VALUE 40.447 THRESHOLD 40.000
+[ALERT][177076] TEMP_SPIKE: VALUE 15.541 THRESHOLD 5.000
+[ALERT][177276] TEMP_HIGH: VALUE 40.129 THRESHOLD 40.000
+[ALERT][177476] TEMP_SPIKE: VALUE -24.004 THRESHOLD 5.000
+[ALERT][177676] TEMP_SPIKE: VALUE 12.057 THRESHOLD 5.000
+[ALERT][177876] TEMP_SPIKE: VALUE -12.151 THRESHOLD 5.000
+[ALERT][178076] TEMP_SPIKE: VALUE 23.463 THRESHOLD 5.000
+[ALERT][178276] HUMID_HIGH: VALUE 87.116 THRESHOLD 80.000
+[ALERT][178276] TEMP_SPIKE: VALUE -5.734 THRESHOLD 5.000
+[ALERT][178476] TEMP_SPIKE: VALUE 5.018 THRESHOLD 5.000
+[ALERT][178676] TEMP_SPIKE: VALUE -21.408 THRESHOLD 5.000
+[ALERT][178876] TEMP_SPIKE: VALUE 11.288 THRESHOLD 5.000
+[ALERT][179076] TEMP_SPIKE: VALUE 6.248 THRESHOLD 5.000
+[ALERT][179276] TEMP_SPIKE: VALUE -16.981 THRESHOLD 5.000
+[ALERT][179476] TEMP_SPIKE: VALUE 19.628 THRESHOLD 5.000
+[ALERT][179676] HUMID_HIGH: VALUE 80.457 THRESHOLD 80.000
+[ALERT][179676] TEMP_SPIKE: VALUE -5.995 THRESHOLD 5.000
+[ALERT][180276] TEMP_HIGH: VALUE 40.227 THRESHOLD 40.000
+[ALERT][180276] TEMP_SPIKE: VALUE 10.875 THRESHOLD 5.000
+[ALERT][180476] TEMP_SPIKE: VALUE -10.862 THRESHOLD 5.000
+[ALERT][180676] HUMID_HIGH: VALUE 89.159 THRESHOLD 80.000
+[ALERT][180676] TEMP_SPIKE: VALUE -6.811 THRESHOLD 5.000
+[ALERT][181076] TEMP_SPIKE: VALUE -5.974 THRESHOLD 5.000
+[ALERT][181276] TEMP_SPIKE: VALUE 18.394 THRESHOLD 5.000
+[ALERT][181476] TEMP_SPIKE: VALUE -6.001 THRESHOLD 5.000
+[ALERT][181676] HUMID_HIGH: VALUE 82.924 THRESHOLD 80.000
+[ALERT][181676] TEMP_SPIKE: VALUE 10.227 THRESHOLD 5.000
+[ALERT][182076] HUMID_HIGH: VALUE 86.965 THRESHOLD 80.000
+[ALERT][182076] TEMP_SPIKE: VALUE -5.450 THRESHOLD 5.000
+[ALERT][182276] TEMP_SPIKE: VALUE -10.413 THRESHOLD 5.000
+[ALERT][182676] TEMP_SPIKE: VALUE 13.970 THRESHOLD 5.000
+[ALERT][183076] TEMP_SPIKE: VALUE -20.295 THRESHOLD 5.000
+[ALERT][183276] TEMP_SPIKE: VALUE 11.781 THRESHOLD 5.000
+[ALERT][183476] HUMID_HIGH: VALUE 82.111 THRESHOLD 80.000
+[ALERT][183676] TEMP_SPIKE: VALUE 14.364 THRESHOLD 5.000
+[ALERT][183876] TEMP_SPIKE: VALUE -7.918 THRESHOLD 5.000
+[ALERT][184076] HUMID_HIGH: VALUE 84.516 THRESHOLD 80.000
+[ALERT][184276] TEMP_HIGH: VALUE 41.468 THRESHOLD 40.000
+[ALERT][184276] TEMP_SPIKE: VALUE 5.785 THRESHOLD 5.000
+[ALERT][184676] TEMP_SPIKE: VALUE -21.177 THRESHOLD 5.000
+[ALERT][184876] TEMP_HIGH: VALUE 43.448 THRESHOLD 40.000
+[ALERT][184876] TEMP_SPIKE: VALUE 27.552 THRESHOLD 5.000
+[ALERT][185076] TEMP_HIGH: VALUE 40.080 THRESHOLD 40.000
+[ALERT][185276] TEMP_SPIKE: VALUE -8.485 THRESHOLD 5.000
+[ALERT][185476] HUMID_HIGH: VALUE 80.969 THRESHOLD 80.000
+[ALERT][185676] TEMP_SPIKE: VALUE -13.126 THRESHOLD 5.000
+[ALERT][185876] TEMP_HIGH: VALUE 44.615 THRESHOLD 40.000
+[ALERT][185876] TEMP_SPIKE: VALUE 25.279 THRESHOLD 5.000
+[ALERT][186076] TEMP_HIGH: VALUE 43.113 THRESHOLD 40.000
+[ALERT][186276] TEMP_SPIKE: VALUE -10.431 THRESHOLD 5.000
+[ALERT][186876] HUMID_HIGH: VALUE 80.797 THRESHOLD 80.000
+[ALERT][186876] TEMP_SPIKE: VALUE -17.615 THRESHOLD 5.000
+[ALERT][187476] HUMID_HIGH: VALUE 89.829 THRESHOLD 80.000
+[ALERT][187676] HUMID_HIGH: VALUE 80.439 THRESHOLD 80.000
+[ALERT][187676] TEMP_SPIKE: VALUE 15.544 THRESHOLD 5.000
+[ALERT][188076] TEMP_SPIKE: VALUE 5.845 THRESHOLD 5.000
+[ALERT][188276] TEMP_HIGH: VALUE 44.419 THRESHOLD 40.000
+[ALERT][188276] TEMP_SPIKE: VALUE 6.267 THRESHOLD 5.000
+[ALERT][188476] HUMID_HIGH: VALUE 88.286 THRESHOLD 80.000
+[ALERT][188476] TEMP_SPIKE: VALUE -8.350 THRESHOLD 5.000
+[ALERT][188676] TEMP_HIGH: VALUE 40.129 THRESHOLD 40.000
+[ALERT][188876] TEMP_SPIKE: VALUE -9.249 THRESHOLD 5.000
+[ALERT][189276] TEMP_SPIKE: VALUE -13.694 THRESHOLD 5.000
+[ALERT][189476] HUMID_HIGH: VALUE 81.381 THRESHOLD 80.000
+[ALERT][189476] TEMP_SPIKE: VALUE 10.737 THRESHOLD 5.000
+[ALERT][189676] TEMP_HIGH: VALUE 43.306 THRESHOLD 40.000
+[ALERT][189676] TEMP_SPIKE: VALUE 13.955 THRESHOLD 5.000
+[ALERT][189876] TEMP_SPIKE: VALUE -14.698 THRESHOLD 5.000
+[ALERT][190276] TEMP_SPIKE: VALUE 6.210 THRESHOLD 5.000
+[ALERT][190476] TEMP_SPIKE: VALUE -11.839 THRESHOLD 5.000
+[ALERT][191276] TEMP_SPIKE: VALUE 9.631 THRESHOLD 5.000
+[ALERT][191476] TEMP_HIGH: VALUE 44.033 THRESHOLD 40.000
+[ALERT][191476] TEMP_SPIKE: VALUE 11.098 THRESHOLD 5.000
+[ALERT][191676] TEMP_SPIKE: VALUE -19.678 THRESHOLD 5.000
+[ALERT][192276] TEMP_SPIKE: VALUE -12.444 THRESHOLD 5.000
+[ALERT][192476] TEMP_SPIKE: VALUE 8.849 THRESHOLD 5.000
+[ALERT][192676] TEMP_SPIKE: VALUE 7.586 THRESHOLD 5.000
+[ALERT][192876] TEMP_SPIKE: VALUE -8.481 THRESHOLD 5.000
+[ALERT][193076] HUMID_HIGH: VALUE 86.909 THRESHOLD 80.000
+[ALERT][193076] TEMP_SPIKE: VALUE -5.757 THRESHOLD 5.000
+[ALERT][193476] TEMP_SPIKE: VALUE 15.696 THRESHOLD 5.000
+[ALERT][193876] TEMP_HIGH: VALUE 41.854 THRESHOLD 40.000
+[ALERT][193876] TEMP_SPIKE: VALUE 8.272 THRESHOLD 5.000
+[ALERT][194076] HUMID_HIGH: VALUE 88.602 THRESHOLD 80.000
+[ALERT][194076] TEMP_SPIKE: VALUE -10.847 THRESHOLD 5.000
+[ALERT][194276] TEMP_HIGH: VALUE 41.526 THRESHOLD 40.000
+[ALERT][194276] TEMP_SPIKE: VALUE 10.519 THRESHOLD 5.000
+[ALERT][194476] HUMID_HIGH: VALUE 89.809 THRESHOLD 80.000
+[ALERT][194476] TEMP_SPIKE: VALUE -7.145 THRESHOLD 5.000
+[ALERT][194676] TEMP_SPIKE: VALUE -15.504 THRESHOLD 5.000
+[ALERT][194876] HUMID_HIGH: VALUE 89.851 THRESHOLD 80.000
+[ALERT][195076] TEMP_HIGH: VALUE 40.789 THRESHOLD 40.000
+[ALERT][195076] HUMID_HIGH: VALUE 86.952 THRESHOLD 80.000
+[ALERT][195076] TEMP_SPIKE: VALUE 23.572 THRESHOLD 5.000
+[ALERT][195276] TEMP_SPIKE: VALUE -21.931 THRESHOLD 5.000
+[ALERT][195476] TEMP_SPIKE: VALUE 9.728 THRESHOLD 5.000
+[ALERT][196076] TEMP_HIGH: VALUE 43.942 THRESHOLD 40.000
+[ALERT][196076] TEMP_SPIKE: VALUE 18.221 THRESHOLD 5.000
+[ALERT][196276] TEMP_SPIKE: VALUE -16.189 THRESHOLD 5.000
+[ALERT][196476] TEMP_SPIKE: VALUE -11.553 THRESHOLD 5.000
+[ALERT][196676] TEMP_SPIKE: VALUE 22.304 THRESHOLD 5.000
+[ALERT][196876] TEMP_SPIKE: VALUE -22.753 THRESHOLD 5.000
+[ALERT][197676] TEMP_SPIKE: VALUE 19.170 THRESHOLD 5.000
+[ALERT][197876] TEMP_SPIKE: VALUE -11.547 THRESHOLD 5.000
+[ALERT][198076] TEMP_SPIKE: VALUE 10.465 THRESHOLD 5.000
+[ALERT][198276] TEMP_SPIKE: VALUE -23.017 THRESHOLD 5.000
+[ALERT][198676] TEMP_SPIKE: VALUE 9.768 THRESHOLD 5.000
+[ALERT][198876] TEMP_HIGH: VALUE 40.508 THRESHOLD 40.000
+[ALERT][198876] TEMP_SPIKE: VALUE 15.643 THRESHOLD 5.000
+[ALERT][199076] TEMP_SPIKE: VALUE -18.428 THRESHOLD 5.000
+[ALERT][199276] TEMP_SPIKE: VALUE 5.094 THRESHOLD 5.000
+[ALERT][199476] HUMID_HIGH: VALUE 83.685 THRESHOLD 80.000
+[ALERT][199876] TEMP_HIGH: VALUE 42.954 THRESHOLD 40.000
+[ALERT][199876] TEMP_SPIKE: VALUE 19.450 THRESHOLD 5.000
+[ALERT][200076] TEMP_HIGH: VALUE 40.902 THRESHOLD 40.000
+[ALERT][200076] HUMID_HIGH: VALUE 82.843 THRESHOLD 80.000
+[ALERT][200276] TEMP_SPIKE: VALUE -7.729 THRESHOLD 5.000
+[ALERT][200476] TEMP_SPIKE: VALUE -15.542 THRESHOLD 5.000
+[ALERT][200676] HUMID_HIGH: VALUE 88.955 THRESHOLD 80.000
+[ALERT][200676] TEMP_SPIKE: VALUE 19.372 THRESHOLD 5.000
+[ALERT][201076] HUMID_HIGH: VALUE 82.080 THRESHOLD 80.000
+[ALERT][201076] TEMP_SPIKE: VALUE -5.859 THRESHOLD 5.000
+[ALERT][202076] TEMP_SPIKE: VALUE 14.814 THRESHOLD 5.000
+[ALERT][202276] TEMP_HIGH: VALUE 44.822 THRESHOLD 40.000
+[ALERT][202276] TEMP_SPIKE: VALUE 7.523 THRESHOLD 5.000
+[ALERT][202676] TEMP_HIGH: VALUE 44.125 THRESHOLD 40.000
+[ALERT][202876] HUMID_HIGH: VALUE 84.549 THRESHOLD 80.000
+[ALERT][202876] TEMP_SPIKE: VALUE -27.489 THRESHOLD 5.000
+[ALERT][203276] TEMP_HIGH: VALUE 40.400 THRESHOLD 40.000
+[ALERT][203276] TEMP_SPIKE: VALUE 22.927 THRESHOLD 5.000
+[ALERT][203476] TEMP_HIGH: VALUE 44.614 THRESHOLD 40.000
+[ALERT][203676] TEMP_SPIKE: VALUE -8.429 THRESHOLD 5.000
+[ALERT][203876] HUMID_HIGH: VALUE 89.863 THRESHOLD 80.000
+[ALERT][203876] TEMP_SPIKE: VALUE -14.046 THRESHOLD 5.000
+[ALERT][204076] TEMP_HIGH: VALUE 40.064 THRESHOLD 40.000
+[ALERT][204076] TEMP_SPIKE: VALUE 17.925 THRESHOLD 5.000
+[ALERT][204276] HUMID_HIGH: VALUE 83.608 THRESHOLD 80.000
+[ALERT][204276] TEMP_SPIKE: VALUE -22.527 THRESHOLD 5.000
+[ALERT][204676] TEMP_HIGH: VALUE 42.923 THRESHOLD 40.000
+[ALERT][204676] TEMP_SPIKE: VALUE 23.634 THRESHOLD 5.000
+[ALERT][204876] TEMP_HIGH: VALUE 44.079 THRESHOLD 40.000
+[ALERT][204876] HUMID_HIGH: VALUE 84.977 THRESHOLD 80.000
+[ALERT][205076] TEMP_HIGH: VALUE 40.650 THRESHOLD 40.000
+[ALERT][205276] HUMID_HIGH: VALUE 85.539 THRESHOLD 80.000
+[ALERT][205476] TEMP_SPIKE: VALUE -15.567 THRESHOLD 5.000
+[ALERT][206076] TEMP_SPIKE: VALUE 11.702 THRESHOLD 5.000
+[ALERT][206276] TEMP_HIGH: VALUE 42.593 THRESHOLD 40.000
+[ALERT][206276] TEMP_SPIKE: VALUE 9.746 THRESHOLD 5.000
+[ALERT][206476] TEMP_SPIKE: VALUE -12.210 THRESHOLD 5.000
+[ALERT][206676] TEMP_SPIKE: VALUE -11.690 THRESHOLD 5.000
+[ALERT][206876] HUMID_HIGH: VALUE 84.170 THRESHOLD 80.000
+[ALERT][206876] TEMP_SPIKE: VALUE 14.172 THRESHOLD 5.000
+[ALERT][207276] TEMP_SPIKE: VALUE -5.978 THRESHOLD 5.000
+[ALERT][207676] HUMID_HIGH: VALUE 85.347 THRESHOLD 80.000
+[ALERT][207676] TEMP_SPIKE: VALUE -10.259 THRESHOLD 5.000
+[ALERT][208076] HUMID_HIGH: VALUE 85.707 THRESHOLD 80.000
+[ALERT][208076] TEMP_SPIKE: VALUE 5.020 THRESHOLD 5.000
+[ALERT][208276] HUMID_HIGH: VALUE 86.491 THRESHOLD 80.000
+[ALERT][208476] TEMP_SPIKE: VALUE 9.306 THRESHOLD 5.000
+[ALERT][208676] TEMP_SPIKE: VALUE 10.867 THRESHOLD 5.000
+[ALERT][208876] TEMP_SPIKE: VALUE -12.292 THRESHOLD 5.000
+[ALERT][209276] TEMP_HIGH: VALUE 40.211 THRESHOLD 40.000
+[ALERT][209276] TEMP_SPIKE: VALUE 14.046 THRESHOLD 5.000
+[ALERT][209476] TEMP_SPIKE: VALUE -24.001 THRESHOLD 5.000
+[ALERT][209676] TEMP_HIGH: VALUE 41.865 THRESHOLD 40.000
+[ALERT][209676] TEMP_SPIKE: VALUE 25.655 THRESHOLD 5.000
+[ALERT][209876] TEMP_HIGH: VALUE 41.746 THRESHOLD 40.000
+[ALERT][210076] TEMP_SPIKE: VALUE -25.758 THRESHOLD 5.000
+[ALERT][210676] TEMP_SPIKE: VALUE 8.425 THRESHOLD 5.000
+[ALERT][211076] TEMP_SPIKE: VALUE -6.928 THRESHOLD 5.000
+[ALERT][211276] HUMID_HIGH: VALUE 83.406 THRESHOLD 80.000
+[ALERT][211476] TEMP_SPIKE: VALUE -8.404 THRESHOLD 5.000
+[ALERT][211676] TEMP_SPIKE: VALUE 6.448 THRESHOLD 5.000
+[ALERT][212276] TEMP_SPIKE: VALUE 11.870 THRESHOLD 5.000
+[ALERT][212476] TEMP_SPIKE: VALUE -12.107 THRESHOLD 5.000
+[ALERT][212676] TEMP_SPIKE: VALUE 18.338 THRESHOLD 5.000
+[ALERT][212876] TEMP_SPIKE: VALUE -20.561 THRESHOLD 5.000
+[ALERT][213476] TEMP_SPIKE: VALUE 17.029 THRESHOLD 5.000
+[ALERT][214076] TEMP_HIGH: VALUE 42.387 THRESHOLD 40.000
+[ALERT][214076] TEMP_SPIKE: VALUE 12.189 THRESHOLD 5.000
+[ALERT][214676] HUMID_HIGH: VALUE 86.824 THRESHOLD 80.000
+[ALERT][214676] TEMP_SPIKE: VALUE -12.520 THRESHOLD 5.000
+[ALERT][214876] TEMP_SPIKE: VALUE 7.997 THRESHOLD 5.000
+[ALERT][215076] TEMP_SPIKE: VALUE -19.490 THRESHOLD 5.000
+[ALERT][215276] HUMID_HIGH: VALUE 80.418 THRESHOLD 80.000
+[ALERT][215276] TEMP_SPIKE: VALUE 7.565 THRESHOLD 5.000
+[ALERT][215476] TEMP_SPIKE: VALUE 10.035 THRESHOLD 5.000
+[ALERT][215676] TEMP_HIGH: VALUE 40.507 THRESHOLD 40.000
+[ALERT][215676] TEMP_SPIKE: VALUE 7.844 THRESHOLD 5.000
+[ALERT][215876] HUMID_HIGH: VALUE 82.340 THRESHOLD 80.000
+[ALERT][216076] TEMP_SPIKE: VALUE -18.558 THRESHOLD 5.000
+[ALERT][216276] TEMP_SPIKE: VALUE 6.270 THRESHOLD 5.000
+[ALERT][216676] HUMID_HIGH: VALUE 87.988 THRESHOLD 80.000
+[ALERT][216876] HUMID_HIGH: VALUE 85.978 THRESHOLD 80.000
+[ALERT][217076] TEMP_SPIKE: VALUE 6.790 THRESHOLD 5.000
+[ALERT][217276] TEMP_SPIKE: VALUE -7.684 THRESHOLD 5.000
+[ALERT][217476] TEMP_SPIKE: VALUE 5.362 THRESHOLD 5.000
+[ALERT][217676] HUMID_HIGH: VALUE 85.326 THRESHOLD 80.000
+[ALERT][217676] TEMP_SPIKE: VALUE -9.568 THRESHOLD 5.000
+[ALERT][217876] TEMP_SPIKE: VALUE 12.218 THRESHOLD 5.000
+[ALERT][218076] HUMID_HIGH: VALUE 80.693 THRESHOLD 80.000
+[ALERT][218076] TEMP_SPIKE: VALUE -5.708 THRESHOLD 5.000
+[ALERT][218276] TEMP_HIGH: VALUE 43.742 THRESHOLD 40.000
+[ALERT][218276] TEMP_SPIKE: VALUE 12.477 THRESHOLD 5.000
+[ALERT][218476] TEMP_SPIKE: VALUE -24.838 THRESHOLD 5.000
+[ALERT][218676] TEMP_HIGH: VALUE 43.544 THRESHOLD 40.000
+[ALERT][218676] TEMP_SPIKE: VALUE 24.640 THRESHOLD 5.000
+[ALERT][218876] TEMP_SPIKE: VALUE -26.117 THRESHOLD 5.000
+[ALERT][219076] TEMP_SPIKE: VALUE 12.953 THRESHOLD 5.000
+[ALERT][219676] TEMP_HIGH: VALUE 41.565 THRESHOLD 40.000
+[ALERT][219676] HUMID_HIGH: VALUE 88.915 THRESHOLD 80.000
+[ALERT][219676] TEMP_SPIKE: VALUE 13.100 THRESHOLD 5.000
+[ALERT][219876] TEMP_SPIKE: VALUE -18.828 THRESHOLD 5.000
+[ALERT][220276] TEMP_SPIKE: VALUE 5.382 THRESHOLD 5.000
+[ALERT][220476] TEMP_SPIKE: VALUE 15.148 THRESHOLD 5.000
+[ALERT][220676] TEMP_SPIKE: VALUE -16.985 THRESHOLD 5.000
+[ALERT][220876] TEMP_SPIKE: VALUE 13.411 THRESHOLD 5.000
+[ALERT][221076] TEMP_SPIKE: VALUE -13.066 THRESHOLD 5.000
+[ALERT][221276] TEMP_SPIKE: VALUE 12.525 THRESHOLD 5.000
+[ALERT][221676] HUMID_HIGH: VALUE 87.334 THRESHOLD 80.000
+[ALERT][222076] TEMP_SPIKE: VALUE 8.450 THRESHOLD 5.000
+[ALERT][222276] TEMP_SPIKE: VALUE -10.502 THRESHOLD 5.000
+[ALERT][222476] HUMID_HIGH: VALUE 83.237 THRESHOLD 80.000
+[ALERT][222476] TEMP_SPIKE: VALUE -11.252 THRESHOLD 5.000
+[ALERT][222676] TEMP_SPIKE: VALUE 15.269 THRESHOLD 5.000
+[ALERT][222876] HUMID_HIGH: VALUE 83.536 THRESHOLD 80.000
+[ALERT][222876] TEMP_SPIKE: VALUE 8.886 THRESHOLD 5.000
+[ALERT][223076] TEMP_SPIKE: VALUE -21.366 THRESHOLD 5.000
+[ALERT][223276] TEMP_SPIKE: VALUE 19.290 THRESHOLD 5.000
+[ALERT][223476] TEMP_HIGH: VALUE 43.967 THRESHOLD 40.000
+[ALERT][223476] TEMP_SPIKE: VALUE 6.703 THRESHOLD 5.000
+[ALERT][223676] TEMP_SPIKE: VALUE -6.271 THRESHOLD 5.000
+[ALERT][223876] TEMP_HIGH: VALUE 42.540 THRESHOLD 40.000
+[ALERT][224076] TEMP_HIGH: VALUE 41.366 THRESHOLD 40.000
+[ALERT][224276] TEMP_SPIKE: VALUE -10.719 THRESHOLD 5.000
+[ALERT][224476] TEMP_SPIKE: VALUE 8.489 THRESHOLD 5.000
+[ALERT][225276] TEMP_SPIKE: VALUE -9.275 THRESHOLD 5.000
+[ALERT][225476] TEMP_SPIKE: VALUE 7.400 THRESHOLD 5.000
+[ALERT][225676] TEMP_SPIKE: VALUE -7.163 THRESHOLD 5.000
+[ALERT][225876] HUMID_HIGH: VALUE 86.715 THRESHOLD 80.000
+[ALERT][225876] TEMP_SPIKE: VALUE 7.171 THRESHOLD 5.000
+[ALERT][226076] TEMP_SPIKE: VALUE -10.936 THRESHOLD 5.000
+[ALERT][226476] TEMP_SPIKE: VALUE -10.930 THRESHOLD 5.000
+[ALERT][226676] TEMP_SPIKE: VALUE 11.424 THRESHOLD 5.000
+
+[MAIN] shutting down...
+[ALERT] stopped
+[PROCESSOR] stopped
+[LOGGER] stopped
+[SENSOR] stopped after 1051 samples
+
+================ SUMMARY ================
+uptime            : 210.2 s
+samples processed : 1050
+buffer produced   : 1050
+buffer consumed   : 1050
+buffer overflow   : 0
+alerts TEMP_HIGH  : 168
+alerts HUMID_HIGH : 187
+alerts TEMP_SPIKE : 707
+log file          : /tmp/sms.log
+=========================================
+
+===== Jitter report: TARGET (SCHED_FIFO) =====
+samples : 1051
+Min     : 109 us
+Avg     : 162.2 us
+Max     : 431 us
+P99     : 286 us
+Histogram:
+  [    0,  100) us : 0 (0.0%)
+  [  100,  500) us : 1051 (100.0%)
+  [  500, 1000) us : 0 (0.0%)
+  [ 1000,  inf) us : 0 (0.0%)
+[MAIN] jitter report written to /tmp/jitter_fifo.txt
+[MAIN] clean exit
+/ # cat /tmp/jitter_fifo.txt
+===== Jitter report: TARGET (SCHED_FIFO) =====
+samples : 1051
+Min     : 109 us
+Avg     : 162.2 us
+Max     : 431 us
+P99     : 286 us
+Histogram:
+  [    0,  100) us : 0 (0.0%)
+  [  100,  500) us : 1051 (100.0%)
+  [  500, 1000) us : 0 (0.0%)
+  [ 1000,  inf) us : 0 (0.0%)
+/ # poweroff -f
+Flash device refused suspend due to active operation (state 20)
+Flash device refused suspend due to active operation (state 20)
+reboot: Power down

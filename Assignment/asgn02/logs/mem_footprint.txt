@@ -1,0 +1,622 @@
+=== HOST (Ubuntu 22.04): $ qemu-system-arm -M vexpress-a9 -cpu cortex-a9 -m 512M -smp 2 -nographic \
+       -kernel /work/Assignment/asgn02/output/zImage \
+       -dtb /work/Assignment/asgn02/output/vexpress-v2p-ca9.dtb \
+       -initrd /work/Assignment/asgn02/output/initramfs_asgn2.cpio.gz \
+       -append 'console=ttyAMA0,115200 rdinit=/sbin/init mem=512M'
+
+qemu: module audio-audio-pa not found, do you want to install qemu-system-gui package?
+qemu: module audio-audio-jack not found, do you want to install qemu-system-gui package?
+qemu: module audio-audio-sdl not found, do you want to install qemu-system-gui package?
+qemu: module audio-audio-pa not found, do you want to install qemu-system-gui package?
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5182:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5705:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+Booting Linux on physical CPU 0x0
+Linux version 5.15.0 (root@minhvt) (arm-linux-gnueabihf-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #3 SMP Sat Oct 17 00:33:47 UTC 2026
+CPU: ARMv7 Processor [410fc090] revision 0 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+OF: fdt: Machine model: V2P-CA9
+Memory policy: Data cache writealloc
+Reserved memory: created DMA memory pool at 0x4c000000, size 8 MiB
+OF: reserved mem: initialized node vram@4c000000, compatible id shared-dma-pool
+cma: Reserved 16 MiB at 0x7f000000
+Zone ranges:
+  Normal   [mem 0x0000000060000000-0x000000007fffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000060000000-0x000000007fffffff]
+Initmem setup node 0 [mem 0x0000000060000000-0x000000007fffffff]
+percpu: Embedded 15 pages/cpu s30668 r8192 d22580 u61440
+Built 1 zonelists, mobility grouping on.  Total pages: 130048
+Kernel command line: console=ttyAMA0,115200 rdinit=/sbin/init mem=512M
+printk: log_buf_len individual max cpu contribution: 4096 bytes
+printk: log_buf_len total cpu_extra contributions: 12288 bytes
+printk: log_buf_len min size: 16384 bytes
+printk: log_buf_len: 32768 bytes
+printk: early log buf free: 14992(91%)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+mem auto-init: stack:off, heap alloc:off, heap free:off
+Memory: 488356K/524288K available (8192K kernel code, 594K rwdata, 1772K rodata, 1024K init, 150K bss, 19548K reserved, 16384K cma-reserved)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+trace event string verifier disabled
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU event tracing is enabled.
+rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+L2C: platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C: DT/platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 dynamic clock gating disabled, standby mode disabled
+L2C-310 cache controller enabled, 8 ways, 128 kB
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x46420001
+random: get_random_bytes called from start_kernel+0x4e4/0x69c with crng_init=0
+sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+clocksource: arm,sp804: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275 ns
+Failed to initialize '/bus@40000000/motherboard-bus@40000000/iofpga@7,00000000/timer@12000': -22
+smp_twd: clock not found -2
+Console: colour dummy device 80x30
+Calibrating local timer... 101.14MHz.
+Calibrating delay loop... 1775.61 BogoMIPS (lpj=887808)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+CPU: Testing write buffer coherency: ok
+CPU0: Spectre v2: using BPIALL workaround
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x60100000 - 0x60100060
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU1: Spectre v2: using BPIALL workaround
+CPU2: failed to boot: -38
+CPU3: failed to boot: -38
+smp: Brought up 1 node, 2 CPUs
+SMP: Total of 2 processors activated (3433.47 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 0
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+hw-breakpoint: debug architecture 0x4 unsupported.
+Serial: AMBA PL011 UART driver
+irq: type mismatch, failed to map hwirq-75 for interrupt-controller@1e001000!
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource arm,sp804
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+TCP bind hash table entries: 4096 (order: 3, 32768 bytes, linear)
+TCP: Hash tables configured (established 4096 bind 4096)
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+Unpacking initramfs...
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, 5 counters available
+workingset: timestamp_bits=30 max_order=17 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+9p: Installing v9fs 9p2000 file system support
+io scheduler mq-deadline registered
+io scheduler kyber registered
+sii902x 0-0060: supply iovcc not found, using dummy regulator
+sii902x 0-0060: supply cvcc12 not found, using dummy regulator
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x40000000-0x43ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x44000000-0x47ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+Concatenating MTD devices:
+(0): "40000000.flash"
+(1): "40000000.flash"
+into device "40000000.flash"
+Freeing initrd memory: 2524K
+physmap-flash 48000000.psram: physmap platform flash device: [mem 0x48000000-0x49ffffff]
+libphy: Fixed MDIO Bus: probed
+libphy: smsc911x-mdio: probed
+smsc911x 4e000000.ethernet eth0: MAC Address: 52:54:00:12:34:56
+isp1760 4f000000.usb: isp1760 bus width: 32, oc: digital
+isp1760 4f000000.usb: NXP ISP1760 USB Host Controller
+isp1760 4f000000.usb: new USB bus registered, assigned bus number 1
+isp1760 4f000000.usb: Scratch test failed. 0x00000000
+isp1760 4f000000.usb: can't setup: -19
+isp1760 4f000000.usb: USB bus 1 deregistered
+usbcore: registered new interface driver usb-storage
+ledtrig-cpu: registered to indicate activity on CPUs
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered PF_PACKET protocol family
+9pnet: Installing 9P2000 support
+Registering SWP/SWPB emulation handler
+aaci-pl041 10004000.aaci: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+aaci-pl041 10004000.aaci: FIFO 512 entries
+mmci-pl18x 10005000.mmci: Got CD GPIO
+mmci-pl18x 10005000.mmci: Got WP GPIO
+mmci-pl18x 10005000.mmci: mmc0: PL181 manf 41 rev0 at 0x10005000 irq 33,34 (pio)
+10009000.uart: ttyAMA0 at MMIO 0x10009000 (irq = 37, base_baud = 0) is a PL011 rev1
+printk: console [ttyAMA0] enabled
+1000a000.uart: ttyAMA1 at MMIO 0x1000a000 (irq = 38, base_baud = 0) is a PL011 rev1
+1000b000.uart: ttyAMA2 at MMIO 0x1000b000 (irq = 39, base_baud = 0) is a PL011 rev1
+1000c000.uart: ttyAMA3 at MMIO 0x1000c000 (irq = 40, base_baud = 0) is a PL011 rev1
+rtc-pl031 10017000.rtc: registered as rtc0
+rtc-pl031 10017000.rtc: setting system clock to 2026-10-17T00:54:48 UTC (1792198488)
+amba 10020000.clcd: Fixing up cyclic dependency with 0-0039
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+sii902x 0-0039: supply iovcc not found, using dummy regulator
+sii902x 0-0039: supply cvcc12 not found, using dummy regulator
+i2c i2c-0: Added multiplexed i2c bus 2
+drm-clcd-pl111 1001f000.clcd: assigned reserved memory node vram@4c000000
+drm-clcd-pl111 1001f000.clcd: using device-specific reserved memory
+drm-clcd-pl111 1001f000.clcd: core tile graphics present
+drm-clcd-pl111 1001f000.clcd: this device will be deactivated
+drm-clcd-pl111 1001f000.clcd: Versatile Express init failed - -19
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+drm-clcd-pl111 10020000.clcd: found bridge on endpoint 0
+drm-clcd-pl111 10020000.clcd: Using non-panel bridge
+[drm] Initialized pl111 1.0.0 20170317 for 10020000.clcd on minor 0
+input: AT Raw Set 2 keyboard as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10006000.kmi/serio0/input/input0
+Console: switching to colour frame buffer device 128x48
+drm-clcd-pl111 10020000.clcd: [drm] fb0: pl111 frame buffer device
+ALSA device list:
+  #0: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+Freeing unused kernel image (initmem) memory: 1024K
+Run /sbin/init as init process
+[ SMS ] starting system initialization...
+sms_sensor_driver: loading out-of-tree module taints kernel.
+sms_sensor: ready (major=242, /dev/sms_sensor)
+[ SMS ] sms_sensor_driver loaded OK
+[ SMS ] ready. Run: sms_app -i 500 -d 60 -v
+
+Please press Enter to activate this console. input: ImExPS/2 Generic Explorer Mouse as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+
+/ # random: fast init done
+echo "===== MEMORY FOOTPRINT: VmRSS/VmSize tai T=5s,30s,55s ====="
+===== MEMORY FOOTPRINT: VmRSS/VmSize tai T=5s,30s,55s =====
+/ # sms_app -i 500 -d 120 & P=$!; sleep 6; echo "=== T=5s ==="; grep -E "VmRSS|V
+mSize|VmStk|VmData|Threads" /proc/$P/status; sleep 24; echo "=== T=30s ==="; gre
+p -E "VmRSS|VmSize|VmStk|VmData|Threads" /proc/$P/status; sleep 25; echo "=== T=
+55s ==="; grep -E "VmRSS|VmSize|VmStk|VmData|Threads" /proc/$P/status; echo "===
+ /proc/PID/maps (35 dong dau) ==="; head -35 /proc/$P/maps; kill -INT $P; sleep 
+4; echo "=== /proc/sms_stats sau khi chay ==="; cat /proc/sms_stats
+=== Sensor Monitoring System (SMS) - LAB/ASSIGNMENT-02 ===
+interval=500 ms  temp_thr=40.0 C  hum_thr=80.0 %  duration=120 s  driver mode
+sms_sensor: interval set to 500 ms
+[INIT] driver interval set to 500 ms
+[INIT] mlockall OK (pages locked, no page-fault jitter)
+[INIT] 4 threads running (sensor, processor, alert, logger)
+[ALERT] started
+[SENSOR] SCHED_FIFO prio 50 : OK
+[LOGGER] writing to /tmp/sms.log
+[PROCESSOR] started
+[ALERT][17629] HUMID_HIGH: VALUE 80.389 THRESHOLD 80.000
+[ALERT][18131] TEMP_SPIKE: VALUE -5.646 THRESHOLD 5.000
+[ALERT][18631] TEMP_SPIKE: VALUE 5.573 THRESHOLD 5.000
+[ALERT][19131] TEMP_SPIKE: VALUE 13.668 THRESHOLD 5.000
+[ALERT][19631] TEMP_SPIKE: VALUE -9.734 THRESHOLD 5.000
+[ALERT][20131] TEMP_SPIKE: VALUE -9.530 THRESHOLD 5.000
+[ALERT][20631] TEMP_SPIKE: VALUE 14.210 THRESHOLD 5.000
+[ALERT][22131] TEMP_SPIKE: VALUE -16.940 THRESHOLD 5.000
+=== T=5s ===
+VmSize:	    3648 kB
+VmRSS:	    2536 kB
+VmData:	    2128 kB
+VmStk:	     132 kB
+Threads:	5
+[ALERT][22631] TEMP_HIGH: VALUE 42.073 THRESHOLD 40.000
+[ALERT][22631] TEMP_SPIKE: VALUE 19.809 THRESHOLD 5.000
+[ALERT][23131] TEMP_SPIKE: VALUE -17.191 THRESHOLD 5.000
+[ALERT][24131] TEMP_SPIKE: VALUE -8.401 THRESHOLD 5.000
+[ALERT][24631] TEMP_HIGH: VALUE 41.279 THRESHOLD 40.000
+[ALERT][24631] HUMID_HIGH: VALUE 84.355 THRESHOLD 80.000
+[ALERT][24631] TEMP_SPIKE: VALUE 19.950 THRESHOLD 5.000
+[ALERT][25131] TEMP_SPIKE: VALUE -23.434 THRESHOLD 5.000
+[ALERT][25631] TEMP_HIGH: VALUE 43.740 THRESHOLD 40.000
+[ALERT][25631] TEMP_SPIKE: VALUE 25.895 THRESHOLD 5.000
+[ALERT][26131] TEMP_SPIKE: VALUE -11.602 THRESHOLD 5.000
+[ALERT][27131] TEMP_HIGH: VALUE 41.512 THRESHOLD 40.000
+[ALERT][27131] TEMP_SPIKE: VALUE 13.173 THRESHOLD 5.000
+[ALERT][27631] TEMP_HIGH: VALUE 43.849 THRESHOLD 40.000
+[ALERT][28131] TEMP_SPIKE: VALUE -24.098 THRESHOLD 5.000
+[ALERT][28631] TEMP_SPIKE: VALUE 17.744 THRESHOLD 5.000
+[ALERT][29131] TEMP_HIGH: VALUE 42.608 THRESHOLD 40.000
+[ALERT][29131] TEMP_SPIKE: VALUE 5.113 THRESHOLD 5.000
+[ALERT][29631] TEMP_SPIKE: VALUE -19.766 THRESHOLD 5.000
+[ALERT][30131] TEMP_SPIKE: VALUE 16.203 THRESHOLD 5.000
+[ALERT][30631] TEMP_HIGH: VALUE 42.433 THRESHOLD 40.000
+[ALERT][30631] HUMID_HIGH: VALUE 87.474 THRESHOLD 80.000
+[ALERT][31131] TEMP_SPIKE: VALUE -6.954 THRESHOLD 5.000
+[ALERT][32131] TEMP_SPIKE: VALUE -6.025 THRESHOLD 5.000
+[ALERT][32631] TEMP_SPIKE: VALUE 10.801 THRESHOLD 5.000
+[ALERT][33131] TEMP_HIGH: VALUE 42.750 THRESHOLD 40.000
+[ALERT][33131] TEMP_SPIKE: VALUE 7.277 THRESHOLD 5.000
+[ALERT][34131] HUMID_HIGH: VALUE 86.221 THRESHOLD 80.000
+[ALERT][34131] TEMP_SPIKE: VALUE -19.141 THRESHOLD 5.000
+[ALERT][34631] TEMP_SPIKE: VALUE 14.162 THRESHOLD 5.000
+[ALERT][36131] TEMP_SPIKE: VALUE -7.425 THRESHOLD 5.000
+[ALERT][36631] TEMP_SPIKE: VALUE -5.593 THRESHOLD 5.000
+[ALERT][37131] TEMP_SPIKE: VALUE 12.785 THRESHOLD 5.000
+[ALERT][38631] TEMP_SPIKE: VALUE -10.309 THRESHOLD 5.000
+[ALERT][39631] TEMP_SPIKE: VALUE -7.105 THRESHOLD 5.000
+[ALERT][40132] TEMP_SPIKE: VALUE 21.892 THRESHOLD 5.000
+[ALERT][40633] TEMP_SPIKE: VALUE -5.990 THRESHOLD 5.000
+[ALERT][41133] TEMP_SPIKE: VALUE -6.793 THRESHOLD 5.000
+[ALERT][41634] HUMID_HIGH: VALUE 85.323 THRESHOLD 80.000
+[ALERT][42134] HUMID_HIGH: VALUE 88.671 THRESHOLD 80.000
+[ALERT][42636] TEMP_SPIKE: VALUE -14.653 THRESHOLD 5.000
+[ALERT][44136] TEMP_HIGH: VALUE 41.723 THRESHOLD 40.000
+[ALERT][44136] TEMP_SPIKE: VALUE 25.370 THRESHOLD 5.000
+[ALERT][44636] TEMP_HIGH: VALUE 41.325 THRESHOLD 40.000
+[ALERT][45137] TEMP_SPIKE: VALUE -20.825 THRESHOLD 5.000
+[ALERT][45638] TEMP_SPIKE: VALUE 19.290 THRESHOLD 5.000
+[ALERT][46638] TEMP_SPIKE: VALUE -21.393 THRESHOLD 5.000
+=== T=30s ===
+VmSize:	    3648 kB
+VmRSS:	    2536 kB
+VmData:	    2128 kB
+VmStk:	     132 kB
+Threads:	5
+[ALERT][47638] TEMP_SPIKE: VALUE 12.985 THRESHOLD 5.000
+[ALERT][48638] TEMP_SPIKE: VALUE -8.653 THRESHOLD 5.000
+[ALERT][49639] TEMP_SPIKE: VALUE 8.058 THRESHOLD 5.000
+[ALERT][50641] TEMP_SPIKE: VALUE -5.110 THRESHOLD 5.000
+[ALERT][51643] TEMP_SPIKE: VALUE -6.327 THRESHOLD 5.000
+[ALERT][52647] TEMP_SPIKE: VALUE 16.074 THRESHOLD 5.000
+[ALERT][53647] HUMID_HIGH: VALUE 85.149 THRESHOLD 80.000
+[ALERT][53647] TEMP_SPIKE: VALUE -17.610 THRESHOLD 5.000
+[ALERT][54148] TEMP_SPIKE: VALUE 17.399 THRESHOLD 5.000
+[ALERT][54649] TEMP_HIGH: VALUE 40.600 THRESHOLD 40.000
+[ALERT][55150] TEMP_SPIKE: VALUE -19.094 THRESHOLD 5.000
+[ALERT][55650] TEMP_SPIKE: VALUE 17.573 THRESHOLD 5.000
+[ALERT][56151] TEMP_SPIKE: VALUE -18.156 THRESHOLD 5.000
+[ALERT][56652] TEMP_SPIKE: VALUE 11.840 THRESHOLD 5.000
+[ALERT][57152] TEMP_SPIKE: VALUE -13.751 THRESHOLD 5.000
+[ALERT][58152] TEMP_SPIKE: VALUE 7.432 THRESHOLD 5.000
+[ALERT][58652] TEMP_SPIKE: VALUE 8.431 THRESHOLD 5.000
+[ALERT][59152] TEMP_SPIKE: VALUE -12.418 THRESHOLD 5.000
+[ALERT][59653] TEMP_SPIKE: VALUE 16.519 THRESHOLD 5.000
+[ALERT][60154] TEMP_SPIKE: VALUE -10.063 THRESHOLD 5.000
+[ALERT][60655] HUMID_HIGH: VALUE 82.526 THRESHOLD 80.000
+[ALERT][60655] TEMP_SPIKE: VALUE 8.710 THRESHOLD 5.000
+[ALERT][61157] TEMP_HIGH: VALUE 44.241 THRESHOLD 40.000
+[ALERT][61157] TEMP_SPIKE: VALUE 6.417 THRESHOLD 5.000
+[ALERT][61658] TEMP_SPIKE: VALUE -6.036 THRESHOLD 5.000
+[ALERT][62159] TEMP_SPIKE: VALUE -13.823 THRESHOLD 5.000
+[ALERT][63161] TEMP_HIGH: VALUE 41.454 THRESHOLD 40.000
+[ALERT][63161] TEMP_SPIKE: VALUE 13.178 THRESHOLD 5.000
+[ALERT][63662] TEMP_SPIKE: VALUE -14.609 THRESHOLD 5.000
+[ALERT][64162] TEMP_SPIKE: VALUE 7.425 THRESHOLD 5.000
+[ALERT][64664] TEMP_SPIKE: VALUE -7.165 THRESHOLD 5.000
+[ALERT][65166] TEMP_SPIKE: VALUE -7.395 THRESHOLD 5.000
+[ALERT][65667] TEMP_SPIKE: VALUE 18.479 THRESHOLD 5.000
+[ALERT][66168] TEMP_SPIKE: VALUE -12.965 THRESHOLD 5.000
+[ALERT][66669] TEMP_HIGH: VALUE 41.249 THRESHOLD 40.000
+[ALERT][66669] TEMP_SPIKE: VALUE 16.025 THRESHOLD 5.000
+[ALERT][67169] TEMP_SPIKE: VALUE -22.872 THRESHOLD 5.000
+[ALERT][68671] TEMP_SPIKE: VALUE -5.087 THRESHOLD 5.000
+[ALERT][69672] TEMP_SPIKE: VALUE -7.001 THRESHOLD 5.000
+[ALERT][70172] HUMID_HIGH: VALUE 87.741 THRESHOLD 80.000
+[ALERT][70172] TEMP_SPIKE: VALUE 21.138 THRESHOLD 5.000
+[ALERT][70674] HUMID_HIGH: VALUE 81.016 THRESHOLD 80.000
+[ALERT][70674] TEMP_SPIKE: VALUE -18.649 THRESHOLD 5.000
+[ALERT][71174] TEMP_SPIKE: VALUE 12.097 THRESHOLD 5.000
+=== T=55s ===
+VmSize:	    3648 kB
+VmRSS:	    2536 kB
+VmData:	    2128 kB
+VmStk:	     132 kB
+Threads:	5
+=== /proc/PID/maps (35 dong dau) ===
+00010000-00083000 r-xp 00000000 00:02 356        /usr/bin/sms_app
+00093000-00095000 r--p 00073000 00:02 356        /usr/bin/sms_app
+00095000-00097000 rw-p 00075000 00:02 356        /usr/bin/sms_app
+00097000-00188000 rw-p 00000000 00:00 0          [heap]
+76d00000-76d21000 rw-p 00000000 00:00 0 
+76d21000-76e00000 ---p 00000000 00:00 0 
+76e8e000-76e8f000 ---p 00000000 00:00 0 
+76e8f000-76ecf000 rw-p 00000000 00:00 0 
+76ecf000-76ed0000 ---p 00000000 00:00 0 
+76ed0000-76f10000 rw-p 00000000 00:00 0 
+76f10000-76f11000 ---p 00000000 00:00 0 
+76f11000-76f51000 rw-p 00000000 00:00 0 
+76f51000-76f52000 ---p 00000000 00:00 0 
+76f52000-76f92000 rw-p 00000000 00:00 0 
+7ea78000-7ea99000 rw-p 00000000 00:00 0          [stack]
+7eaec000-7eaed000 r-xp 00000000 00:00 0          [sigpage]
+7eaed000-7eaee000 r--p 00000000 00:00 0          [vvar]
+7eaee000-7eaef000 r-xp 00000000 00:00 0          [vdso]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]
+[ALERT] stopped
+
+[MAIN] shutting down...
+[PROCESSOR] stopped
+[LOGGER] stopped
+[SENSOR] stopped after 111 samples
+
+================ SUMMARY ================
+uptime            : 55.6 s
+samples processed : 110
+buffer produced   : 110
+buffer consumed   : 110
+buffer overflow   : 0
+alerts TEMP_HIGH  : 14
+alerts HUMID_HIGH : 10
+alerts TEMP_SPIKE : 75
+log file          : /tmp/sms.log
+=========================================
+
+===== Jitter report: TARGET (SCHED_FIFO) =====
+samples : 111
+Min     : 109 us
+Avg     : 325.5 us
+Max     : 609 us
+P99     : 586 us
+Histogram:
+  [    0,  100) us : 0 (0.0%)
+  [  100,  500) us : 106 (95.5%)
+  [  500, 1000) us : 5 (4.5%)
+  [ 1000,  inf) us : 0 (0.0%)
+[MAIN] jitter report written to /tmp/jitter_report.txt
+[MAIN] clean exit
+=== /proc/sms_stats sau khi chay ===
+sms_sensor driver statistics
+============================
+read_count       : 111
+last_temperature : 35.116 C
+last_humidity    : 35.343 %
+driver_uptime    : 72 s
+min_interval_ms  : 500
+[1]+  Done                       sms_app -i 500 -d 120
+/ # poweroff -f
+Flash device refused suspend due to active operation (state 20)
+Flash device refused suspend due to active operation (state 20)
+reboot: Power down

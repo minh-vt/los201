@@ -1,0 +1,31 @@
+set pagination off
+set confirm off
+set print pretty on
+set logging file /work/Assignment/asgn02/logs/gdb_session.txt
+set logging overwrite on
+set logging on
+echo \n########## GDB multi-thread debug: sms_app_x86 (Scenario A) ##########\n
+echo --- set breakpoints in Processor and Alert threads ---\n
+break processor_thread
+break alert_thread
+run --sim -i 200 -d 20 -v
+echo \n--- stopped at processor_thread: all threads ---\n
+info threads
+bt
+echo \n--- shared circular buffer state (read under gdb, no mutex held) ---\n
+print ((SmsCtx *)arg)->cb.head
+print ((SmsCtx *)arg)->cb.tail
+print ((SmsCtx *)arg)->cb.size
+print ((SmsCtx *)arg)->cb.total_produced
+print ((SmsCtx *)arg)->cb.total_consumed
+print ((SmsCtx *)arg)->cb.overflow_count
+echo \n--- call stack of every thread ---\n
+thread apply all bt
+continue
+echo \n--- next stop ---\n
+info threads
+thread apply all bt
+continue
+echo \n--- finished ---\n
+info threads
+quit
